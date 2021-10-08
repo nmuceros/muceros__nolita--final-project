@@ -8,15 +8,18 @@ const Navigation = () => {
     const toggle = () => setIsOpen(!isOpen)
 
     return (
-        <Navbar dark color="dark" expand="md" fixed="top">
+        <Navbar dark expand="md" fixed="top" color="info">
             <Container>
-            <NavbarBrand href="">Example Portfolio Site</NavbarBrand>
+            <NavbarBrand href="">~NolitaMuceros~</NavbarBrand>
             <NavbarToggler onClick={toggle} />
             <Collapse isOpen={isOpen} navbar>
                 <Nav className="ml-auto" navbar>
                     <NavItem>
                         <NavLink tag={RouteLink} to="/">Home</NavLink>
                     </NavItem>
+                    <NavItem>
+                        <NavLink tag={RouteLink} to="/resume">Resume</NavLink>
+                    </NavItem>                    
                     <NavItem>
                         <NavLink tag={RouteLink} to="/about">About Me</NavLink>
                     </NavItem>

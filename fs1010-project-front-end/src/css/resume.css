@@ -1,0 +1,180 @@
+#main {
+  visibility: hidden;
+}
+
+
+.verticalNavBar {
+  position: relative;
+  /* float: left; */
+  /* padding-top: 4rem; */
+  /* margin-top: 13rem; */
+  /* padding-top: 10rem; */
+  width: 90%;
+  height: auto;
+  /* min-height: 646px; */
+  background-color: transparent;
+  
+  
+}
+
+
+.verticalNavBar-ul {
+
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  /* width: 15%; */
+  /* position: fixed; */
+  /* height: 100%; */
+  /* overflow: auto; */
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  text-align: center;
+  justify-content:space-around;
+  /* padding-top: 2rem; */
+  padding-top: 1rem;
+  
+}
+
+
+.verticalNavBar-li a {
+  display: block;
+  /* color: white;   */
+  color: rgb(40, 187, 187);;
+  padding: 6px;
+  text-decoration: none;
+  text-align: center;
+  font-weight: bold;
+} 
+
+
+.verticalNavBar-li a:hover {
+  /* background-color:#655C56; */
+  /* background-color: rgb(27, 165, 165); */
+  background-color: white;
+}
+
+
+.resumeContainer {
+  position: relative;
+  height: auto;
+  margin-top: 1rem;
+  padding-bottom: 1rem;
+  /* margin-bottom: 1rem; */
+  width: 100%;
+}
+
+
+.resumeHeader {
+  position: relative;
+  display: flex;
+  width: 100%; 
+  height: auto;
+  /* background-color: #444444; */
+  color: seashell;
+  /* margin-top: 2rem; */
+  /* padding-bottom: 1rem; */
+}
+
+.objective {
+  padding-bottom: 2rem;
+  /* background-color: #444444; */
+
+}
+
+.objectiveTitle {
+  position: relative;
+  font-weight: bold;
+  font-size: 14px;
+  margin-top: 2rem;
+  /* padding-bottom: 2rem; */
+}
+
+.objective {
+  position: relative;
+  width: 100%;
+  min-height: 110px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: white;
+  background-color: #444444;
+  /* margin-top: 2rem; */
+}
+
+.contactInfo {
+  position: relative;
+  width: 100%;
+  min-height: 110px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: white;
+  background-color: #444444;
+  /* margin-bottom: 2rem; */
+}
+
+
+.telephone, .email {
+  margin-top: 1px;
+}
+
+.address {
+  margin-top: 2rem;
+  /* margin-bottom: 2rem; */
+}
+
+.resumeContent {
+  width: 100%;
+  height: auto;
+  align-content: center;
+  text-align: center;
+  background-color: lightblue;
+  /* margin-top: 2rem; */
+  
+}
+
+.highlightsTitle, .experienceTitle, .educationTitle {
+  border: 5px solid white;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #444444;
+  color: white;
+}
+
+.highlights-container, .experience-container, .education-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  padding-left: 1rem;
+  margin-bottom: 2rem;
+  font-size: .8rem;
+  text-align: left;
+}
+
+.mainBullet {
+  padding-top: 3rem;
+  
+}
+
+/* .job-top, .education-top {
+  padding-top: 3rem;
+  padding-left: 1.5rem;
+  width: 100%;
+} */
+
+.job, .education {
+  padding-top: 1.5rem;
+  padding-left: 1.5rem;
+  width: 100%;
+}
+ #top-experience, #top-education {
+  padding-left: 1rem;
+  margin-bottom: 3rem;
+}
+
+#top {
+  padding-left: 1rem;
+}

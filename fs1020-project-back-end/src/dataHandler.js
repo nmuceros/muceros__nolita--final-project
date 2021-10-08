@@ -1,6 +1,6 @@
 import { promises as fs } from 'fs'
 import path from 'path'
-import { isArray } from 'util'
+// import { isArray } from 'util'
 
 const file = path.resolve('./data/db.json')
 
@@ -34,7 +34,7 @@ const getAll = async () => {
 
 const update = async (id, data) => {
     let content = await getAll()
-    if (!isArray(content)) {
+    if (!Array.isArray(content)) {
         throw new Error("No data found")
     }
 
