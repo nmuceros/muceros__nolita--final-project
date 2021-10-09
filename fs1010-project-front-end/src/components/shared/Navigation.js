@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, Container } from 'reactstrap'
 import { NavLink as RouteLink } from 'react-router-dom'
+import Logo from "../shared/LogoBrand"
 
 
 const Navigation = () => {
@@ -10,7 +11,9 @@ const Navigation = () => {
     return (
         <Navbar dark expand="md" fixed="top" color="info">
             <Container>
-            <NavbarBrand href="">~NolitaMuceros~</NavbarBrand>
+            <NavbarBrand href="">
+                <Logo />
+            </NavbarBrand>
             <NavbarToggler onClick={toggle} />
             <Collapse isOpen={isOpen} navbar>
                 <Nav className="ml-auto" navbar>

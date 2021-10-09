@@ -1,0 +1,61 @@
+#logo {
+    position: relative;
+    width: 2rem;
+    height: 2rem;
+    background-color: red;
+    border-radius: 50%;
+    /* align-content: center; */
+    /* text-align: center; */
+    margin-left: 0;
+    margin-right: 0;
+    align-items: center;
+
+}
+
+
+#logo-sm-circle-unfilled {
+
+        /* margin-top: 1rem; */
+        width: 40%; 
+        height: 40%; 
+        position: relative;
+        /* align-items: center; */
+        /* text-align: center; */
+        /* align-content: center;
+        margin-left:  0;
+        margin-right: 0; */
+        /* width: 100%; */
+        border-radius: 50%;
+        border: black solid;
+        background-color: black;
+    
+        animation-name: logospin;
+        animation-duration: 5000ms;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        /* -o-animation-direction: alternate-reverse; */
+        animation-direction: alternate;
+        
+    }
+    
+    @keyframes logospin {
+        from {
+            transform: rotate(90deg);
+           
+        }
+    
+    
+        to {
+            transform: rotate(-45deg);
+        } 
+        /* from {
+            transform: rotate(90deg);
+           
+        }
+    
+    
+        to {
+            transform: rotate(0deg);
+        }
+    */
+    }
