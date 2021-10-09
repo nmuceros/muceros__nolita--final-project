@@ -10,7 +10,7 @@ const Resume = () => {
         <Container fluid>
             <main>
                 {/* <section> */}
-                <div id="placeholder">bottom</div>
+                <div id="placeholder">Bottom</div>
                 <Row className="my-8">
 
                     <Col lg="2">
@@ -48,15 +48,15 @@ const Resume = () => {
                                                 color: "white"
                                             }}
                                         />
-                                        38 Pridham Place, Tottenham, Ontario L0G1W0
+                                        {'  '}38 Pridham Place, Tottenham, Ontario L0G1W0
                                     </div>
                                     <div className="telephone">
                                         <img src={phone} />
-                                        (647) 674-3709
+                                        {'  '}(647) 674-3709
                                     </div>
                                     <div className="email">
                                         <img src={eMail} />
-                                            nolitsmuceros@yahoo.com
+                                            {'  '}nolitsmuceros@yahoo.com
                                     </div>
                                 </Col>
                             </Row>  
@@ -89,9 +89,9 @@ const Resume = () => {
                             </Row>   
 
                             <Row className="experience-container">
-                                <a href="#main" id="top-experience">[Top]</a>
+                                <a href="#placeholder" id="top-experience">[Top]</a>
                                 <div className="experienceTitle">WORK EXPERIENCE</div>
-                                <a href="#main" id="top">[Top]</a>                                    
+                                <a href="#placeholder" id="top" style={{paddingTop: "10px"}}>[Top]</a>                                    
                                 <br></br>
                                 <p className="job"><b>IT Analyst / QA Analyst / Systems Specialist</b><br></br>
                                     <b>Honda Canada Inc. ~ 2012 to Present</b><br></br>
@@ -168,9 +168,9 @@ const Resume = () => {
                             </Row>    
 
                             <Row className="education-container">
-                                <a href="#main" id="top-education">[Top]</a>
+                                <a href="#placeholder" id="top-education">[Top]</a>
                                 <div className="educationTitle">EDUCATION</div>
-                                <a href="#main" id="top">[Top]</a>                                         
+                                <a href="#placeholder" id="top" style={{paddingTop: "10px"}}>[Top]</a>                                                                          
                                     <p className="education"><b>Full-Stack Web Development</b><br></br>
                                         York University ~ On-Going
                                     </p><br></br>
