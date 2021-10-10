@@ -12,7 +12,7 @@ const LogoBrand = () => {
           <Spinner animation="border" />
           <Spinner animation="grow" size="sm" />
           <Spinner animation="grow" /> */}
-        <div id="logo-sm-circle-unfilled">nm
+        <div id="logo-sm-circle-unfilled">NM
 
         </div>
 

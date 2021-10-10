@@ -8,6 +8,7 @@ import { GiDiploma } from "react-icons/gi"
 import { BiHighlight } from "react-icons/bi"
 import { FaRegHandshake } from "react-icons/fa"
 import { BsArrowUpSquare } from "react-icons/bs"
+import { MdVerticalAlignTop } from "react-icons/md"
 import { grey } from "color-name"
 
 const Resume = () => {
@@ -152,21 +153,21 @@ const Resume = () => {
                                         <Row>
                                             <div className="experience-container">
                                                 <a href="#placeholder" id="top-experience">
-                                                   <BsArrowUpSquare 
+                                                <MdVerticalAlignTop 
                                                         style={{
                                                             fontSize: "1.5rem",
-                                                            color: grey
-                                                        }}  
-                                                   />
+                                                            color: "white"
+                                                        }}            
+                                                  />
                                                 </a>
                                                 <div className="experienceTitle">WORK EXPERIENCE</div>
                                                 <a href="#placeholder" id="top" style={{paddingTop: "10px"}}>
-                                                  <BsArrowUpSquare 
+                                                  <MdVerticalAlignTop 
                                                         style={{
                                                             fontSize: "1.5rem",
-                                                            color: grey
-                                                        }}                                                    
-                                                  />                                                    
+                                                            color: "white"
+                                                        }}            
+                                                  />
                                                 </a>                                    
                                                 <br></br>
                                                 <div className="experience-contents-container">
@@ -249,21 +250,21 @@ const Resume = () => {
                                         <Row>
                                             <div className="education-container">
                                                 <a href="#placeholder" id="top-education">
-                                                  <BsArrowUpSquare 
+                                                <MdVerticalAlignTop 
                                                         style={{
                                                             fontSize: "1.5rem",
-                                                            color: grey
-                                                        }}                                                    
+                                                            color: "white"
+                                                        }}            
                                                   />
                                                 </a>
                                                 <div className="educationTitle">EDUCATION</div>
                                                 <a href="#placeholder" id="top">
-                                                 <BsArrowUpSquare 
+                                                <MdVerticalAlignTop 
                                                         style={{
                                                             fontSize: "1.5rem",
-                                                            color: grey
-                                                        }}                                                   
-                                                 />
+                                                            color: "white"
+                                                        }}            
+                                                  />
                                                 </a>   
                                                 <div className="education-contents-container">            
                                                     <p className="education"><b>Full-Stack Web Development</b><br></br>

@@ -288,11 +288,13 @@
 }
  #top-experience, #top-education {
   padding-left: 2.5rem;
+  outline: none;
   /* padding-bottom: 5rem; */
 }
 
 #top {
   padding-left: 2.5rem;
+  outline: none;  
   /* margin: 5px; */
 }
 

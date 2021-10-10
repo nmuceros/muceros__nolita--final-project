@@ -1,8 +1,10 @@
 #logo {
     position: relative;
-    width: 2rem;
-    height: 2rem;
-    background-color: red;
+    width: 3rem;
+    height: 3rem;
+    /* background-color: #32494e; */
+    /* background-color: #65a2b9; */
+    background-color: rgb(76, 81, 83);
     border-radius: 50%;
     /* align-content: center; */
     /* text-align: center; */
@@ -16,8 +18,8 @@
 #logo-sm-circle-unfilled {
 
         /* margin-top: 1rem; */
-        width: 40%; 
-        height: 40%; 
+        width:30%; 
+        height:30%; 
         position: relative;
         /* align-items: center; */
         /* text-align: center; */
@@ -27,10 +29,10 @@
         /* width: 100%; */
         border-radius: 50%;
         border: black solid;
-        background-color: black;
-    
+        background-color: #65a2b9;
+        margin-left: 15px;
         animation-name: logospin;
-        animation-duration: 5000ms;
+        animation-duration: 500ms;
         animation-iteration-count: infinite;
         animation-timing-function: linear;
         /* -o-animation-direction: alternate-reverse; */
