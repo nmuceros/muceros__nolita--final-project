@@ -81,7 +81,7 @@ const Resume = () => {
                                                             fontSize: "1.5rem"
                                                         }}                                                        
                                                     />
-                                                    {'  '}38 Pridham Place, Tottenham, ON L0G1W0
+                                                    {'  '}Tottenham, ON L0G1W0
                                                 </div>
                                                 <div className="telephone">
                                                     {/* <img src={phone} alt="phone icone"/> */}

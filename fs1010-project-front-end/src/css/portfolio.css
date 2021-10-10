@@ -85,83 +85,56 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-
-    
-    /* align-items: center; */
     width: 50%;
-    /* height: auto; */
-    /* align-content: center; */
-    /* background-color: red; */
-
 }
+
+
 #portfolio-cardImage-creativeResonance {
     margin-top: 1rem;
     width: 100%;
     position: relative;
-    
-    /* width: 100%; */
-    border-radius: 50%;
+    /* border-radius: 50%; */
     border: black solid;
 
-    animation-name: spin;
+    /* animation-name: spin;
     animation-duration: 5000ms;
     animation-iteration-count: infinite;
-    animation-timing-function: linear;
+    animation-timing-function: linear; */
 }
 
-@keyframes spin {
+/* @keyframes spin {
     from {
         transform: rotate(0deg);
     }
-
-
     to {
         transform: rotate(360deg);
     }
-}
-
-/* #portfolio-cardImage-photoGallery {
-    margin-top: 1rem;
-    width: 100%;
-    position: relative;
-    animation-name: linear;
-    animation-duration: 5000ms;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
 } */
 
 
-
-
-
-#portfolio-cardImage-photoGallery  {
+/* #portfolio-cardImage-photoGallery  {
     margin-top: 1rem;
     width: 100%;
     position: relative;
-    
-    /* width: 100%; */
-    /* border-radius: 50%; */
-    /* border: black solid; */
 
     animation-name: grow;
     animation-duration: 5000ms;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
-}
+} */
 
-@keyframes grow {
+/* @keyframes grow {
     from{
         height:0px;
         width: 0px;
-
     }
     to{
         height: 98px;
         width: 98px;
     }
-}
+} */
 
-#portfolio-cardImage-todoApp {
+/* #portfolio-cardImage-todoApp {
     margin-top: 1rem;
     width: 100%;
     position: relative;
@@ -178,4 +151,4 @@
     50%  {left:-50%; top:0;}
     75%  {left:50%; top:0;}
     100% {left:-50%; top:0;}
-}
+} */
