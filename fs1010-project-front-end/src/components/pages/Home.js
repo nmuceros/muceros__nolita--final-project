@@ -1,7 +1,7 @@
 import React from "react"
 import { Container, Row, Col } from "reactstrap"
 import "../../css/home.css"
-import myPhoto from "../../images/myPhoto14.jpeg"
+import profilePhoto from "../../images/myPhoto14.jpeg"
 
 const Home = () => {
     return (
@@ -13,7 +13,7 @@ const Home = () => {
                             <div className="aboutMe-container">
                                 <row>
                                     <div className="imageFrame">
-                                        <img className="myPhoto" src={myPhoto} alt="owner's photo" />
+                                        <img id="myPhoto" src={profilePhoto} alt="profilePhoto" />
                                     </div>
                                 </row>
                             </div>

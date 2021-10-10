@@ -36,7 +36,7 @@
 }
 
 
-.myPhoto {
+#myPhoto {
     position: relative;
     width: 100%;
     /*border: 5px solid pink;*/

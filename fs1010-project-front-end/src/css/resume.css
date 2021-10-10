@@ -1,7 +1,26 @@
-#placeholder {
-  visibility: hidden;
+* {
+  box-sizing: border-box;
+  /* overflow: auto; */
 }
 
+#placeholder {
+  visibility: hidden;
+  height: 50px;
+}
+
+#sidebar {
+  position: relative;
+
+  margin: 0;
+  padding: 0;
+  margin-top: 1rem;  
+  /* margin-left: 2rem; */
+  width: 100%;
+  height: auto;
+
+  /* border-style: solid 3px red; */
+  /* background-color: red; */
+}
 
 .verticalNavBar {
   position: relative;
@@ -9,7 +28,8 @@
   /* padding-top: 4rem; */
   /* margin-top: 13rem; */
   /* padding-top: 10rem; */
-  width: 90%;
+  /* width: 90%; */
+  padding-left: 2rem;
   height: auto;
   /* min-height: 646px; */
   background-color: transparent;
@@ -28,11 +48,16 @@
   /* height: 100%; */
   /* overflow: auto; */
   font-family: 'Montserrat', sans-serif;
-  font-size: 14px;
+  font-size: 18px;
+
   text-align: center;
   justify-content:space-around;
   /* padding-top: 2rem; */
-  padding-top: 1rem;
+  /* padding-top: 1rem; */
+  /* text-shadow: black; */
+  /* background-color: whitesmoke; */
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
   
 }
 
@@ -40,7 +65,8 @@
 .verticalNavBar-li a {
   display: block;
   /* color: white;   */
-  color: rgb(40, 187, 187);;
+  /* color: rgb(40, 187, 187); */
+  color: white;
   padding: 6px;
   text-decoration: none;
   text-align: center;
@@ -54,55 +80,89 @@
   background-color: white;
 }
 
-
-.resumeContainer {
+#resume-container {
   position: relative;
+  overflow: auto;
+  margin: 0;
+  padding: 0;
   height: auto;
   margin-top: 1rem;
-  padding-bottom: 1rem;
-  /* margin-bottom: 1rem; */
-  width: 100%;
+  margin-right: 4rem;
+  margin-left: 4rem;
+  /* background-color: blue; */
+  background-color: lightblue;  
 }
 
-
-.resumeHeader {
+.resume-header-container {
   position: relative;
   display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  /* padding: 3rem; */
+  background-color: #444444;
+}
+
+
+/* .resumeHeader {
+  position: relative;
+  margin: 0;
+  padding: 0;
   width: 100%; 
   height: auto;
-  /* background-color: #444444; */
   color: seashell;
-  /* margin-top: 2rem; */
-  /* padding-bottom: 1rem; */
+} */
+
+#objective-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding: 2rem;
+  /* background-color: black; */
 }
 
-.objective {
-  padding-bottom: 2rem;
-  padding-left: 5rem;
+/* .objective { */
+  /* position: relative;
+  width: 100%;
+  height: auto; */
+  /* padding-bottom: 2rem; */
+  /* padding-left: 5rem; */
   /* background-color: #444444; */
 
-}
+/* } */
 
 .objectiveTitle {
   position: relative;
+  /* width: 100%; */
+  height: auto;
   font-weight: bold;
   font-size: 14px;
-  margin-top: 2rem;
+  /* margin-top: 1rem; */
+  color: white;
   /* padding-bottom: 2rem; */
 }
 
 .objective {
   position: relative;
-  width: 100%;
-  min-height: 110px;
+  /* width: 100%; */
   font-family: Arial, Helvetica, sans-serif;
   font-size: 12px;
   color: white;
-  background-color: #444444;
-  /* margin-top: 2rem; */
 }
 
-.contactInfo {
+#contactInfo-container {
+  position: relative;
+  height: auto;
+  padding-top: 2rem;
+  /* margin-left: 1rem; */
+  /* background-color: black;   */
+}
+
+
+
+/* .contactInfo {
   position: relative;
   width: 100%;
   min-height: 110px;
@@ -110,29 +170,61 @@
   font-size: 12px;
   color: white;
   background-color: #444444;
-  /* margin-bottom: 2rem; */
-  /* margin-left: .1rem; */
+
+} */
+
+
+.telephone, .email, .address {
+  /* width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: white; */
+
+  position: relative;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: white;
+
+
 }
 
-
 .telephone, .email {
-  margin-top: 1px;
+  /* margin-top: 1px; */
+
+  
 }
 
 .address {
-  margin-top: 2rem;
-  /* margin-bottom: 2rem; */
+  /* margin-top: 2rem; */
+
 }
 
-.resumeContent {
+/* .resumeContent {
   width: 100%;
   height: auto;
   align-content: center;
   text-align: center;
   background-color: lightblue;
-  /* margin-top: 2rem; */
   
+} */
+
+
+
+.highlights-container, .experience-container, .education-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  /* padding-left: 1rem; */
+  /* margin-bottom: 2rem; */
+  /* padding: 2rem; */
+  font-size: .8rem;
+  text-align: left;
 }
+
+
+
 
 .highlightsTitle, .experienceTitle, .educationTitle {
   border: 5px solid white;
@@ -145,21 +237,39 @@
   color: white;
 }
 
-.highlights-container, .experience-container, .education-container {
+.experienceTitle, .educationTitle {
+  margin-top: 3rem;
+
+}
+
+.highlights-contents-container, .experience-contents-container, .education-contents-container {
   position: relative;
   width: 100%;
   height: auto;
-  overflow: hidden;
-  padding-left: 1rem;
-  margin-bottom: 2rem;
-  font-size: .8rem;
-  text-align: left;
+  padding: 3rem 5rem 3rem 5rem;
+
+  /* background-color: red; */
+
+
 }
 
+/* .highlights-ul.a {
+  list-style-type: circle;
+  color: black;
+} */
+
+
 .mainBullet {
-  padding-top: 3rem;
+  /* padding-top: 3rem; */
+
   
 }
+
+
+
+/* .mainBullet li {
+  text-decoration: dotted;
+} */
 
 /* .job-top, .education-top {
   padding-top: 3rem;
@@ -173,10 +283,18 @@
   width: 100%;
 }
  #top-experience, #top-education {
-  padding-left: 1rem;
-  margin-bottom: 3rem;
+  padding-left: 2rem;
+  /* padding-bottom: 5rem; */
 }
 
 #top {
-  padding-left: 1rem;
+  padding-left: 2rem;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, adjust the left margin of vertical navbar*/
+@media screen and (max-width: 600px) {
+  .verticalNavBar {
+    padding-left: 0;
+  }
+  
 }
