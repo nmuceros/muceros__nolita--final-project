@@ -1,9 +1,14 @@
 import React from "react"
 import { Container, Row, Col } from "reactstrap"
 import "../../css/resume.css"
-import eMail from "../../images/email.png"
-import phone from "../../images/phone.png"
-import location from "../../images/location.png"
+import { GoLocation } from "react-icons/go"
+import { MdOutlineEmail } from "react-icons/md"
+import { FiPhone } from "react-icons/fi"
+import { GiDiploma } from "react-icons/gi"
+import { BiHighlight } from "react-icons/bi"
+import { FaRegHandshake } from "react-icons/fa"
+import { BsArrowUpSquare } from "react-icons/bs"
+import { grey } from "color-name"
 
 const Resume = () => {
     return (
@@ -18,9 +23,27 @@ const Resume = () => {
                             <div id="sidebar">
                                 <nav className="verticalNavBar">
                                     <ul className="verticalNavBar-ul">
-                                        <li className="verticalNavBar-li"><a href="#highlights" className="defaultMenuItem">Highlights</a></li>
-                                        <li className="verticalNavBar-li"><a href="#top-experience">Experience</a></li>
-                                        <li className="verticalNavBar-li"><a href="#top-education">Education</a></li>
+                                        <li className="verticalNavBar-li"><a href="#highlights" className="defaultMenuItem">
+                                        <BiHighlight 
+                                            style={{
+                                                fontSize: "3rem"
+                                            }}
+                                        />
+                                        Highlights</a></li>
+                                        <li className="verticalNavBar-li"><a href="#top-experience">
+                                            <FaRegHandshake 
+                                                style={{
+                                                    fontSize: "3rem"
+                                                }}                                            
+                                            />
+                                            Experience</a></li>
+                                        <li className="verticalNavBar-li"><a href="#top-education">
+                                            <GiDiploma 
+                                                style={{
+                                                    fontSize: "3rem"
+                                                }}                                            
+                                            />
+                                            Education</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -53,20 +76,29 @@ const Resume = () => {
                                         <Col lg="5" sm="12">
                                             <div id="contactInfo-container">
                                                 <div className="address">
-                                                    <img src={location} alt="address icon"
+                                                    <GoLocation 
                                                         style={{
-                                                            color: "white",
-                                                            backgroundcolor: "white"
-                                                        }}
+                                                            fontSize: "1.5rem"
+                                                        }}                                                        
                                                     />
                                                     {'  '}38 Pridham Place, Tottenham, ON L0G1W0
                                                 </div>
                                                 <div className="telephone">
-                                                    <img src={phone} alt="phone icone"/>
+                                                    {/* <img src={phone} alt="phone icone"/> */}
+                                                    <FiPhone 
+                                                        style={{
+                                                            fontSize: "1.5rem"
+                                                        }}                                                      
+                                                    />
                                                     {'  '}(647) 674-3709
                                                 </div>
                                                 <div className="email">
-                                                    <img src={eMail} alt="email icon"/>
+                                                    {/* <img src={eMail} alt="email icon"/> */}
+                                                    <MdOutlineEmail 
+                                                        style={{
+                                                            fontSize: "1.5rem"
+                                                        }}                                                      
+                                                    />
                                                         {'  '}nolitsmuceros@yahoo.com
                                                 </div>
                                             </div>
@@ -119,9 +151,23 @@ const Resume = () => {
 
                                         <Row>
                                             <div className="experience-container">
-                                                <a href="#placeholder" id="top-experience">[Top]</a>
+                                                <a href="#placeholder" id="top-experience">
+                                                   <BsArrowUpSquare 
+                                                        style={{
+                                                            fontSize: "1.5rem",
+                                                            color: grey
+                                                        }}  
+                                                   />
+                                                </a>
                                                 <div className="experienceTitle">WORK EXPERIENCE</div>
-                                                <a href="#placeholder" id="top" style={{paddingTop: "10px"}}>[Top]</a>                                    
+                                                <a href="#placeholder" id="top" style={{paddingTop: "10px"}}>
+                                                  <BsArrowUpSquare 
+                                                        style={{
+                                                            fontSize: "1.5rem",
+                                                            color: grey
+                                                        }}                                                    
+                                                  />                                                    
+                                                </a>                                    
                                                 <br></br>
                                                 <div className="experience-contents-container">
                                                     <p className="job"><b>IT Analyst / QA Analyst / Systems Specialist</b><br></br>
@@ -202,9 +248,23 @@ const Resume = () => {
 
                                         <Row>
                                             <div className="education-container">
-                                                <a href="#placeholder" id="top-education">[Top]</a>
+                                                <a href="#placeholder" id="top-education">
+                                                  <BsArrowUpSquare 
+                                                        style={{
+                                                            fontSize: "1.5rem",
+                                                            color: grey
+                                                        }}                                                    
+                                                  />
+                                                </a>
                                                 <div className="educationTitle">EDUCATION</div>
-                                                <a href="#placeholder" id="top" style={{paddingTop: "10px"}}>[Top]</a>   
+                                                <a href="#placeholder" id="top">
+                                                 <BsArrowUpSquare 
+                                                        style={{
+                                                            fontSize: "1.5rem",
+                                                            color: grey
+                                                        }}                                                   
+                                                 />
+                                                </a>   
                                                 <div className="education-contents-container">            
                                                     <p className="education"><b>Full-Stack Web Development</b><br></br>
                                                         York University ~ On-Going
