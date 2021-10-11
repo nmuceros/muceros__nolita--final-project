@@ -62,7 +62,7 @@ fuzzyTextFilterFn.autoRemove = (val) => !val;
 
 
 
-const ListingTable = ({ columns, data, loading = true, key }) => {
+const ListingTable = ({ columns, data, loading = true }) => {
   const [switchSearch, setSwitchSearch] = useState(false);
   const toggleSwitchSearch = () => {
     setAllFilters([]);
@@ -124,7 +124,7 @@ const ListingTable = ({ columns, data, loading = true, key }) => {
 
   return (
     <Container>
-      <div key={key}>
+      <div>
         <span className="float-right ">
           <CustomInput
             checked={switchSearch}
@@ -228,7 +228,7 @@ const ListingTable = ({ columns, data, loading = true, key }) => {
                 {page.map((row, i) => {
                   prepareRow(row);
                   return (
-                    <tr {...row.getRowProps()}>
+                    <tr {...row.getRowProps()} key={i}>
                       {row.cells.map((cell) => {
                         return (
                           <td

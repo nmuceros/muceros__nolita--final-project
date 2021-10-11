@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { Container, Row, Table, Button } from 'reactstrap'
-import ListingTable from "../pages/ListingTable"
+import { Container, Row, Col, Table, Button } from 'reactstrap'
+// import ListingTable from "../pages/ListingTable"
 
 
 
@@ -16,38 +16,43 @@ const Listings = () => {
     const user = parseJwt(token).username
     const [listing, setListing] = useState([])
 
-    const listHeader = [
-        {
-          id: "1",  
-          Header: "ID",
-          className: "t-cell-1 text-left",
-          accessor: "id"
-        },
-        {
-          id: "2",              
-          Header:  "Name",
-          accessor: "name",
-          className: "t-cell-2 text-left"
-        },
-        {
-          id: "3",              
-          Header: "Phone Number",
-          accessor: "phoneNumber",
-          className: "t-cell-3 text-left"
-        },
-        {
-          id: "4",  
-          Header: "Email",
-          accessor: "email",
-          className: "t-cell-4 text-center"
-        },
-        {
-            id: "5",  
-            Header: "Message",
-            accessor: "content",
-            className: "t-cell-5 text-center"
-          }        
-      ];
+    // const listHeader = [
+    //     {
+    //       id: "1",  
+    //       Header: "ID",
+    //       className: "t-cell-1 text-left",
+    //       accessor: "id",
+    //       notShowSortingDisplay: "true"  
+    //     },
+    //     {
+    //       id: "2",              
+    //       Header:  "Name",
+    //       accessor: "name",
+    //       className: "t-cell-2 text-left",
+    //       notShowSortingDisplay: "true"        
+    //     },
+    //     {
+    //       id: "3",              
+    //       Header: "Phone Number",
+    //       accessor: "phoneNumber",
+    //       className: "t-cell-3 text-left",
+    //       notShowSortingDisplay: "true"           
+    //     },
+    //     {
+    //       id: "4",  
+    //       Header: "Email",
+    //       accessor: "email",
+    //       className: "t-cell-4 text-center",
+    //       notShowSortingDisplay: "true"         
+    //     },
+    //     {
+    //         id: "5",  
+    //         Header: "Message",
+    //         accessor: "content",
+    //         className: "t-cell-5 text-center",
+    //         notShowSortingDisplay: "true"            
+    //       }        
+    //   ];
     //   const listData = listing;
 
 
@@ -67,28 +72,49 @@ const Listings = () => {
             })
             const data = await response.json()
             setListing(data)
+            console.log(data)
         }
         getData()
     }, [token])
 
     return (
         <Container>
-            <main className="submission-main-container" key={listing.id}>
+            <main className="submission-main-container">
 
-               <ListingTable columns={listHeader} data={listing} loading={false} key={listing.id} />
+               {/* <ListingTable columns={listHeader} data={listing} loading={false} /> */}
 
-                {/* <Row>
-                    <h1>Listings for user: {user}</h1>
+                <Row>
+                    
+                    <header className="listing-header">
+                        <Col >
+                            <div className="listingTitle-container">   
+                                <h1 className="listingTitle-texts">Messages for : {user}</h1>
+                            </div>
+                         </Col>   
+                         <Col>
+                            <div className="listingSendButton-container">
+                                    <Button 
+                                        id="listing-sendButton" 
+                                        color="secondary" 
+                                        size="sm"
+                                        onClick={logout} 
+                                    >
+                                        Logout
+                                    </Button>
+                            </div>      
+                         </Col>                       
+                     </header>
                 </Row>
                 <Row>
-                    <div className="submission-listing-container">
-                        <Table responsive>
+                    <main className="submission-listing-container">
+                        <Table hover bordered responsive size="sm" >
                             <thead>
                                 <tr>
-                                <th>ID</th>
-                                <th>Name</th>
-                                <th>Phone Number</th>
-                                <th>Email</th>
+                                    <th className="column-id">ID</th>
+                                    <th className="column-name">Name</th>
+                                    <th className="column-email">Email</th>                                
+                                    <th className="column-phone">Phone Number</th>
+                                    <th className="column-message">Message</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -96,16 +122,34 @@ const Listings = () => {
                                     <tr><td colSpan="4" className="text-center"><i>No listings found</i></td></tr>
                                 }
                                 {listing.length > 0 &&
-                                    listing.map(entry => <tr><td>{entry.id}</td><td>{entry.name}</td><td>{entry.phoneNumber}</td><td>{entry.email}</td></tr>)
+                                    listing.map(entry => 
+                                        <tr key={entry.id}>
+                                            <td>{entry.id}</td>
+                                            <td>{entry.name}</td>
+                                            <td>{entry.email}</td>
+                                            <td>{entry.phoneNumber}</td>
+                                            <td>{entry.content}</td>
+                                        </tr>
+                                    )
                                 }
                             </tbody>
                         </Table>
-                    </div>    
-                </Row>     */}
+                    </main>    
+                </Row>     
                 
-                <Row className="my-5">
-                    <Button onClick={logout} color="primary">Logout</Button>
-                </Row>
+                {/* <Row className="my-5">
+                    <div className="listing-sendButton-container">
+                        <Button 
+                            id="listing-sendButton" 
+                            color="secondary" 
+                            size="sm"
+                            onClick={logout} 
+                        >
+                            Logout
+                        </Button>
+                    </div>
+                </Row> */}
+
 
 
             </main>                    
