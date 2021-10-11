@@ -30,19 +30,20 @@ const Portfolio = () => {
       ];
 
 
-    // const [selectedProject, setSelectedProject] = useState(null); 
-    // const [isOpen, setIsOpen] = useState(false);
-    // const handleMore = (e, projectObject) => {
-    //     setSelectedProject({
-    //         projectID: projectObject.projectID,
-    //         projectName: projectObject.projectName,
-    //         projectImage: projectObject.projectImage,
-    //         projectbBuiltBy: projectObject.projectbBuiltBy,      
-    //         projectTitle: projectObject.projectTitle,     
-    //         projectDesc: projectObject.projectDesc
-    //     });
-    //     setIsOpen(!isOpen);
-    // }
+    const [selectedProject, setSelectedProject] = useState(null); 
+    const [isOpen, setIsOpen] = useState(false);
+    
+    const handleMore = (e, projectObject) => {
+        setSelectedProject({
+            projectID: projectObject.projectID,
+            projectName: projectObject.projectName,
+            projectImage: projectObject.projectImage,
+            projectbBuiltBy: projectObject.projectbBuiltBy,      
+            projectTitle: projectObject.projectTitle,     
+            projectDesc: projectObject.projectDesc
+        });
+        setIsOpen(!isOpen);
+    }
 
 
     return (
@@ -62,30 +63,29 @@ const Portfolio = () => {
 
                 <Row>
 
-                    {projects.map((projectObject) => (
-                        // <p>projectObject.projectName</p>
-                        // console.log(projectObject.projectName)
-                    
+                    {projects.map((projectObject, index) => (
                         <Col md="4" className="mb-5">
                             <div key={projectObject.projectID}>                         
-                                <Card id="portfolio-card-container">
+                                <Card id="portfolio-card-container" key={index}>
                                     <div className="portfolio-cardImage-container">
                                         <CardImg id="portfolio-cardImage-creativeResonance" width="100%" src={projectObject.projectImage} alt="Card image cap" />
                                     </div>
-
                                     {/* <CardBody>
-                                        <CardTitle id="portfolio-cardTitle" tag="h5">{projectObject.name}</CardTitle>
-                                        <CardSubtitle id="portfolio-cardSubTitle" ag="h6" className="mb-2 text-muted">{projectObject.ProjectBuiltBy}</CardSubtitle>
-                                    
-                                        <div ey={projectObject.projectID}>
-                                            <Button outline color="secondary" size="sm" onClick={(e) => handleMore(e,projectObject)}
+                                        <CardTitle id="portfolio-cardTitle" tag="h5">{projectObject.projectName}</CardTitle>
+                                        <div>
+                                            <Button 
+                                                id={`showMoreButton ${projectObject.projectID}`} 
+                                                outline color="secondary" size="sm" 
+                                                onClick={(e) => handleMore(e,projectObject)}
                                                 style={{ 
                                                     marginBottom: '1rem'
                                                 }}
                                             >
                                                 More...
                                             </Button>
-                                            <Collapse isOpen={isOpen}>
+                                            <Collapse 
+                                                id={`collapse ${projectObject.projectID}`} 
+                                                isOpen={isOpen}>
                                                 <Card>
                                                     <CardBody id="portfolio-cardText">
                                                         {projectObject.projectDesc}
@@ -95,12 +95,12 @@ const Portfolio = () => {
                                         </div>                                    
                                     </CardBody> */}
 
-                                    <CardBody>
+                                     <CardBody>
                                         <CardTitle id="portfolio-cardTitle" tag="h5">{projectObject.projectName}</CardTitle>
-                                        {/* <CardSubtitle id="portfolio-cardSubTitle" ag="h6" className="mb-2 text-muted">{projectObject.projectb}</CardSubtitle> */}
+                                        <CardSubtitle id="portfolio-cardSubTitle" ag="h6" className="mb-2 text-muted">{projectObject.projectb}</CardSubtitle> 
                                         <CardText id="portfolio-cardText">{projectObject.projectDesc}</CardText>
-                                        <Button id="portfolio-collapse-button" color="secondary" size="sm">Button</Button>
-                                    </CardBody>      
+                                        {/* <Button id="portfolio-collapse-button" color="secondary" size="sm">Button</Button> */}
+                                    </CardBody>       
 
                                 </Card>
                             </div>    

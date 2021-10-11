@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Container } from "reactstrap";
 import {
   useTable,
   useSortBy,
@@ -59,7 +60,9 @@ function fuzzyTextFilterFn(rows, id, filterValue) {
 
 fuzzyTextFilterFn.autoRemove = (val) => !val;
 
-const XTable = ({ columns, data, loading = true }) => {
+
+
+const XTable = ({ columns, data, loading = true, key }) => {
   const [switchSearch, setSwitchSearch] = useState(false);
   const toggleSwitchSearch = () => {
     setAllFilters([]);
@@ -120,8 +123,8 @@ const XTable = ({ columns, data, loading = true }) => {
   );
 
   return (
-    <>
-      <div>
+    <Container>
+      <div key={key}>
         <span className="float-right ">
           <CustomInput
             checked={switchSearch}
@@ -216,7 +219,7 @@ const XTable = ({ columns, data, loading = true }) => {
               <tbody>
                 <tr>
                   <td colSpan="10000" className="text-left">
-                    * Tidak ada data
+                    * No record found
                   </td>
                 </tr>
               </tbody>
@@ -307,7 +310,7 @@ const XTable = ({ columns, data, loading = true }) => {
           </div>
         </div>
       )}
-    </>
+  </Container>
   );
 };
 

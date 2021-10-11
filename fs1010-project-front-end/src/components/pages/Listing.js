@@ -18,27 +18,37 @@ const Listings = () => {
 
     const listHeader = [
         {
-          Header: "ID",
+          id: "1",  
+          header: "ID",
           className: "t-cell-1 text-left",
           accessor: "id"
         },
         {
-          Header:  "Name",
+          id: "2",              
+          header:  "Name",
           accessor: "name",
           className: "t-cell-2 text-left"
         },
         {
-          Header: "Phone Number",
+          id: "3",              
+          header: "Phone Number",
           accessor: "phoneNumber",
           className: "t-cell-3 text-left"
         },
         {
-          Header: "Email",
+          id: "4",  
+          header: "Email",
           accessor: "email",
           className: "t-cell-4 text-center"
         },
+        {
+            id: "5",  
+            Header: "Message",
+            accessor: "content",
+            className: "t-cell-5 text-center"
+          }        
       ];
-      const listData = listing;
+    //   const listData = listing;
 
 
 
@@ -60,11 +70,12 @@ const Listings = () => {
         }
         getData()
     }, [token])
+
     return (
         <Container>
-            <main className="submission-main-container" >
+            <main className="submission-main-container" key={listing.id}>
 
-               <XTable columns={listHeader} loading={false} data={listData} key={listData.id} />
+               <XTable columns={listHeader} data={listing} loading={false} key={listing.id} />
 
                 {/* <Row>
                     <h1>Listings for user: {user}</h1>
@@ -90,10 +101,11 @@ const Listings = () => {
                             </tbody>
                         </Table>
                     </div>    
-                </Row>    
+                </Row>     */}
+                
                 <Row className="my-5">
                     <Button onClick={logout} color="primary">Logout</Button>
-                </Row> */}
+                </Row>
 
 
             </main>                    
