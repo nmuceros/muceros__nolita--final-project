@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Container, Row, Table, Button } from 'reactstrap'
-import XTable from "../pages/Table"
+import ListingTable from "../pages/ListingTable"
 
 
 
@@ -19,25 +19,25 @@ const Listings = () => {
     const listHeader = [
         {
           id: "1",  
-          header: "ID",
+          Header: "ID",
           className: "t-cell-1 text-left",
           accessor: "id"
         },
         {
           id: "2",              
-          header:  "Name",
+          Header:  "Name",
           accessor: "name",
           className: "t-cell-2 text-left"
         },
         {
           id: "3",              
-          header: "Phone Number",
+          Header: "Phone Number",
           accessor: "phoneNumber",
           className: "t-cell-3 text-left"
         },
         {
           id: "4",  
-          header: "Email",
+          Header: "Email",
           accessor: "email",
           className: "t-cell-4 text-center"
         },
@@ -75,7 +75,7 @@ const Listings = () => {
         <Container>
             <main className="submission-main-container" key={listing.id}>
 
-               <XTable columns={listHeader} data={listing} loading={false} key={listing.id} />
+               <ListingTable columns={listHeader} data={listing} loading={false} key={listing.id} />
 
                 {/* <Row>
                     <h1>Listings for user: {user}</h1>

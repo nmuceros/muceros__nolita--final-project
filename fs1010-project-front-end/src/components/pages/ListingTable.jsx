@@ -62,7 +62,7 @@ fuzzyTextFilterFn.autoRemove = (val) => !val;
 
 
 
-const XTable = ({ columns, data, loading = true, key }) => {
+const ListingTable = ({ columns, data, loading = true, key }) => {
   const [switchSearch, setSwitchSearch] = useState(false);
   const toggleSwitchSearch = () => {
     setAllFilters([]);
@@ -314,4 +314,4 @@ const XTable = ({ columns, data, loading = true, key }) => {
   );
 };
 
-export default XTable;
+export default ListingTable;
