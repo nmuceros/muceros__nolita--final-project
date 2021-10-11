@@ -12,15 +12,15 @@ const Home = () => {
                         <Col lg="5">
                  
                                  
-                            <row>
+                            <Row>
                                 <div className="aboutMe-container">                                    
                                     <div className="imageFrame">
                                         <img id="myPhoto" src={profilePhoto} alt="profilePhoto" />
                                     </div>
                                                                
                                </div>
-                            </row> 
-                            <row>
+                            </Row> 
+                            <Row>
                               <div className="homeQuote-container">
 
                                  
@@ -29,7 +29,7 @@ const Home = () => {
                                 
                                
                               </div>
-                            </row> 
+                            </Row> 
                         </Col>
                 
                         <Col lg="7">

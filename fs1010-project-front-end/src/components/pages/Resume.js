@@ -7,9 +7,9 @@ import { FiPhone } from "react-icons/fi"
 import { GiDiploma } from "react-icons/gi"
 import { BiHighlight } from "react-icons/bi"
 import { FaRegHandshake } from "react-icons/fa"
-import { BsArrowUpSquare } from "react-icons/bs"
+// import { BsArrowUpSquare } from "react-icons/bs"
 import { MdVerticalAlignTop } from "react-icons/md"
-import { grey } from "color-name"
+// import { grey } from "color-name"
 
 const Resume = () => {
     return (

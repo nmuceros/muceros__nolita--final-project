@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Form, FormGroup, Col, Input, Label, Button, Container, CardBody, Card, CardText } from 'reactstrap'
+import { Form, FormGroup, Col, Input, Button, Container } from 'reactstrap'
 import { BsFillPersonFill } from "react-icons/bs"
 import { GrMail } from "react-icons/gr"
 import { AiTwotonePhone } from "react-icons/ai"
@@ -41,7 +41,7 @@ const Contact = () => {
             <main className="contact-container">
 
                 <h2 className="contactTitle-container">
-                    <div className="contactTitle-texts">The best place to reach me!</div>
+                    <div className="contactTitle-texts">Reachable Here!</div>
                 </h2>                
            
                 
@@ -60,7 +60,7 @@ const Contact = () => {
                                         type="name" 
                                         name="name" 
                                         id="nameEntry" 
-                                        placeholder="Enter your full name" 
+                                        placeholder="Enter full name" 
                                         required value={name} 
                                         onChange={e => setName(e.target.value)}
                                     />
@@ -80,7 +80,7 @@ const Contact = () => {
                                         type="email" 
                                         name="email" 
                                         id="emailEntry" p
-                                        placeholder="Enter email to contact"  
+                                        placeholder="Enter email"  
                                         required value={email} 
                                         onChange={e => setEmail(e.target.value) }
                                     />

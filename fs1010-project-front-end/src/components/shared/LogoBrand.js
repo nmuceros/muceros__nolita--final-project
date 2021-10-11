@@ -20,7 +20,7 @@ const LogoBrand = () => {
                 <div id="logo-sm-circle-unfilled">Hi!</div>
                  
             </div>
-            <div class="logo-text">@Nolita's Site</div> 
+            <div className="logo-text">@Nolita's Site</div> 
     </div>
 
     )

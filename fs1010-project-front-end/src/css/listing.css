@@ -1,0 +1,24 @@
+*{
+    box-sizing: border-box;
+}
+
+.submission-listing-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+
+    justify-content: center;
+    justify-items: center;
+
+    
+    width: 80%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+
+    background-color: red;
+    border-style: solid red;
+
+}
