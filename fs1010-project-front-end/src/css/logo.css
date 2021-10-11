@@ -15,11 +15,12 @@
 }
 
 
-#logo-sm-circle-unfilled {
 
+
+#logo-sm-circle-unfilled  { 
         /* margin-top: 1rem; */
-        width:30%; 
-        height:30%; 
+        width:40%; 
+        height:40%; 
         position: relative;
         /* align-items: center; */
         /* text-align: center; */
@@ -28,18 +29,37 @@
         margin-right: 0; */
         /* width: 100%; */
         border-radius: 50%;
-        border: black solid;
+        border: black solid 2px;
         background-color: #65a2b9;
+        font-family: cursive;
         margin-left: 15px;
+        margin-top: -15px;
+        
         animation-name: logospin;
-        animation-duration: 500ms;
+        animation-duration: 800ms;
         animation-iteration-count: infinite;
         animation-timing-function: linear;
         /* -o-animation-direction: alternate-reverse; */
         animation-direction: alternate;
         
     }
+
+    #logo-sm-circle-unfilled {
+        position: relative;
+        margin-top: -20px;
+        margin-left: 10px;
+        width: -0;
+        height: 0;
+    }
     
+    .smiley {
+        position: relative;
+        margin-left: 14px;
+        margin-top: -12px;
+
+
+    }
+
     @keyframes logospin {
         from {
             transform: rotate(90deg);

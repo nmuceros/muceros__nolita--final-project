@@ -58,7 +58,7 @@ const Resume = () => {
 
                                         <Col lg="7" sm="12">
                                             <div id="objective-container">
-                                                <div className="objectiveTitle">Objective:</div>
+                                                {/* <div className="objectiveTitle">Objective:</div> */}
                                                 <div className="objective">
                                                     <p style={{
                                                             marginleft: "20px",

@@ -1,4 +1,5 @@
 import React from 'react'
+import { FaRegSmileWink } from "react-icons/fa"
 // import { Spinner } from 'reactstrap'
 // import 'bootstrap/dist/css/bootstrap.min.css'
 import "../../css/logo.css"
@@ -12,7 +13,10 @@ const LogoBrand = () => {
           <Spinner animation="border" />
           <Spinner animation="grow" size="sm" />
           <Spinner animation="grow" /> */}
-        <div id="logo-sm-circle-unfilled">NM
+          <FaRegSmileWink 
+            className="smiley"
+        />  
+        <div id="logo-sm-circle-unfilled">Hi!
 
         </div>
 

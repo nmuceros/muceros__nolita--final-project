@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
 import { Form, FormGroup, Col, Input, Label, Button, Container, CardBody, Card, CardText } from 'reactstrap'
-
-
+import { BsFillPersonFill } from "react-icons/bs"
+import { GrMail } from "react-icons/gr"
+import { AiTwotonePhone } from "react-icons/ai"
+import { RiMessage3Fill } from "react-icons/ri"
+import "../../css/contact.css"
 
 const Contact = () => {
     const [name, setName] = useState("")
@@ -29,43 +32,114 @@ const Contact = () => {
 
     return (
         <Container>
-            <Card className="text-white bg-secondary my-5 py-4 text-center">
+            {/* <Card className="text-white bg-secondary my-5 py-4 text-center">
                 <CardBody>
                     <CardText className="text-white m-0">Use form to reach me, I'll get back to you within 24 hours!</CardText>
                 </CardBody>
-            </Card>
-            <Form className="my-5" onSubmit={formSubmit}>
-                <FormGroup row>
-                    <Label for="emailEntry" sm={2}>Email</Label>
-                    <Col sm={10}>
-                    <Input type="email" name="email" id="emailEntry" placeholder="Enter email to contact"  required value={email} onChange={e => setEmail(e.target.value) }/>
-                    </Col>
-                </FormGroup>
-                <FormGroup row>
-                    <Label for="phoneEntry" sm={2}>Phone Number</Label>
-                    <Col sm={10}>
-                    <Input type="phone" name="phone" id="phoneEntry" placeholder="Enter phone number" value={phoneNumber} onChange={e => setPhoneNumber(e.target.value)}/>
-                    </Col>
-                </FormGroup>
-                <FormGroup row>
-                    <Label for="nameEntry" sm={2}>Full Name</Label>
-                    <Col sm={10}>
-                    <Input type="name" name="name" id="nameEntry" placeholder="Enter your full name" required value={name} onChange={e => setName(e.target.value)}/>
-                    </Col>
-                </FormGroup>
+            </Card> */}
 
-                <FormGroup row>
-                    <Label for="messageEntry" sm={2}>Message</Label>
-                    <Col sm={10}>
-                    <Input type="textarea" name="text" id="messageEntry" required value={content} onChange={e => setContent(e.target.value)}/>
-                    </Col>
-                </FormGroup>
-                <FormGroup check row>
-                    <Col sm={{ size: 10, offset: 2 }}>
-                    <Button color="success">Submit</Button>
-                    </Col>
-                </FormGroup>
-            </Form>
+            <main className="contact-container">
+
+                <h2 className="contactTitle-container">
+                    <div className="contactTitle-texts">The best place to reach me!</div>
+                </h2>                
+           
+                
+                <section className="contactForm-container">
+                    <Form className="my-5" onSubmit={formSubmit}>
+                    
+                        <FormGroup row>
+                            <Col xs={2} sm={2} md={2} lg={1}>                    
+                                <div className="inputNameIcon-container"> 
+                                        <BsFillPersonFill />         
+                                </div>                          
+                            </Col>
+                            <Col xs={10} sm={10} md={10} lg={11}>
+                                <div className="inputName-containier">
+                                    <Input 
+                                        type="name" 
+                                        name="name" 
+                                        id="nameEntry" 
+                                        placeholder="Enter your full name" 
+                                        equired value={name} 
+                                        onChange={e => setName(e.target.value)}
+                                    />
+                                </div>    
+                            </Col>
+                        </FormGroup>  
+
+                        <FormGroup row>
+                            <Col xs={2} sm={2} md={2} lg={1}>                    
+                                <div className="inputEmailIcon-container"> 
+                                        <GrMail />         
+                                </div>                          
+                            </Col>
+                            <Col xs={10} sm={10} md={10} lg={11}>
+                                <div className="inputEmail-containier">
+                                    <Input 
+                                        type="email" 
+                                        name="email" 
+                                        id="emailEntry" p
+                                        placeholder="Enter email to contact"  
+                                        required value={email} 
+                                        onChange={e => setEmail(e.target.value) }
+                                    />
+                                </div>    
+                            </Col>
+                         </FormGroup>                         
+
+                        <FormGroup row>
+                            <Col xs={2} sm={2} md={2} lg={1}>                    
+                                <div className="inputPhoneIcon-container"> 
+                                        <AiTwotonePhone />         
+                                </div>                          
+                            </Col>
+                            <Col xs={10} sm={10} md={10} lg={11}>
+                                <div className="inputPhone-containier">
+                                    <Input 
+                                        type="phone" 
+                                        name="phone" i
+                                        id="phoneEntry" 
+                                        placeholder="Enter phone number" 
+                                        value={phoneNumber} 
+                                        onChange={e => setPhoneNumber(e.target.value)}
+                                    />
+                                </div>    
+                            </Col>
+                         </FormGroup>                          
+
+                        <FormGroup row>
+                            <Col xs={2} sm={2} md={2} lg={1}>                    
+                                <div className="inputMessageIcon-container"> 
+                                        <RiMessage3Fill />         
+                                </div>                          
+                            </Col>
+                            <Col xs={10} sm={10} md={10} lg={11}>
+                                <div className="inputMessage-containier">
+                                <Input 
+                                    type="textarea" 
+                                    name="text" 
+                                    id="messageEntry" 
+                                    required value={content} 
+                                    placeholder="Enter your message"                                     
+                                    onChange={e => setContent(e.target.value)}
+                                />
+                                </div>    
+                            </Col>
+                         </FormGroup>                          
+
+
+                        <FormGroup>
+                            <Col>
+                                <div id="send">
+                                    <Button color="info" size="sm">Submit</Button>
+                                 </div>
+                            </Col>
+                        </FormGroup>
+                    </Form>                        
+                </section>    
+
+            </main>    
         </Container>
       )
     }
