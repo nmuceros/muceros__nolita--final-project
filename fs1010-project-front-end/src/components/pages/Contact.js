@@ -131,8 +131,8 @@ const Contact = () => {
 
                         <FormGroup>
                             <Col>
-                                <div id="send">
-                                    <Button color="info" size="sm">Submit</Button>
+                                <div id="contact-sendButton-container">
+                                    <Button id="contact-sendButton" color="secondary" size="sm">Submit</Button>
                                  </div>
                             </Col>
                         </FormGroup>

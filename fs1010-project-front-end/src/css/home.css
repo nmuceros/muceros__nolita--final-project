@@ -30,9 +30,11 @@
     float: left;
     width: 55%;
     margin-left: 20%;
-    margin-top: 5%;
-    border-radius: 50% ;
-    box-shadow: 20px 20px 10px #5EAAA8;
+    margin-top: 2%;
+    /* border-radius: 50% ; */
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    box-shadow: 30px 30px 20px white;
+    clear: left;
 }
 
 
@@ -40,6 +42,51 @@
     position: relative;
     width: 100%;
     /*border: 5px solid pink;*/
-    border-radius: 50%;
- 
+    /* border-radius: 50%; */
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
 }
+
+.homeQuote-container {
+    position: relative;
+    margin-top: 15rem;
+    text-align: center;
+    font-family: 'Courgette', cursive;
+    font-size: 14px;
+    font-weight: bold;
+    color: rgb(76, 81, 83);
+
+    /* background-color: red; */
+
+}
+
+#homeHello-texts {
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+#homeMyName-texts {
+    font-size: 1.5rem;
+}
+
+.myName {
+    color: rgb(4, 161, 192);
+    font-size: 2rem;
+
+}
+
+.homeAspiring-texts {
+    font-size: 1.3rem;
+}
+
+.homeCurrently-texts {
+    margin-top: 1.5rem;
+    font-size: 1rem;
+}
+
+#findOutMore-button {
+    cursor: pointer;
+}
+
+#findOutMore-button:hover {
+    transform: translate(-.35rem) scale(1.05);
+  }

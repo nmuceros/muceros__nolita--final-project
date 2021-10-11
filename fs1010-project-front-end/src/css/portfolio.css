@@ -152,3 +152,11 @@
     75%  {left:50%; top:0;}
     100% {left:-50%; top:0;}
 } */
+
+#portfolio-collapse-button {
+    cursor: pointer;
+}
+
+#portfolio-collapse-button:hover {
+    transform: translate(-.35rem) scale(1.05);
+  }

@@ -99,7 +99,7 @@ const Portfolio = () => {
                                         <CardTitle id="portfolio-cardTitle" tag="h5">{projectObject.projectName}</CardTitle>
                                         {/* <CardSubtitle id="portfolio-cardSubTitle" ag="h6" className="mb-2 text-muted">{projectObject.projectb}</CardSubtitle> */}
                                         <CardText id="portfolio-cardText">{projectObject.projectDesc}</CardText>
-                                        <Button>Button</Button>
+                                        <Button id="portfolio-collapse-button" color="secondary" size="sm">Button</Button>
                                     </CardBody>      
 
                                 </Card>

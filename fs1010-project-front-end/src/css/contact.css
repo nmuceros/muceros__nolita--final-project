@@ -85,8 +85,15 @@
     color:black;
  } */
 
- #send {
+ #contact-sendButton {
     position: relative;
     align-content: center;
     margin-left: 2.2rem;
  }
+
+ #contact-sendButton {
+    cursor: pointer;
+}
+#contact-sendButton:hover  {
+    transform: translate(-.35rem) scale(1.05);
+  }
