@@ -20,8 +20,7 @@ const Listings = () => {
         {
           Header: "ID",
           className: "t-cell-1 text-left",
-          accessor: "id",
-          notShowSortingDisplay: true
+          accessor: "id"
         },
         {
           Header:  "Name",
@@ -30,7 +29,7 @@ const Listings = () => {
         },
         {
           Header: "Phone Number",
-          accessor: "phone_number",
+          accessor: "phoneNumber",
           className: "t-cell-3 text-left"
         },
         {
@@ -63,9 +62,9 @@ const Listings = () => {
     }, [token])
     return (
         <Container>
-            <main className="submission-main-container">
+            <main className="submission-main-container" >
 
-            <XTable columns={listHeader} loading={false} data={listData} />
+               <XTable columns={listHeader} loading={false} data={listData} key={listData.id} />
 
                 {/* <Row>
                     <h1>Listings for user: {user}</h1>
