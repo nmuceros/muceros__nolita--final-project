@@ -1,0 +1,91 @@
+*{
+    box-sizing: border-box;
+}
+
+
+.login-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+
+    margin-top: 4rem;
+    margin-bottom: 4em;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+
+    /* border-style: solid; */
+    border-radius: 15px;
+    background: linear-gradient(#deedf0, #ebf4f7, #deedf0) no-repeat;
+    box-shadow: 0px 15px 20px rgba(0,0,0,0.1);        
+}
+
+.loginTitle-container {
+    position: relative;
+    margin-top: 1rem;
+    width: 100%;
+    height: auto;
+}
+
+.loginTitle-texts {
+    position: relative;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+    text-align: center;
+    font-size: 1rem;
+
+
+}
+
+.userIDIcon-container, .userNameIcon-container {
+    position: relative;
+    /* color: white; */
+    font-size: 1.5rem;
+    align-content: center;
+}
+
+#usernameEntry, #passwordEntry {
+    position: relative;
+    width: 100%;
+    height: 2.5rem;
+    text-align: left;
+    align-content: center;
+    font-size: .8rem;
+    border: 1px solid #AAAAAA;
+    background: none;
+    border-bottom: solid 2px #382933;
+    overflow: hidden;
+    box-shadow: 10px 15px 20px rgba(0,0,0,0.1);
+    border-radius: 5px;
+}
+
+
+#usernameEntry::placeholder {
+    color: silver;  
+}
+
+#passwordEntry::placeholder {
+    color: silver;  
+}
+
+
+
+ #login-signInButton {
+    position: relative;
+    align-content: center;
+    margin-left: 2.2rem;
+    font-size: .8rem;
+ }
+
+ #login-signInButton {
+    cursor: pointer;
+}
+
+#login-signInButton :hover  {
+    transform: translate(-.35rem) scale(1.05);
+}
