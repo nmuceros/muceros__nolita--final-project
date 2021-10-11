@@ -1,3 +1,22 @@
+.logoBrand-container {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+
+    /* flex-direction: column; */
+    /* text-justify: auto; */
+    /* width: auto;
+    height: auto; */
+    /* justify-content: left; */
+    
+    /* background-color: yellow; */
+
+}
+
 #logo {
     position: relative;
     width: 3rem;
@@ -11,6 +30,8 @@
     margin-left: 0;
     margin-right: 0;
     align-items: center;
+
+    /* background-color: blue; */
 
 }
 
@@ -81,3 +102,17 @@
         }
     */
     }
+
+    .logo-text {
+        position: relative;
+        display: flex;
+        height: auto;
+        margin: 0;
+        padding: 0;
+        align-items: center;
+        font-family: 'Ballet', cursive;
+        font-size: 1.2rem;
+        font-weight: bolder;
+        margin-left: .2rem;
+        /* background-color: red; */
+    } 

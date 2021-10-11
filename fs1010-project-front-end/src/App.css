@@ -9,3 +9,9 @@ body {
   /* background: linear-gradient(#87A7B3, #CDC7BE, #E1F1DD) no-repeat; */
   
 }
+
+.mainNavigation {
+    font-family: 'Ballet', cursive;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }

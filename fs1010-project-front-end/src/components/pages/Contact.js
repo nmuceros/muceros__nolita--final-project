@@ -61,7 +61,7 @@ const Contact = () => {
                                         name="name" 
                                         id="nameEntry" 
                                         placeholder="Enter your full name" 
-                                        equired value={name} 
+                                        required value={name} 
                                         onChange={e => setName(e.target.value)}
                                     />
                                 </div>    
@@ -101,7 +101,7 @@ const Contact = () => {
                                         name="phone" i
                                         id="phoneEntry" 
                                         placeholder="Enter phone number" 
-                                        value={phoneNumber} 
+                                        required value={phoneNumber} 
                                         onChange={e => setPhoneNumber(e.target.value)}
                                     />
                                 </div>    

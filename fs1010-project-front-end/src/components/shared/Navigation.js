@@ -9,7 +9,7 @@ const Navigation = () => {
     const toggle = () => setIsOpen(!isOpen)
 
     return (
-        <Navbar dark expand="md" fixed="top" color="info">
+        <Navbar className="mainNavigation" dark expand="md" fixed="top" color="info">
             <Container>
             <NavbarBrand href="">
                 <Logo />
@@ -27,7 +27,7 @@ const Navigation = () => {
                         <NavLink tag={RouteLink} to="/portfolio">Portfolio</NavLink>
                     </NavItem>
                     <NavItem>
-                       <NavLink tag={RouteLink} to="/contact">Contact Us</NavLink>
+                       <NavLink tag={RouteLink} to="/contact">Contact Me</NavLink>
                     </NavItem>
                     <NavItem>
                         <NavLink tag={RouteLink} to="/submissions">Submissions</NavLink>

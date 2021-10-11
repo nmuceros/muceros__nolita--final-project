@@ -6,22 +6,22 @@ import "../../css/logo.css"
 
 const LogoBrand = () => {
     return (
-        <div id="logo">
+        <div className="logoBrand-container">
+            <div id="logo">
 
-          {/* <Spinner animation="border" variant="primary" />
-          <Spinner animation="border" size="sm" />
-          <Spinner animation="border" />
-          <Spinner animation="grow" size="sm" />
-          <Spinner animation="grow" /> */}
-          <FaRegSmileWink 
-            className="smiley"
-        />  
-        <div id="logo-sm-circle-unfilled">Hi!
-
-        </div>
-
+            {/* <Spinner animation="border" variant="primary" />
+            <Spinner animation="border" size="sm" />
+            <Spinner animation="border" />
+            <Spinner animation="grow" size="sm" />
+            <Spinner animation="grow" /> */}
+                <FaRegSmileWink 
+                    className="smiley"
+                />  
+                <div id="logo-sm-circle-unfilled">Hi!</div>
+                 
+            </div>
+            <div class="logo-text">@Nolita's Site</div> 
     </div>
-
 
     )
 
