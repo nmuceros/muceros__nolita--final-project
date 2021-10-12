@@ -8,7 +8,7 @@
 .imageFrame {
     position: relative;
     float: left;
-    width: 55%;
+    width: 15rem;
     margin-left: 20%;
     margin-top: 2%;
     border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
@@ -26,7 +26,7 @@
 .homeQuote-container {
     position: relative;
     width: 80%;
-    padding-top: 1rem;
+    padding-top: 2.5rem;
     text-align: center;
     font-family: 'Courgette', cursive;
     font-size: 14px;

@@ -1,4 +1,5 @@
 import express from "express"; 
+import cors from "cors";
 import contactRouter from "./src/routers/contactRouter.js";
 import userRouter from "./src/routers/userRouter.js";
 import authRouter from "./src/routers/authRouter.js";
@@ -7,6 +8,8 @@ import errorHandler from "./src/middleware/errorHandler.js"; // middleware to ha
 
 
 const app = express(); 
+
+app.use(cors());
 
 const port = process.env.PORT; // port required for this project
 

@@ -27,7 +27,7 @@ const validateEntries = (req, res, next) => { // middleware
 
 // entries GET route
 // entries JSON file will be created if does not exist
-contactRouter.get("/contact_form/entries", verifyToken, async (req, res) => {
+contactRouter.get("/api/contact_form/entries", verifyToken, async (req, res) => {
     try {
         const entries = await db.getAll(entriesDbFile); // entries = [] (if JSON file is created)
         return res.status(200).send(entries);
@@ -44,7 +44,7 @@ contactRouter.get("/contact_form/entries", verifyToken, async (req, res) => {
 
 // entries GET route - specific ID
 // entries JSON file will be created if does not exist
-contactRouter.get("/contact_form/entries/:id", verifyToken, async (req, res) => {
+contactRouter.get("/api/contact_form/entries/:id", verifyToken, async (req, res) => {
     try {
         const id = req.params.id;
         const entriesFound = await db.getItemById("id", id, entriesDbFile); // value is an object (if found)
