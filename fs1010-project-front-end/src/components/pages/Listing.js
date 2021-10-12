@@ -3,6 +3,7 @@ import { Container, Row, Col, Table, Button } from 'reactstrap'
 // import ListingTable from "../pages/ListingTable"
 // import { IoPersonCircle } from "react-icons/io5"
 import { RiLogoutCircleRFill } from "react-icons/ri"
+import { RiLogoutBoxRLine } from "react-icons/ri"
 
 
 
@@ -104,7 +105,7 @@ const Listings = () => {
                                         Logout
                                     </Button>                                      */}
                                     {/* <div id="listing-logout"  onClick={logout}> */}
-                                        <RiLogoutCircleRFill id="listing-logout" nClick={logout} />
+                                        <RiLogoutBoxRLine id="listing-logout" onClick={logout} />
                                     {/* </div> */}
                             </div>      
                          </Col>                       
