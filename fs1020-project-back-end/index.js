@@ -1,32 +1,24 @@
-import express from 'express'
-import * as jwtGenerator from 'jsonwebtoken'
-import entryRoutes from './src/entries'
-import cors from 'cors'
-
-const app = express()
-const PORT = process.env.PORT || 3000
-
-app.use(express.json())
-app.use(cors())
-
-app.get('/', (req,res) => {
-    res.send("FS1010 Final Project is setup correctly!")
-})
-
-app.post('/auth', (req, res) => {
-    const username = req.body.username
-    const password = req.body.password
-
-    if (username == "test" && password == "password") {
-        const token = jwtGenerator.sign({username}, process.env.JWT_SECRET, {expiresIn: '1h'})
-        return res.send({token})
-    }
-    return res.status(401).send({error: "incorrect username\password"})
-})
+import express from "express"; 
+import contactRouter from "./src/routers/contactRouter.js";
+import userRouter from "./src/routers/userRouter.js";
+import authRouter from "./src/routers/authRouter.js";
+import errorHandler from "./src/middleware/errorHandler.js"; // middleware to handle all other errors
+// import jwt from "jsonwebtoken";
 
 
-app.use('/contact_form/entries', entryRoutes)
+const app = express(); 
 
-app.listen(PORT, () => {
-    console.log(`Server started at http://localhost:${PORT}`)
-})
+const port = process.env.PORT; // port required for this project
+
+app.use(express.json()); // Express JSON parsing middleware
+
+// mount route
+app.use(userRouter);
+app.use(contactRouter);
+app.use(authRouter);
+
+// app.use(jwt({secret: process.env.JWT_SECRETKEY, algorithms: ['HS256']}));
+
+app.use(errorHandler);
+
+app.listen(port, () => console.log(`API server ready on http://localhost:${port}`));
