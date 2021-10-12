@@ -64,7 +64,7 @@ const Listings = () => {
     }
     useEffect(() => {
         const getData = async () => {
-            const response = await fetch('http://localhost:4000/contact_form/entries', {
+            const response = await fetch('http://localhost:4000/api/contact_form/entries', {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${token}`

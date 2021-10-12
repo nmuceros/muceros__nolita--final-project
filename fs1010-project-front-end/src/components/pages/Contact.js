@@ -14,7 +14,7 @@ const Contact = () => {
 
     const formSubmit = async event => {
         event.preventDefault()
-        const response = await fetch('http://localhost:4000/contact_form/entries', {
+        const response = await fetch('http://localhost:4000/api/contact_form/entries', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',

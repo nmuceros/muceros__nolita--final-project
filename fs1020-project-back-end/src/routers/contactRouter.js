@@ -27,7 +27,7 @@ const validateEntries = (req, res, next) => { // middleware
 
 // entries GET route
 // entries JSON file will be created if does not exist
-contactRouter.get("/contact_form/entries", verifyToken, async (req, res) => {
+contactRouter.get("/api/contact_form/entries", verifyToken, async (req, res) => {
 // contactRouter.get("/contact_form/entries", async (req, res) => {
     try {
         const entries = await db.getAll(entriesDbFile); // entries = [] (if JSON file is created)
@@ -45,7 +45,7 @@ contactRouter.get("/contact_form/entries", verifyToken, async (req, res) => {
 
 // entries GET route - specific ID
 // entries JSON file will be created if does not exist
-contactRouter.get("/contact_form/entries/:id", verifyToken, async (req, res) => {
+contactRouter.get("/api/contact_form/entries/:id", verifyToken, async (req, res) => {
     try {
         const id = req.params.id;
         const entriesFound = await db.getItemById("id", id, entriesDbFile); // value is an object (if found)
@@ -64,7 +64,7 @@ contactRouter.get("/contact_form/entries/:id", verifyToken, async (req, res) => 
 
  // entries POST route
  // entries JSON file will be created if does not exist
- contactRouter.post("/contact_form/entries", validateEntries, async (req, res) => {
+ contactRouter.post("/api/contact_form/entries", validateEntries, async (req, res) => {
     try {
         // add new entry
         let newEntry = { id: uuidv4(), ...req.body }; // uuidv4() - auto generates id
