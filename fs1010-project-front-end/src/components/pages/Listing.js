@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { Container, Row, Col, Table, Button } from 'reactstrap'
 // import ListingTable from "../pages/ListingTable"
+// import { IoPersonCircle } from "react-icons/io5"
+import { RiLogoutCircleRFill } from "react-icons/ri"
 
 
 
@@ -92,15 +94,18 @@ const Listings = () => {
                             </div>
                          </Col>   
                          <Col>
-                            <div className="listingSendButton-container">
-                                    <Button 
+                            <div className="listing-logoutIcon-container">
+                                    {/* <Button 
                                         id="listing-sendButton" 
                                         color="secondary" 
                                         size="sm"
                                         onClick={logout} 
                                     >
                                         Logout
-                                    </Button>
+                                    </Button>                                      */}
+                                    {/* <div id="listing-logout"  onClick={logout}> */}
+                                        <RiLogoutCircleRFill id="listing-logout" nClick={logout} />
+                                    {/* </div> */}
                             </div>      
                          </Col>                       
                      </header>

@@ -3,6 +3,7 @@ import { Container, Col, Row, Button, Form, FormGroup, Label, Input, Card, CardB
 import { useHistory, useLocation } from 'react-router-dom'
 import { BsFillPersonFill } from "react-icons/bs"
 import { RiLockPasswordFill } from "react-icons/ri"
+// import { VscQuestion} from "react-icons/vsc"
 import "../../css/login.css"
 
 const Login = () => {
@@ -55,10 +56,15 @@ const Login = () => {
                 <Form className="my-5" onSubmit={loginSubmit}>
 
                     <FormGroup row>
-                        <Col xs={3} sm={2} md={2} lg={1}>                    
-                            <div className="userIDIcon-container"> 
-                                    <BsFillPersonFill />         
-                            </div>                          
+                        <Col xs={3} sm={2} md={2} lg={1}>     
+                            <div className="userIDIcon-main-containier">               
+                                <div className="userIDIcon-container"> 
+                                        <BsFillPersonFill />         
+                                </div>  
+                                {/* <div className="userIDTooltip-container"> 
+                                        <VscQuestion />         
+                                </div>         */}
+                            </div>            
                         </Col>
                         <Col xs={9} sm={10} md={10} lg={11}>
                             <div className="inputUserID-containier">
@@ -68,7 +74,7 @@ const Login = () => {
                                     id="usernameEntry" 
                                     placeholder="Username" 
                                     value={email} 
-                                    autoComplete="false"
+                                    autoComplete="off"
                                     onChange={e => setUsername(e.target.value)}
                                 />
                             </div>    
@@ -89,6 +95,7 @@ const Login = () => {
                                     id="passwordEntry" 
                                     placeholder="Valid password" 
                                     required value={password} 
+                                    autoComplete="off"
                                     onChange={e => setPassword(e.target.value)}
                                 />
                             </div>    

@@ -42,6 +42,13 @@
 
 }
 
+/* .serIDIcon-main-containier {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+
+} */
+
 .userIDIcon-container, .userNameIcon-container {
     position: relative;
     /* color: white; */

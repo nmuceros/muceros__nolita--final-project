@@ -27,24 +27,40 @@
     line-height: 5rem;
 }
 
-.listingSendButton-container{
+/* .listingSendButton-container{
     position: relative;
     text-align: right;
     line-height: 5rem;
-}
+} */
 
 
-#listing-sendButton {
+/* #listing-sendButton {
     position: relative;
     align-content: center;
- }
+ } */
 
- #listing-sendButton {
-    cursor: pointer;
+ .listing-logoutIcon-container {
+    position: relative;
+    text-align: right;
+    line-height: 5rem;
+
+    /* color: white; */
+    font-size: 1.5rem;
+    /* align-content: center; */
+
+    /* background-color: red; */
 }
-#listing-sendButton:hover  {
-    transform: translate(-.35rem) scale(1.05);
-  }
+
+ #listing-logout {
+    /* cursor: pointer; */
+
+}
+
+#listing-logout:hover  {
+    opacity: .5;
+    transform: scale(1.2);
+}
+
 
 
 
