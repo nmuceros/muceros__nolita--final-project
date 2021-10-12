@@ -45,73 +45,55 @@ const Login = () => {
             </Card>
             }
 
-            <h2 className="loginTitle-container">
-                    <div className="loginTitle-texts">For Authorized User Only!</div>
-            </h2>                
+            <header>
+                <h2 className="loginTitle-container">
+                        <div className="loginTitle-texts">For Authorized User Only!</div>
+                </h2>                
+            </header>
 
              <section className="loginForm-container">            
                 <Form className="my-5" onSubmit={loginSubmit}>
-                  {/* <Row form>
-                      <Col md={6}> */}
 
-                        {/* <FormGroup>
-                          <Label for="usernameEntry">Username</Label>
-                          <Input type="text" name="username" id="usernameEntry" placeholder="Username" value={username} onChange={e => setUsername(e.target.value)}/>
-                        </FormGroup> */}
+                    <FormGroup row>
+                        <Col xs={3} sm={2} md={2} lg={1}>                    
+                            <div className="userIDIcon-container"> 
+                                    <BsFillPersonFill />         
+                            </div>                          
+                        </Col>
+                        <Col xs={9} sm={10} md={10} lg={11}>
+                            <div className="inputUserID-containier">
+                                <Input 
+                                    type="text" 
+                                    name="username" 
+                                    id="usernameEntry" 
+                                    placeholder="Username" 
+                                    value={email} 
+                                    autoComplete="false"
+                                    onChange={e => setUsername(e.target.value)}
+                                />
+                            </div>    
+                        </Col>
+                    </FormGroup>  
 
-                        <FormGroup row>
-                            <Col xs={3} sm={2} md={2} lg={1}>                    
-                                <div className="userIDIcon-container"> 
-                                        <BsFillPersonFill />         
-                                </div>                          
-                            </Col>
-                            <Col xs={9} sm={10} md={10} lg={11}>
-                                <div className="inputUserID-containier">
-                                    <Input 
-                                        type="text" 
-                                        name="username" 
-                                        id="usernameEntry" 
-                                        placeholder="Username" 
-                                        value={email} 
-                                        onChange={e => setUsername(e.target.value)}
-                                    />
-                                </div>    
-                            </Col>
-                        </FormGroup>  
-
-                      {/* </Col> */}
-
-                      {/* <Col md={6}> */}
-
-                        {/* <FormGroup>
-                          <Label for="passwordEntry">Password</Label>
-                          <Input type="password" name="password" id="passwordEntry" placeholder="Valid password" onChange={e => setPassword(e.target.value)}/>
-                        </FormGroup> */}
-                        <FormGroup row>
-                            <Col xs={3} sm={2} md={2} lg={1}>                    
-                                <div className="userNameIcon-container"> 
-                                        <RiLockPasswordFill />         
-                                </div>                          
-                            </Col>
-                            <Col xs={9} sm={10} md={10} lg={11}>
-                                <div className="inputUserName-containier">
-                                    <Input 
-                                        type="password" 
-                                        name="password" 
-                                        id="passwordEntry" 
-                                        placeholder="Valid password" 
-                                        required value={password} 
-                                        onChange={e => setPassword(e.target.value)}
-                                    />
-                                </div>    
-                            </Col>
-                        </FormGroup>  
-
-
-                      {/* </Col> */}
-
-                  {/* </Row> */}
-                  {/* <Button color="success">Sign in</Button> */}
+                    <FormGroup row>
+                        <Col xs={3} sm={2} md={2} lg={1}>                    
+                            <div className="userNameIcon-container"> 
+                                    <RiLockPasswordFill />         
+                            </div>                          
+                        </Col>
+                        <Col xs={9} sm={10} md={10} lg={11}>
+                            <div className="inputUserName-containier">
+                                <Input 
+                                    type="password" 
+                                    name="password" 
+                                    id="passwordEntry" 
+                                    placeholder="Valid password" 
+                                    required value={password} 
+                                    onChange={e => setPassword(e.target.value)}
+                                />
+                            </div>    
+                        </Col>
+                    </FormGroup>  
 
                       <FormGroup>
                           <Col>
@@ -120,7 +102,6 @@ const Login = () => {
                               </div>
                           </Col>
                       </FormGroup>
-
 
                 </Form>
               </section>  

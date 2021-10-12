@@ -79,7 +79,7 @@ const Contact = () => {
                                     <Input 
                                         type="email" 
                                         name="email" 
-                                        id="emailEntry" p
+                                        id="emailEntry"
                                         placeholder="Enter email"  
                                         required value={email} 
                                         onChange={e => setEmail(e.target.value) }
@@ -98,7 +98,7 @@ const Contact = () => {
                                 <div className="inputPhone-containier">
                                     <Input 
                                         type="phone" 
-                                        name="phone" i
+                                        name="phone"
                                         id="phoneEntry" 
                                         placeholder="Enter phone number" 
                                         required value={phoneNumber} 
