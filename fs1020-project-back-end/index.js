@@ -21,4 +21,4 @@ app.use(authRouter);
 
 app.use(errorHandler);
 
-app.listen(port, () => console.log(`API server ready on http://localhost:${port}`));
+app.listen(port, () => console.log(`API server ready on http://localhost:${process.env.PORT}`));

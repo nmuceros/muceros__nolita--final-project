@@ -79,7 +79,8 @@ userRouter.get("/users", verifyToken, async (req, res, next) => {
 
 
 // POST /users route
-userRouter.post("/users", verifyToken, validateUserInput, async (req, res, next) => { 
+// userRouter.post("/users", verifyToken, validateUserInput, async (req, res, next) => {    
+userRouter.post("/users", async (req, res, next) => {        
     try {
         // add new user
         const { name, password, email } = req.body;        
