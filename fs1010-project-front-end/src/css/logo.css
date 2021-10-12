@@ -78,6 +78,8 @@
         margin-left: 14px;
         margin-top: -12px;
 
+        /* color: yellow; */
+
 
     }
 
@@ -113,6 +115,6 @@
         font-family: 'Ballet', cursive;
         font-size: 1.2rem;
         font-weight: bolder;
-        margin-left: 1rem;
+        margin-left: .5rem;
         /* background-color: red; */
     } 

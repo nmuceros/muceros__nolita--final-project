@@ -5,8 +5,6 @@ import { Container, Row, Col, Table, Button } from 'reactstrap'
 import { RiLogoutCircleRFill } from "react-icons/ri"
 import { RiLogoutBoxRLine } from "react-icons/ri"
 
-
-
 import parseJwt from '../../helpers/authHelper'
 import { useHistory } from "react-router-dom";
 import "../../css/listing.css"
@@ -65,6 +63,7 @@ const Listings = () => {
         sessionStorage.removeItem('token')
         history.push("/login")
     }
+    
     useEffect(() => {
         const getData = async () => {
             const response = await fetch('http://localhost:4000/api/contact_form/entries', {
@@ -96,23 +95,13 @@ const Listings = () => {
                          </Col>   
                          <Col>
                             <div className="listing-logoutIcon-container">
-                                    {/* <Button 
-                                        id="listing-sendButton" 
-                                        color="secondary" 
-                                        size="sm"
-                                        onClick={logout} 
-                                    >
-                                        Logout
-                                    </Button>                                      */}
-                                    {/* <div id="listing-logout"  onClick={logout}> */}
-                                        <RiLogoutBoxRLine id="listing-logout" onClick={logout} />
-                                    {/* </div> */}
+                                <RiLogoutBoxRLine id="listing-logout" onClick={logout} />
                             </div>      
                          </Col>                       
                      </header>
                 </Row>
                 <Row>
-                    <main className="submission-listing-container">
+                    <section className="submission-listing-container">
                         <Table hover bordered responsive size="sm" >
                             <thead>
                                 <tr>
@@ -140,24 +129,8 @@ const Listings = () => {
                                 }
                             </tbody>
                         </Table>
-                    </main>    
-                </Row>     
-                
-                {/* <Row className="my-5">
-                    <div className="listing-sendButton-container">
-                        <Button 
-                            id="listing-sendButton" 
-                            color="secondary" 
-                            size="sm"
-                            onClick={logout} 
-                        >
-                            Logout
-                        </Button>
-                    </div>
-                </Row> */}
-
-
-
+                    </section>    
+                </Row>                     
             </main>                    
         </Container>
     )

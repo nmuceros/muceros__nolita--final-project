@@ -12,6 +12,7 @@ const Login = () => {
     const [email, setUsername] = useState("")
     const [password, setPassword] = useState("")
     const [auth, setAuth] = useState(true)
+    // const [errorMessage, setErrorMessage] = useState('');
 
     const loginSubmit = async event => {
         
@@ -38,18 +39,12 @@ const Login = () => {
     return (
         <Container>
           <main className="login-container">
-            {!auth && 
-                <Card className="text-white bg-primary my-5 py-4 text-center">
-                <CardBody>
-                    <CardText className="text-white m-0">Invalid credentials, please try again</CardText>
-                </CardBody>
-            </Card>
-            }
 
             <header>
                 <h2 className="loginTitle-container">
-                        <div className="loginTitle-texts">For Authorized User Only!</div>
-                </h2>                
+                    <div className="loginTitle-texts">For Authorized User Only!</div>
+                </h2>    
+                {!auth && <p className="loginErrorMessage">Invalid credentials, please try again!</p>}                            
             </header>
 
              <section className="loginForm-container">            
@@ -73,7 +68,7 @@ const Login = () => {
                                     name="username" 
                                     id="usernameEntry" 
                                     placeholder="Username" 
-                                    value={email} 
+                                    required value={email} 
                                     autoComplete="off"
                                     onChange={e => setUsername(e.target.value)}
                                 />

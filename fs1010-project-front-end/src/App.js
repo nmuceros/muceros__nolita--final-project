@@ -22,8 +22,7 @@ function App() {
           <Route exact path="/contact" component={Contact} />
           <Route exact path="/login" component={Login} />
           <PrivateRoute path="/submissions"> {/* PrivateRoute is a user-defined component */}
-
-            <Listing />
+              <Listing />
           </PrivateRoute>
         </Switch>
         <Footer />  

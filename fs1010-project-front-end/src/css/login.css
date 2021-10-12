@@ -42,6 +42,14 @@
 
 }
 
+.loginErrorMessage {
+    position: relative;
+    margin-top: 2rem;
+    text-align: center;
+    color: red;
+
+}
+
 /* .serIDIcon-main-containier {
     position: relative;
     display: flex;

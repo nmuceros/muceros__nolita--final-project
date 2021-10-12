@@ -11,29 +11,29 @@ const Navigation = () => {
     return (
         <Navbar className="mainNavigation" dark expand="md" fixed="top" color="info">
             <Container>
-            <NavbarBrand href="">
-                <Logo />
-            </NavbarBrand>
-            <NavbarToggler onClick={toggle} />
-            <Collapse isOpen={isOpen} navbar>
-                <Nav className="ml-auto" navbar>
-                    <NavItem>
-                        <NavLink tag={RouteLink} to="/">Home</NavLink>
-                    </NavItem>
-                    <NavItem>
-                        <NavLink tag={RouteLink} to="/resume">Resume</NavLink>
-                    </NavItem>                    
-                    <NavItem>
-                        <NavLink tag={RouteLink} to="/portfolio">Portfolio</NavLink>
-                    </NavItem>
-                    <NavItem>
-                       <NavLink tag={RouteLink} to="/contact">Contact Me</NavLink>
-                    </NavItem>
-                    <NavItem>
-                        <NavLink tag={RouteLink} to="/submissions">Submissions</NavLink>
-                    </NavItem>
-                </Nav>
-            </Collapse>
+                <NavbarBrand href="">
+                    <Logo />
+                </NavbarBrand>
+                <NavbarToggler onClick={toggle} />
+                <Collapse isOpen={isOpen} navbar>
+                    <Nav className="ml-auto" navbar>
+                        <NavItem>
+                            <NavLink tag={RouteLink} to="/">Home</NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink tag={RouteLink} to="/resume">Resume</NavLink>
+                        </NavItem>                    
+                        <NavItem>
+                            <NavLink tag={RouteLink} to="/portfolio">Portfolio</NavLink>
+                        </NavItem>
+                        <NavItem>
+                        <NavLink tag={RouteLink} to="/contact">Contact Me</NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink tag={RouteLink} to="/submissions">Submissions</NavLink>
+                        </NavItem>
+                    </Nav>
+                </Collapse>
             </Container>
         </Navbar>
     )
