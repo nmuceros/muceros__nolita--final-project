@@ -43,7 +43,7 @@ const verifyPassword = async (hashedPW, password) => {
 
 
 // POST /auth route
-authRouter.post("/api/auth", validateAuthInput, async (req, res) => {
+authRouter.post("/auth", validateAuthInput, async (req, res) => {
     try {
         const { email, password } = req.body;
         // find the email in users.json

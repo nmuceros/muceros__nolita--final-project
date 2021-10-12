@@ -13,7 +13,7 @@ const Listings = () => {
 
     let history = useHistory();
     const token = sessionStorage.getItem('token')
-    const user = parseJwt(token).username
+    const user = parseJwt(token).email
     const [listing, setListing] = useState([])
 
     // const listHeader = [
@@ -72,7 +72,7 @@ const Listings = () => {
             })
             const data = await response.json()
             setListing(data)
-            console.log(data)
+            // console.log(data)
         }
         getData()
     }, [token])

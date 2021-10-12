@@ -8,7 +8,7 @@ import "../../css/login.css"
 const Login = () => {
     let history = useHistory();
     let location = useLocation();
-    const [username, setUsername] = useState("")
+    const [email, setUsername] = useState("")
     const [password, setPassword] = useState("")
     const [auth, setAuth] = useState(true)
 
@@ -21,7 +21,7 @@ const Login = () => {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
               },
-            body: JSON.stringify({username, password})
+            body: JSON.stringify({email, password})
         })
         const payload = await response.json()
         if (response.status >= 400) {
@@ -72,7 +72,7 @@ const Login = () => {
                                         name="username" 
                                         id="usernameEntry" 
                                         placeholder="Username" 
-                                        value={username} 
+                                        value={email} 
                                         onChange={e => setUsername(e.target.value)}
                                     />
                                 </div>    
@@ -100,7 +100,7 @@ const Login = () => {
                                         name="password" 
                                         id="passwordEntry" 
                                         placeholder="Valid password" 
-                                        required value={username} 
+                                        required value={password} 
                                         onChange={e => setPassword(e.target.value)}
                                     />
                                 </div>    
