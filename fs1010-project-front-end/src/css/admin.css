@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 
-.submission-listing-container {
+.admin-main-container {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -12,7 +12,7 @@
     margin-right: auto;
 }
 
-.listing-header {
+.admin-header {
     position: relative;
     display: flex;
     flex-wrap: nowrap;
@@ -21,11 +21,62 @@
     align-items: center;
 }
 
-.listingTitle-container {
+
+
+/* .adminTitle-container {
+    position: relative;
+    text-align: left;
+    background-color: blue;
+} */
+
+/* .adminTitle-container {
     position: relative;
     text-align: left;
     line-height: 5rem;
+
+    background-color: blue;
+} */
+
+.adminTitle-container {
+    position: relative;
+    margin-top: 1rem;
+    width: 100%;
+    /* color: white; */
+    /* text-shadow: 2px 2px 4px #000000; */
+    /* font-size: 1.5rem; */
+
+    text-align: left;
+    /* line-height: 4rem; */
+
+
+    /* background-color: red; */
+
+    /* background-color: blue; */
 }
+
+.admin-logoutIcon-container {
+    position: relative;
+    margin-top: 1rem;
+    width: 100%;
+    text-align: right;
+    /* height: auto; */
+    /* line-height: 1.5rem; */
+    /* background-color: red; */
+
+    /* color: white; */
+    font-size: 1.3rem;
+    /* align-content: center; */
+
+    /* background-color: blue; */
+}
+
+.adminTitle-texts {
+    position: relative;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+    font-size: 1.5rem;
+}
+
 
 /* .listingSendButton-container{
     position: relative;
@@ -39,37 +90,30 @@
     align-content: center;
  } */
 
- .listing-logoutIcon-container {
-    position: relative;
-    text-align: right;
-    line-height: 5rem;
 
-    /* color: white; */
-    font-size: 1.3rem;
-    /* align-content: center; */
 
-    /* background-color: red; */
-}
-
- #listing-logout {
+ #admin-logout {
     /* cursor: pointer; */
 
 }
 
-#listing-logout:hover  {
+#admin-logout:hover  {
     opacity: .5;
     transform: scale(1.2);
 }
 
-
-
-
-.listingTitle-container .listingTitle-texts {
+.admin-listing-container {
     position: relative;
-    color: white;
-    text-shadow: 2px 2px 4px #000000;
-    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
 }
+
+
+
 
 Table thead {
     font-size: .8rem;
@@ -103,5 +147,32 @@ Table tbody {
 }
 
 
+.inputUserName-containier, .inputPassword-containier, .inputEmail-containier {
+    position: relative;
+    color: white;
+    font-size: 1rem;
+    align-content: center;
+    width: 100%;
+    margin-bottom: .5rem;
+    padding-bottom: 0;
+}
 
+#nameEntry, #emailEntry, #passwordEntry {
+    position: relative;
+    width: 100%;
+    height: 2rem;
+    text-align: left;
+    align-content: center;
+    /* font-size: 1rem; */
+    border: 1px solid #AAAAAA;
+    background: none;
+    border-bottom: solid 2px #382933;
+    overflow: hidden;
+    box-shadow: 10px 15px 20px rgba(0,0,0,0.1);
+    border-radius: 5px;
+}
 
+.nameError, .passwordError, .emailError {
+    color: red;
+    font-size: .8rem;
+}
