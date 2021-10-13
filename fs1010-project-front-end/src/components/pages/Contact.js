@@ -13,40 +13,46 @@ const Contact = () => {
     const [phoneNumber, setPhoneNumber] = useState("")
     const [content, setContent] = useState("")
 
-    const [errorMessages, setErrorMessages] = useState([
-        {
-            nameError: "",
-            emailError: "",
-            phoneNumberError: "",
-            contentError: ""
-         }
-        ])
+    // const [errorMessages, setErrorMessages] = useState([
+    //     {
+    //         nameError: "",
+    //         emailError: "",
+    //         phoneNumberError: "",
+    //         contentError: ""
+    //      }
+    //     ])
     
+    const [errorMessages, setErrorMessages] = useState({})
+
 
     const formSubmit = async event => {
         event.preventDefault()
 
+        setErrorMessages({})
         let foundErrors = contactFields_Validation(errorMessages)
         setErrorMessages(foundErrors)
 
-        const response = await fetch('http://localhost:4000/api/contact_form/entries', {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-              },
-            body: JSON.stringify({name, email, phoneNumber, content})
-        })
-        const payload = await response.json()
+        //   alert(`${Object.keys(foundErrors).length}`)
 
-        // Display the back-end error message when all the front-end validations are satisfied
-        // if (errorMessages.length < 1) {
+        // Ensure front-end validations are complete before fetching happens
+        if (Object.keys(foundErrors).length === 0) {        
+
+            const response = await fetch('http://localhost:4000/api/contact_form/entries', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({name, email, phoneNumber, content})
+            })
+
+            const payload = await response.json()
             if (response.status >= 400) {
                 alert(`Oops! Error: ${payload.message} for fields: ${payload.invalid.join(",")}`)
             } else {
                 alert(`Congrats! Submission submitted with id: ${payload.id}`)
             }
-        // }
+        }
     }
 
     const contactFields_Validation = (errorMessages) => {
