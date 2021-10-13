@@ -73,6 +73,10 @@
     color: silver;  
 }
 
+.nameError {
+    color: red;
+}
+
 /* #send {
     position: relative;
     text-align: center;

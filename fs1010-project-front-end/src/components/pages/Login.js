@@ -12,7 +12,12 @@ const Login = () => {
     const [email, setUsername] = useState("")
     const [password, setPassword] = useState("")
     const [auth, setAuth] = useState(true)
-    // const [errorMessage, setErrorMessage] = useState('');
+    // const [errorMessage, setErrorMessage] = useState({});
+
+
+    const inputField_Handler = () => {
+        
+    }
 
     const loginSubmit = async event => {
         
@@ -48,7 +53,7 @@ const Login = () => {
             </header>
 
              <section className="loginForm-container">            
-                <Form className="my-5" onSubmit={loginSubmit}>
+                <Form className="my-5" onSubmit={loginSubmit} >
 
                     <FormGroup row>
                         <Col xs={3} sm={2} md={2} lg={1}>     

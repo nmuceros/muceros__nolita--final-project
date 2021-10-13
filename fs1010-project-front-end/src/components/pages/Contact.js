@@ -5,6 +5,7 @@ import { GrMail } from "react-icons/gr"
 import { AiTwotonePhone } from "react-icons/ai"
 import { RiMessage3Fill } from "react-icons/ri"
 import "../../css/contact.css"
+// import contactFields_Validation from "../validations/contactValidation.js"
 
 const Contact = () => {
     const [name, setName] = useState("")
@@ -12,8 +13,22 @@ const Contact = () => {
     const [phoneNumber, setPhoneNumber] = useState("")
     const [content, setContent] = useState("")
 
+    const [errorMessages, setErrorMessages] = useState([
+        {
+            nameError: "",
+            emailError: "",
+            phoneNumberError: "",
+            contentError: ""
+         }
+        ])
+    
+
     const formSubmit = async event => {
         event.preventDefault()
+
+        let foundErrors = contactFields_Validation(errorMessages)
+        setErrorMessages(foundErrors)
+
         const response = await fetch('http://localhost:4000/api/contact_form/entries', {
             method: 'POST',
             headers: {
@@ -23,12 +38,49 @@ const Contact = () => {
             body: JSON.stringify({name, email, phoneNumber, content})
         })
         const payload = await response.json()
-        if (response.status >= 400) {
-            alert(`Oops! Error: ${payload.message} for fields: ${payload.invalid.join(",")}`)
-        } else {
-            alert(`Congrats! Submission submitted with id: ${payload.id}`)
-        }
+
+        // Display the back-end error message when all the front-end validations are satisfied
+        // if (errorMessages.length < 1) {
+            if (response.status >= 400) {
+                alert(`Oops! Error: ${payload.message} for fields: ${payload.invalid.join(",")}`)
+            } else {
+                alert(`Congrats! Submission submitted with id: ${payload.id}`)
+            }
+        // }
     }
+
+    const contactFields_Validation = (errorMessages) => {
+
+        let contactErrors = {}
+     
+    
+        if (!name) {
+            contactErrors.nameError = "Name is required!"
+        }
+    
+        let regX = /^([a-z\d-]+)@([a-z\d-]+)\.([a-z]{2,8}(\.[a-z]{2,8})?)$/
+        if (!email) {
+            contactErrors.emailError = "eMail is required!"
+        } else if (!regX.test(email)) {
+            contactErrors.emailError = "eMail is invalid!"  
+        }
+    
+        regX = /^\d{10}$/
+        if (!phoneNumber) {
+            contactErrors.phoneNumberError = "Phone Number is required!"
+        } else if (!regX.test(phoneNumber)) {
+            contactErrors.phoneNumberError = "Phone Number is invalid!"  
+        }        
+    
+        if (!content) {
+            contactErrors.contentError = "Message is required!"
+        }
+    
+        return contactErrors
+        
+    }
+
+
 
     return (
         <Container>
@@ -46,7 +98,7 @@ const Contact = () => {
            
                 
                 <section className="contactForm-container">
-                    <Form className="my-5" onSubmit={formSubmit}>
+                    <Form className="my-5" onSubmit={formSubmit} noValidate>
                     
                         <FormGroup row>
                             <Col xs={2} sm={2} md={2} lg={1}>                    
@@ -64,7 +116,8 @@ const Contact = () => {
                                         required value={name} 
                                         onChange={e => setName(e.target.value)}
                                     />
-                                </div>    
+                                </div>   
+                                {errorMessages.nameError && <p className="nameError">{ errorMessages.nameError }</p>}   
                             </Col>
                         </FormGroup>  
 
@@ -85,6 +138,7 @@ const Contact = () => {
                                         onChange={e => setEmail(e.target.value) }
                                     />
                                 </div>    
+                                {errorMessages.emailError && <p className="nameError">{ errorMessages.emailError }</p>}                                   
                             </Col>
                          </FormGroup>                         
 
@@ -105,6 +159,7 @@ const Contact = () => {
                                         onChange={e => setPhoneNumber(e.target.value)}
                                     />
                                 </div>    
+                                {errorMessages.phoneNumberError && <p className="nameError">{ errorMessages.phoneNumberError }</p>}                                   
                             </Col>
                          </FormGroup>                          
 
@@ -125,6 +180,7 @@ const Contact = () => {
                                     onChange={e => setContent(e.target.value)}
                                 />
                                 </div>    
+                                {errorMessages.contentError && <p className="nameError">{ errorMessages.contentError }</p>}                                   
                             </Col>
                          </FormGroup>                          
 
