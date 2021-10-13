@@ -4,10 +4,10 @@ import { useHistory } from "react-router-dom";
 import { RiLogoutCircleRFill } from "react-icons/ri"
 import { RiLogoutBoxRLine } from "react-icons/ri"
 import parseJwt from '../../helpers/authHelper'
-import "../../css/listing.css"
+import "../../css/messagecentre.css"
 
 
-const Listings = () => {
+const MessageCentre = () => {
 
     let history = useHistory();
     const token = sessionStorage.getItem('token')
@@ -87,7 +87,7 @@ const Listings = () => {
                     <header className="listing-header">
                         <Col >
                             <div className="listingTitle-container">   
-                                <h1 className="listingTitle-texts">Messages for : {user}</h1>
+                                <h1 className="listingTitle-texts">Messages received for {user}</h1>
                             </div>
                          </Col>   
                          <Col>
@@ -133,4 +133,4 @@ const Listings = () => {
     )
 }
 
-export default Listings
+export default MessageCentre

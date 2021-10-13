@@ -60,8 +60,8 @@ const verifyPassword = async (hashedPW, password) => {
 
 // GET /users route
 // users JSON file will be created if does not exist
-// userRouter.get("/users", verifyToken, async (req, res, next) => {
-userRouter.get("/api/users", async (req, res, next) => {
+userRouter.get("/api/users", verifyToken, async (req, res, next) => {
+// userRouter.get("/api/users", async (req, res, next) => {
     try {
         // call getAll function from dbHandler
         // JSON file will be created if does not exist
@@ -80,8 +80,8 @@ userRouter.get("/api/users", async (req, res, next) => {
 
 
 // POST /users route
-// userRouter.post("/users", verifyToken, validateUserInput, async (req, res, next) => {    
-userRouter.post("/api/users", validateUserInput, async (req, res, next) => {    
+userRouter.post("/api/users", verifyToken, validateUserInput, async (req, res, next) => {    
+// userRouter.post("/api/users", validateUserInput, async (req, res, next) => {    
 // userRouter.post("/users", async (req, res, next) => {        
     try {
         // add new user
