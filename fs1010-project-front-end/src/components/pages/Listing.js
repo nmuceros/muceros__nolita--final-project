@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { Container, Row, Col, Table, Button } from 'reactstrap'
-// import ListingTable from "../pages/ListingTable"
-// import { IoPersonCircle } from "react-icons/io5"
+import { useHistory } from "react-router-dom";
 import { RiLogoutCircleRFill } from "react-icons/ri"
 import { RiLogoutBoxRLine } from "react-icons/ri"
-
 import parseJwt from '../../helpers/authHelper'
-import { useHistory } from "react-router-dom";
 import "../../css/listing.css"
 
 

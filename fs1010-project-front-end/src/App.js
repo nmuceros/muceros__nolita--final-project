@@ -9,6 +9,7 @@ import Portfolio from './components/pages/Portfolio'
 import Contact from './components/pages/Contact'
 import Login from './components/pages/Login'
 import Listing from './components/pages/Listing'
+import Admin from './components/pages/Admin'
 import PrivateRoute from './components/shared/PrivateRoute'
 
 function App() {
@@ -21,9 +22,12 @@ function App() {
           <Route exact path="/portfolio" component={Portfolio} />
           <Route exact path="/contact" component={Contact} />
           <Route exact path="/login" component={Login} />
-          <PrivateRoute path="/submissions"> {/* PrivateRoute is a user-defined component */}
+          <PrivateRoute path="/messagecentre"> {/* PrivateRoute is a user-defined component */}
               <Listing />
           </PrivateRoute>
+          <PrivateRoute path="/admin"> {/* PrivateRoute is a user-defined component */}
+              <Admin />
+          </PrivateRoute>          
         </Switch>
         <Footer />  
     </BrowserRouter>

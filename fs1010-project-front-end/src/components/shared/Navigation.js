@@ -30,8 +30,11 @@ const Navigation = () => {
                         <NavLink tag={RouteLink} to="/contact">Contact Me</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink tag={RouteLink} to="/submissions">Submissions</NavLink>
+                            <NavLink tag={RouteLink} to="/messagecentre">Message Centre</NavLink>
                         </NavItem>
+                        <NavItem>
+                            <NavLink tag={RouteLink} to="/admin">Admin</NavLink>
+                        </NavItem>                        
                     </Nav>
                 </Collapse>
             </Container>
