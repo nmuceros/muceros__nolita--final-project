@@ -51,7 +51,7 @@ authRouter.post("/api/auth", validateAuthInput, async (req, res) => {
         if (userFound) {
             const passwordMatch = await verifyPassword(userFound.password, password);
             if ( passwordMatch ) {      
-                const token = jwt.sign({ email }, process.env.JWT_SECRETKEY, {expiresIn: '1m'}); // this creates a new token, passing in data
+                const token = jwt.sign({ email }, process.env.JWT_SECRETKEY, {expiresIn: '60m'}); // this creates a new token, passing in data
                 return res.status(200).json( {token: token} ); // we return back an object that has the token property with the value of token
             }    
         } 

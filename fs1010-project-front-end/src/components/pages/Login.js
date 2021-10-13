@@ -37,6 +37,7 @@ const Login = () => {
             sessionStorage.setItem('token', payload.token)
 
             let { from } = location.state || { from: { pathname: "/" } };
+            // let { from } = location.state;
             history.replace(from);
         }
     }

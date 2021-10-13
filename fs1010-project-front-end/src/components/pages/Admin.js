@@ -13,7 +13,7 @@ const Admin = () => {
     let history = useHistory();
     const token = sessionStorage.getItem('token')
 
-    const [listing, setListing] = useState([])
+    const [userList, setUserList] = useState([])
 
     const [name, setName] = useState("")
     const [password, setPassword] = useState("")
@@ -36,14 +36,14 @@ const Admin = () => {
                 }
             })
             const data = await response.json()
-            setListing(data)
+            setUserList(data)
             // console.log(data)
         }
         getData()
     }, [token])
 
 
-    const formSubmit = async event => {
+    const userFormSubmit = async event => {
         event.preventDefault()
 
         setErrorMessages({})
@@ -57,14 +57,16 @@ const Admin = () => {
                 method: 'POST',
                 headers: {
                     'Accept': 'application/json',
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
                 },
                 body: JSON.stringify({name, password, email})
             })
 
             const payload = await response.json()
             if (response.status >= 400) {
-                alert(`Oops! Error: ${payload.message} for fields: ${payload.invalid.join(",")}`)
+                // alert(`Oops! Error: ${payload.message} for fields: ${payload.invalid.join(",")}`)
+                alert(`Oops! Error: ${payload.message} for fields: ${payload}`)
             } else {
                 alert(`New user has been added with id: ${payload.id}`)
             }
@@ -125,7 +127,7 @@ const Admin = () => {
                 <Row>
                 <section className="addUser-container">
 
-                    <Form className="my-5" onSubmit={formSubmit} noValidate>
+                    <Form className="my-5" onSubmit={userFormSubmit} noValidate>
                     
                         <FormGroup row>
 
@@ -202,11 +204,11 @@ const Admin = () => {
                                 </tr>
                             </thead>
                             <tbody>
-                                {listing.length === 0 &&
+                                {userList.length === 0 &&
                                     <tr><td colSpan="4" className="text-center"><i>No listings found</i></td></tr>
                                 }
-                                {listing.length > 0 &&
-                                    listing.map(entry => 
+                                {userList.length > 0 &&
+                                    userList.map(entry => 
                                         <tr key={entry.id}>
                                             <td>{entry.id}</td>
                                             <td>{entry.name}</td>
