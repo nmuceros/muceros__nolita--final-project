@@ -243,6 +243,7 @@
 
 .experienceTitle, .educationTitle {
   margin-top: 3rem;
+  
 
 }
 
@@ -282,7 +283,7 @@
 } */
 
 .job, .education {
-  padding-top: 1.5rem;
+  padding-top: .5rem;
   padding-left: 1.5rem;
   width: 100%;
 }

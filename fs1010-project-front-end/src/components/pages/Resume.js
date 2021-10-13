@@ -141,8 +141,7 @@ const Resume = () => {
                                                                     testing, Build Tooling, Modelling tools</li>
                                                             </ul> <br></br>
                                                         <li>Three years experience as Developer</li> <br></br>
-                                                        <li>With some experience in Automated Testing – UFT</li> <br></br>
-                                                        <li>With years of experience in UI/Regression/QA Testing</li> <br></br>
+                                                        <li>With some experience in Automated Testing (UFT) / UI/Regression/QA Testing</li> <br></br>
                                                         <li>Excellent ability to plan, organize, prioritize work and meet deadlines</li> <br></br>
                                                         <li>Flexible, hardworking, adaptable, team player and can work independently</li> <br></br>
                                                     </ul>
@@ -197,7 +196,7 @@ const Resume = () => {
                                                         </li>
                                                     </ul><br></br>
                                                     <p className="job"><b>Credit Administrator / Credit Coordinator </b><br></br>
-                                                        <b>Honda Financial Services Inc. ~ 2007 to 2010</b>
+                                                        <b>Honda Financial Services Inc. ~ 2003 to 2010</b>
                                                     </p>
                                                     <ul>
                                                         <li>Automated Loan/Lease Assumption Contract using VBScript</li>
@@ -214,7 +213,7 @@ const Resume = () => {
                                                         <li>Maintained and controlled company’s Documents Change Request File (manually and electronically)</li>
                                                         <li>Processed invoices via internal system</li>
                                                     </ul><br></br>
-                                                    <p className="job"><b>Computer Programmer</b>
+                                                    <p className="job"><b>Computer Programmer</b><br></br>
                                                         <b>Delco Wire and Cable Corporation ~ 2000 to 2001</b>
                                                     </p>
                                                     <ul>
@@ -226,7 +225,7 @@ const Resume = () => {
                                                         <b>Nancy T. Ang and Associates ~ 1997 to 2000</b>
                                                     </p>
                                                     <ul>
-                                                        <li><p>Enhanced and maintained various customized systems per client requirements:<br></br>
+                                                        <li><p>Enhanced and maintained various customized systems per client requirements:<br></br><br></br>
                                                             <b>Custom applications: </b><br></br>
                                                             -Sales and Accounts Receivable System<br></br>
                                                             -General Ledger and Budget Monitoring System<br></br>
@@ -277,7 +276,7 @@ const Resume = () => {
                                                         Informatix Computer Institute ~ 1999
                                                     </p><br></br>
                                                     <p className="education"><b>Master of Science in Computer Science</b><br></br>
-                                                        Central Colleges of the Philippines ~ 1992 to 1998
+                                                        Central Colleges of the Philippines ~ 1998 to 1998
                                                     </p><br></br>                                                                            
                                                     <p className="education"><b>Bachelor of Science in Business Administration Major in Computer Science</b><br></br>
                                                         Central Colleges of the Philippines ~ 1992 to 1996
