@@ -32,10 +32,10 @@ const Home = () => {
                                 </Row> 
                                 <Row>
                                     <div className="homeQuote-container1">
-                                        <p className="texts-experts">"Experts once know basic. They became expert because someone like you have given them a chance.</p>
+                                        <p className="texts-experts">"Experts once know the basics. They became expert because someone like you have given them a chance.</p>
                                     </div>
                                     <div className="homeQuote-container2">
-                                        <p className="texts-add">Add an expert to be... hire me!"</p>
+                                        <p className="texts-add">Give me a chance!... Hire me!"</p>
                                         
                                     
                                      </div>
