@@ -50,7 +50,7 @@ const Contact = () => {
             if (response.status >= 400) {
                 alert(`Oops! Error: ${payload.message} for fields: ${payload.invalid.join(",")}`)
             } else {
-                alert(`Congrats! Submission submitted with id: ${payload.id}`)
+                alert(`Your message has been submitted with id: ${payload.id}`)
             }
         }
     }

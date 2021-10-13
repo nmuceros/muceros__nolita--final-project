@@ -1,9 +1,19 @@
 import React from "react"
+import { useHistory } from "react-router-dom"
 import { Container, Row, Col, Button } from "reactstrap"
 import "../../css/home.css"
 import profilePhoto from "../../images/myPhoto14.jpeg"
 
 const Home = () => {
+
+    const history = useHistory()
+
+    const buttonHandler = () => {
+        history.push("/portfolio")
+
+    }
+
+
     return (
         <Container>
             <main>
@@ -38,7 +48,9 @@ const Home = () => {
                             <h3 className="homeAspiring-texts">Aspiring Full-Stack Web Developer</h3>
                             <p className="homeCurrently-texts">Currently a student of "Full-Stack Web Development" program at York University.  </p>
                             {/* <p>Get to know me...</p> */}
-                            <Button id="findOutMore-button" color="secondary">Find our more about me...</Button>
+
+                            <Button id="findOutMore-button" color="secondary" onClick = { buttonHandler}> Find out more... </Button>
+
                         </Col>
                     </Row>
                 </section>
