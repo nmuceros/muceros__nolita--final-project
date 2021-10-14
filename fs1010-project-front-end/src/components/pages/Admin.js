@@ -18,26 +18,14 @@ const Admin = () => {
     const [name, setName] = useState("")
     const [password, setPassword] = useState("")
     const [email, setEmail] = useState("")
-    
-    const [errorMessages, setErrorMessages] = useState({})
+
+    const [errorMessages, setErrorMessages] = useState("")
 
     const logout = event => {
         event.preventDefault()
         sessionStorage.removeItem('token')
         history.push("/login")
     }
-
-    // const getData = async () => {
-    //     const response = await fetch('http://localhost:4000/api/users', {
-    //         method: 'GET',
-    //         headers: {
-    //             'Authorization': `Bearer ${token}`
-    //         }
-    //     })
-    //     const data = await response.json()
-    //     setUserList(data)
-
-    // }
     
     useEffect(() => {
         const getData = async () => {
@@ -55,7 +43,6 @@ const Admin = () => {
     }, [token])
 
 
-    
     const getData_AfterAdd = async () => {
         const response = await fetch('http://localhost:4000/api/users', {
             method: 'GET',
@@ -72,13 +59,15 @@ const Admin = () => {
     const userFormSubmit = async event => {
         event.preventDefault()
 
-        setErrorMessages({})
-        let foundErrors = userFields_Validation(errorMessages)
-        setErrorMessages(foundErrors)
+        // setErrorMessages({})
+        let foundErrors = userFields_Validation()
+        
+       
 
         // Ensure front-end validations are complete before fetching happens
-        if (Object.keys(foundErrors).length === 0) {        
-
+        // so no duplicate error message will be displayed
+        // if (Object.keys(foundErrors).length === 0) {     
+        if ( foundErrors.length === 0 ) {   
             const response = await fetch('http://localhost:4000/api/users', {
                 method: 'POST',
                 headers: {
@@ -91,53 +80,47 @@ const Admin = () => {
 
             const payload = await response.json()
             if (response.status >= 400) {
-                // alert(`Oops! Error: ${payload.message} for fields: ${payload.invalid.join(",")}`)
                 alert(`Oops! Error: ${payload.message} for fields: ${payload}`)
             } else {
                 getData_AfterAdd()
                 alert(`New user has been added with id: ${payload.id}`)
             }
+        } else {
+            setErrorMessages( `Validation Error/s Found: ${foundErrors.join(" / ")}` )
         }
     }
 
-    const userFields_Validation = (errorMessages) => {
 
-        let userErrors = {}
-     
-    
+    const userFields_Validation = () => {
+        let userErrors = []
         if (!name) {
-            userErrors.nameError = "Name is required!"
+            userErrors.push("Name is required")
         }
 
         let regX = /^[\w@-]{8,20}$/; 
         if (!password) {
-            userErrors.passwordError = "Password is required!"
+            // userErrors.passwordError = "Password is required"
+            userErrors.push("Password is required")
         } else if (!regX.test(password)) {
-            userErrors.passwordError = "Password is invalid!"  
+            // userErrors.passwordError = "Password is invalid!"  
+            userErrors.push("Password is invalid")
         }
-
 
         regX = /^([a-z\d-]+)@([a-z\d-]+)\.([a-z]{2,8}(\.[a-z]{2,8})?)$/
         if (!email) {
-            userErrors.emailError = "eMail is required!"
+            // userErrors.emailError = "eMail is required!"
+            userErrors.push("eMail is required")
         } else if (!regX.test(email)) {
-            userErrors.emailError = "eMail is invalid!"  
+            // userErrors.emailError = "eMail is invalid!"  
+            userErrors.push("eMail is invalid")
         }
-
-
-    
         return userErrors
-        
     }
 
     return (
         <Container>
             <main className="admin-main-container">
-
-               {/* <ListingTable columns={listHeader} data={listing} loading={false} /> */}
-
                 <Row>
-                    
                     <header className="admin-header">
                         <Col >
                             <div className="adminTitle-container">   
@@ -151,75 +134,82 @@ const Admin = () => {
                          </Col>                       
                      </header>
                 </Row>
+
+
+                
                 <Row>
-                <section className="addUser-container">
 
-                    <Form onSubmit={userFormSubmit} noValidate>
-                    
-                        <FormGroup row>
+                 
+                    <section className="addUser-container">
+                    {/* {errorMessages && <p className="errorMessages">{ errorMessages}</p>} */}
 
-                            <Col xs={4} sm={3} md={3} lg={3}>
-                                <div className="inputUserName-containier">
-                                    <Input 
-                                        type="name" 
-                                        name="name" 
-                                        id="nameEntry" 
-                                        placeholder="Enter full name" 
-                                        required value={name} 
-                                        onChange={e => setName(e.target.value)}
-                                    />
-                                </div>   
-                                {errorMessages.nameError && <p className="nameError">{ errorMessages.nameError }</p>}   
-                            </Col>
+                        <Form onSubmit={userFormSubmit} noValidate>
+                            <FormGroup row>
+                            
+                                <Col xs={4} sm={3} md={3} lg={3}>
+                                    <div className="inputUserName-containier">
+                                        <Input 
+                                            type="name" 
+                                            name="name" 
+                                            id="nameEntry" 
+                                            placeholder="Enter full name" 
+                                            required value={name} 
+                                            onChange={e => setName(e.target.value)}
+                                          
+                                            
+                                        />
+                                    </div>   
+                                    {/* {errorMessages.nameError && <p className="nameError">{ errorMessages.nameError }</p>}    */}
+                                </Col>
 
-                            <Col xs={4} sm={3} md={3} lg={3}>
-                                <div className="inputPassword-containier">
-                                    <Input 
-                                        type="password" 
-                                        name="password" 
-                                        id="passwordEntry" 
-                                        placeholder="Enter password" 
-                                        required value={password} 
-                                        onChange={e => setPassword(e.target.value)}
-                                    />
-                                </div>   
-                                {errorMessages.passwordError && <p className="passwordError">{ errorMessages.passwordError }</p>}   
-                            </Col>        
+                                <Col xs={4} sm={3} md={3} lg={3}>
+                                    <div className="inputPassword-containier">
+                                        <Input 
+                                            type="password" 
+                                            name="password" 
+                                            id="passwordEntry" 
+                                            placeholder="Enter password" 
+                                            required value={password} 
+                                            onChange={e => setPassword(e.target.value)}
+                                        
+                                        />
+                                    </div>   
+                                    {/* {errorMessages.passwordError && <p className="passwordError">{ errorMessages.passwordError }</p>}    */}
+                                </Col>        
 
-                            <Col xs={4} sm={3} md={4} lg={4}>
-                                <div className="inputEmail-containier">
-                                    <Input 
-                                        type="email" 
-                                        name="email" 
-                                        id="emailEntry" 
-                                        placeholder="Enter email" 
-                                        required value={email} 
-                                        onChange={e => setEmail(e.target.value)}
-                                    />
-                                </div>   
-                                {errorMessages.emailError && <p className="emailError">{ errorMessages.emailError }</p>}   
-                            </Col>                                                   
+                                <Col xs={4} sm={3} md={4} lg={4}>
+                                    <div className="inputEmail-containier">
+                                        <Input 
+                                            type="email" 
+                                            name="email" 
+                                            id="emailEntry" 
+                                            placeholder="Enter email" 
+                                            required value={email} 
+                                            onChange={e => setEmail(e.target.value)}
+                                            // onChange={ handleInputChange } 
+                                        />
+                                    </div>   
+                                    {/* {errorMessages.emailError && <p className="emailError">{ errorMessages.emailError }</p>}    */}
+                                </Col>                                                   
 
-                            <Col xs={4} sm={3} md={2} lg={2}>                    
-                                {/* <div className="adduserIcon-container"> 
-                                        <AiOutlineUserAdd />         
-                                </div>                           */}
-                                  <Button 
-                                        id="addUser-button" 
-                                        color="secondary" 
-                                        size="sm"
-                                    >
-                                        Add User
-                                   </Button>
-                            </Col>
+                                <Col xs={4} sm={3} md={2} lg={2}>                    
+                                    <Button 
+                                            id="addUser-button" 
+                                            color="secondary" 
+                                            size="sm"
+                                        >
+                                            Add User
+                                    </Button>
+                                </Col>
+                          
+                            </FormGroup>  
+                        </Form>
 
-                        </FormGroup>  
-
-                    </Form>
-                                                
+                        {errorMessages && <p id="errorMessages">{ errorMessages}</p>}
 
                     </section>
                 </Row>
+
                 <Row>
                     <section className="admin-listing-container">
                         <Table hover bordered responsive size="sm" >

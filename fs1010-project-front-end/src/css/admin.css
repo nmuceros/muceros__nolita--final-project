@@ -172,7 +172,9 @@ Table tbody {
     border-radius: 5px;
 }
 
-.nameError, .passwordError, .emailError {
+#errorMessages {
+    position: relative;
+    /* margin-top: 5rem; */
     color: red;
     font-size: .8rem;
 }
