@@ -17,6 +17,8 @@ const Contact = () => {
     const [phoneNumberError, setPhoneNumberError] = useState("")
     const [contentError, setContentError] = useState("")
 
+    
+
     const handleName = (e) => {
         setName(e.target.value)
         setNameError(!nameError)
@@ -53,7 +55,7 @@ const Contact = () => {
 
         const payload = await response.json()
         if (response.status >= 400) {
-            alert(`Error Alert! ${payload.message} for fields: ${payload.invalid.join(", ")}`)
+            alert(`Error Alert! ${payload.message} for fields ${payload.invalid.join(", ")}`)
         } else {
             alert(`Your message has been submitted with id: ${payload.id}`)
         }
@@ -71,7 +73,7 @@ const Contact = () => {
             setEmailError("eMail is required!")
             errorCounter += errorCounter     
         } else if (!regX.test(email)) {
-            setEmailError("eMail is invalid!") 
+            setEmailError("eMail is invalid! Must be correct email format sample@email.ca.") 
             errorCounter += errorCounter
         }
     
@@ -80,7 +82,7 @@ const Contact = () => {
             setPhoneNumberError("Phone Number is required!")
             errorCounter += errorCounter
         } else if (!regX.test(phoneNumber)) {
-            setPhoneNumberError("Phone Number is invalid. Should be in the format 9999999999!")  
+            setPhoneNumberError("Phone Number is invalid! Must be 10-digit numbers.")  
             errorCounter += errorCounter
         }        
     

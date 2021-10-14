@@ -47,7 +47,12 @@
     margin-top: 2rem;
     text-align: center;
     color: red;
+    font-size: .8rem;
+}
 
+.loginErrorDisplay {
+    color: red;
+    font-size: .8rem;
 }
 
 /* .serIDIcon-main-containier {

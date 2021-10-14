@@ -9,18 +9,36 @@ const Login = () => {
     const history = useHistory();
     const inputRef = useRef(null);
     let location = useLocation();
-    const [email, setUsername] = useState("")
-    const [password, setPassword] = useState("")
     const [auth, setAuth] = useState(true)
+
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+
+    const [emailError, setEmailError] = useState("")
+    const [passwordError, setPasswordError] = useState("")
+    const [foundError, setFoundError] = useState()
+
 
     useEffect(() => {
         inputRef.current.focus();
     }, [])
 
+    const handleEmail = (e) => {
+        setEmail(e.target.value)
+        setEmailError(!emailError)
+    }
 
-    const loginSubmit = async event => {
-        
+    const handlePassword = (e) => {
+        setPassword(e.target.value)
+        setPasswordError(!passwordError)
+    }
+
+
+    const loginSubmit = async event => {        
         event.preventDefault()
+
+        loginFields_Validation()
+
         const response = await fetch('http://localhost:4000/api/auth', {
             method: 'POST',
             headers: {
@@ -40,6 +58,34 @@ const Login = () => {
         }
     }
 
+    const loginFields_Validation = () => {
+        let errorCounter = 0
+ 
+        let regX = /^([a-z\d-]+)@([a-z\d-]+)\.([a-z]{2,8}(\.[a-z]{2,8})?)$/
+        if (!email) {
+            setEmailError("eMail is required!")
+            errorCounter += errorCounter     
+        } else if (!regX.test(email)) {
+            setEmailError("eMail is invalid! Must be correct email format sample@email.ca.") 
+            errorCounter += errorCounter
+        }
+
+        regX = /^[\w@-]{8,20}$/; 
+        if (!password) {
+            setPasswordError("Password is required!")
+            errorCounter += errorCounter
+        } else if (!regX.test(password)) {
+            setPasswordError("Password is invalid! Must be atleast 8 characters.")
+            errorCounter += errorCounter
+        }        
+        if (errorCounter > 0) {
+            setFoundError(true)
+        } else {
+            setFoundError(false)
+        }
+      
+    }
+
     return (
         <Container>
           <main className="login-container">
@@ -48,11 +94,11 @@ const Login = () => {
                 <h2 className="loginTitle-container">
                     <div className="loginTitle-texts">For Authorized User Only!</div>
                 </h2>    
-                {!auth && <p className="loginErrorMessage">Invalid credentials, please try again!</p>}                            
+                { !auth && <p className="loginErrorMessage">Invalid credentials, please try again!</p>}                            
             </header>
 
              <section className="loginForm-container">            
-                <Form className="my-5" onSubmit={loginSubmit} >
+                <Form className="my-5" onSubmit={loginSubmit} noValidate >
 
                     <FormGroup row>
                         <Col xs={3} sm={2} md={2} lg={1}>     
@@ -72,9 +118,15 @@ const Login = () => {
                                     required value={email} 
                                     autoComplete="off"
                                     ref={inputRef}
-                                    onChange={e => setUsername(e.target.value)}
+                                    // onChange={e => setUsername(e.target.value)}
+                                    onChange={handleEmail}
                                 />
-                            </div>    
+                            </div>  
+                            <div className="loginErrorDisplay" 
+                                    style={{ visibility: !emailError ? "hidden" : "visible" }}
+                                >
+                                    {emailError}
+                            </div>                               
                         </Col>
                     </FormGroup>  
 
@@ -93,9 +145,15 @@ const Login = () => {
                                     placeholder="Valid password" 
                                     required value={password} 
                                     autoComplete="off"
-                                    onChange={e => setPassword(e.target.value)}
+                                    // onChange={e => setPassword(e.target.value)}
+                                    onChange={handlePassword}
                                 />
-                            </div>    
+                            </div>   
+                            <div className="loginErrorDisplay" 
+                                    style={{ visibility: !passwordError ? "hidden" : "visible" }}
+                                >
+                                    {passwordError}
+                            </div>                              
                         </Col>
                     </FormGroup>  
 
