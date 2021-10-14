@@ -1,12 +1,27 @@
-import React from "react"
+import React, { useState } from "react"
 import { useHistory } from "react-router-dom"
 import { Container, Row, Col, Button } from "reactstrap"
-import "../../css/home.css"
 import profilePhoto from "../../images/myPhoto14.jpeg"
+// import twitter from "../../images/twitter.svg"
+// import facebook from "../../images/facebook2.svg"
+// import linkedin from "../../images/linkedin.svg"
+// import instagram from "../../images/instagram.svg"
+import "../../css/home.css"
 
 const Home = () => {
 
+    // const social = [
+    //     {icon: twitter, link: "https://twitter.com/cityoftoronto?lang=en"},
+    //     {icon: facebook, link: "https://www.facebook.com/cityofto/"},
+    //     {icon: linkedin, link: "https://ca.linkedin.com/company/city-of-toronto"},
+    //     {icon: instagram, link: "https://www.instagram.com/explore/locations/212991559/toronto-ontario/?hl=en"}
+    // ];    
+
     const history = useHistory()
+
+
+        
+    // const [selectedSocial, setSelectedSocial] = useState(null);    
 
     const buttonHandler = () => {
         history.push("/portfolio")
@@ -19,6 +34,22 @@ const Home = () => {
             <main>
                 <section className="section">
                     <Row className="my-5">
+                        {/* <Col lg="1">
+                            <div className="social-container">
+                                {
+                                social.map(social => 
+                                    <div className="social-image-container">
+                                        <a href={social.link}>
+                                        <img className="img-social" src={social.icon} alt="social-image" onClick={() => setSelectedSocial(social.icon)} />
+                                        </a>
+                                    </div>
+                                )
+                                }
+                            </div>
+
+
+                        </Col> */}
+
                         <Col lg="5">
                             <div className="leftSection-container">
                                  
@@ -32,10 +63,10 @@ const Home = () => {
                                 </Row> 
                                 <Row>
                                     <div className="homeQuote-container1">
-                                        <p className="texts-experts">"Experts once know the basics. They became expert because someone like you have given them a chance.</p>
+                                        <p className="texts-experts">"Experts once know the basics. They became expert because someone like you gave them a chance.</p>
                                     </div>
                                     <div className="homeQuote-container2">
-                                        <p className="texts-add">Give me a chance!... Hire me!"</p>
+                                        <p className="texts-add">Give me a chance!... Try me!"</p>
                                         
                                     
                                      </div>
@@ -54,6 +85,8 @@ const Home = () => {
                                 <Button id="findOutMore-button" color="secondary" onClick = { buttonHandler}> Recent projects... </Button>
                             </div>
                         </Col>
+
+
                     </Row>
                 </section>
             </main>
