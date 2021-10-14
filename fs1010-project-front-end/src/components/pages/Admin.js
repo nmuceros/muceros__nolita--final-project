@@ -20,6 +20,25 @@ const Admin = () => {
 
     const [errorMessages, setErrorMessages] = useState("")
 
+
+    const handleName = (e) => {
+        setName(e.target.value)
+        setErrorMessages(!errorMessages)        
+    }
+
+
+    const handleEmail = (e) => {
+        setEmail(e.target.value)
+        setErrorMessages(!errorMessages)        
+    }
+
+
+    const handlePassword = (e) => {
+        setPassword(e.target.value)
+        setErrorMessages(!errorMessages)        
+    }
+
+
     const logout = event => {
         event.preventDefault()
         sessionStorage.removeItem('token')
@@ -79,7 +98,7 @@ const Admin = () => {
                 alert(`New user has been added with id: ${payload.id}`)
             }
         } else {
-            setErrorMessages( `Error: ${foundErrors.join(" / ")}` )
+            setErrorMessages( `Validation Error: ${foundErrors.join(" / ")}` )
         }
     }
 
@@ -94,14 +113,14 @@ const Admin = () => {
         if (!password) {
             userErrors.push("Password is required")
         } else if (!regX.test(password)) {
-            userErrors.push("Password is invalid")
+            userErrors.push("Password is invalid! Must be atleast 8 characters.")
         }
 
         regX = /^([a-z\d-]+)@([a-z\d-]+)\.([a-z]{2,8}(\.[a-z]{2,8})?)$/
         if (!email) {
             userErrors.push("eMail is required")
         } else if (!regX.test(email)) {
-            userErrors.push("eMail is invalid")
+            userErrors.push("eMail is invalid! Must be correct email format sample@email.ca.")
         }
         return userErrors
     }
@@ -143,7 +162,8 @@ const Admin = () => {
                                             id="nameEntry" 
                                             placeholder="Enter full name" 
                                             required value={name} 
-                                            onChange={e => setName(e.target.value)}
+                                            // onChange={e => setName(e.target.value)}
+                                            onChange={handleName}
                                           
                                             
                                         />
@@ -159,7 +179,8 @@ const Admin = () => {
                                             id="passwordEntry" 
                                             placeholder="Enter password" 
                                             required value={password} 
-                                            onChange={e => setPassword(e.target.value)}
+                                            // onChange={e => setPassword(e.target.value)}
+                                            onChange={handlePassword}
                                         
                                         />
                                     </div>   
@@ -174,8 +195,9 @@ const Admin = () => {
                                             id="emailEntry" 
                                             placeholder="Enter email" 
                                             required value={email} 
-                                            onChange={e => setEmail(e.target.value)}
+                                            // onChange={e => setEmail(e.target.value)}
                                             // onChange={ handleInputChange } 
+                                            onChange={handleEmail}
                                         />
                                     </div>   
                                     {/* {errorMessages.emailError && <p className="emailError">{ errorMessages.emailError }</p>}    */}
