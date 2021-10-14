@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, Container } from 'reactstrap'
 import { NavLink as RouteLink } from 'react-router-dom'
 import Logo from "../shared/LogoBrand"
+import "../../css/navigation.css"
 
 
 const Navigation = () => {
@@ -17,8 +18,8 @@ const Navigation = () => {
                 <NavbarToggler onClick={toggle} />
                 <Collapse isOpen={isOpen} navbar>
                     <Nav className="ml-auto" navbar>
-                        <NavItem>
-                            <NavLink tag={RouteLink} to="/">Home</NavLink>
+                        <NavItem className="nav-item">
+                            <NavLink tag={RouteLink} exact to="/">Home</NavLink>
                         </NavItem>
                         <NavItem>
                             <NavLink tag={RouteLink} to="/resume">Resume</NavLink>

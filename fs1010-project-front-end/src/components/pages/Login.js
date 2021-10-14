@@ -1,24 +1,22 @@
-import React, { useState } from 'react'
-import { Redirect } from 'react-router'
-import { Container, Col, Row, Button, Form, FormGroup, Label, Input, Card, CardBody, CardText } from 'reactstrap'
+import React, { useState, useEffect, useRef } from 'react'
+import { Container, Col, Button, Form, FormGroup, Label, Input, Card, CardBody, CardText } from 'reactstrap'
 import { useHistory, useLocation } from 'react-router-dom'
 import { BsFillPersonFill } from "react-icons/bs"
 import { RiLockPasswordFill } from "react-icons/ri"
-// import { VscQuestion} from "react-icons/vsc"
 import "../../css/login.css"
 
 const Login = () => {
     const history = useHistory();
+    const inputRef = useRef(null);
     let location = useLocation();
     const [email, setUsername] = useState("")
     const [password, setPassword] = useState("")
     const [auth, setAuth] = useState(true)
-    // const [errorMessage, setErrorMessage] = useState({});
 
+    useEffect(() => {
+        inputRef.current.focus();
+    }, [])
 
-    const inputField_Handler = () => {
-        
-    }
 
     const loginSubmit = async event => {
         
@@ -36,18 +34,9 @@ const Login = () => {
             setAuth(false)
         } else {
             sessionStorage.setItem('token', payload.token)
-
             let { from } = location.state || { from: { pathname: "/" } };
             // history.replace(from);
-
             history.push(from);
-
-          
-
-            // history.push(`/${toPage}`)
-
-            // <Redirect to={{ pathname: "/", state: { from: this.props.location } }}
-
         }
     }
 
@@ -71,9 +60,6 @@ const Login = () => {
                                 <div className="userIDIcon-container"> 
                                         <BsFillPersonFill />         
                                 </div>  
-                                {/* <div className="userIDTooltip-container"> 
-                                        <VscQuestion />         
-                                </div>         */}
                             </div>            
                         </Col>
                         <Col xs={9} sm={10} md={10} lg={11}>
@@ -85,6 +71,7 @@ const Login = () => {
                                     placeholder="Username" 
                                     required value={email} 
                                     autoComplete="off"
+                                    ref={inputRef}
                                     onChange={e => setUsername(e.target.value)}
                                 />
                             </div>    

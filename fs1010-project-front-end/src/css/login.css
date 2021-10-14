@@ -102,5 +102,7 @@
 }
 
 #login-signInButton :hover  {
-    transform: translate(-.35rem) scale(1.05);
+    /* transform: translate(-.35rem) scale(1.05); */
+    transform: scale(1.3);
 }
+

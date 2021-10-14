@@ -14,7 +14,6 @@ const Admin = () => {
     const token = sessionStorage.getItem('token')
 
     const [userList, setUserList] = useState([])
-
     const [name, setName] = useState("")
     const [password, setPassword] = useState("")
     const [email, setEmail] = useState("")
@@ -55,15 +54,9 @@ const Admin = () => {
     }
 
 
-
     const userFormSubmit = async event => {
         event.preventDefault()
-
-        // setErrorMessages({})
         let foundErrors = userFields_Validation()
-        
-       
-
         // Ensure front-end validations are complete before fetching happens
         // so no duplicate error message will be displayed
         // if (Object.keys(foundErrors).length === 0) {     
@@ -99,19 +92,15 @@ const Admin = () => {
 
         let regX = /^[\w@-]{8,20}$/; 
         if (!password) {
-            // userErrors.passwordError = "Password is required"
             userErrors.push("Password is required")
         } else if (!regX.test(password)) {
-            // userErrors.passwordError = "Password is invalid!"  
             userErrors.push("Password is invalid")
         }
 
         regX = /^([a-z\d-]+)@([a-z\d-]+)\.([a-z]{2,8}(\.[a-z]{2,8})?)$/
         if (!email) {
-            // userErrors.emailError = "eMail is required!"
             userErrors.push("eMail is required")
         } else if (!regX.test(email)) {
-            // userErrors.emailError = "eMail is invalid!"  
             userErrors.push("eMail is invalid")
         }
         return userErrors
