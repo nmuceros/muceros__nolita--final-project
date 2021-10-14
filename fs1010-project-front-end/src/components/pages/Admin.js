@@ -27,7 +27,36 @@ const Admin = () => {
         history.push("/login")
     }
 
-    const getData = async () => {
+    // const getData = async () => {
+    //     const response = await fetch('http://localhost:4000/api/users', {
+    //         method: 'GET',
+    //         headers: {
+    //             'Authorization': `Bearer ${token}`
+    //         }
+    //     })
+    //     const data = await response.json()
+    //     setUserList(data)
+
+    // }
+    
+    useEffect(() => {
+        const getData = async () => {
+            const response = await fetch('http://localhost:4000/api/users', {
+                method: 'GET',
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            })
+            const data = await response.json()
+            setUserList(data)
+        }
+
+        getData()
+    }, [token])
+
+
+    
+    const getData_AfterAdd = async () => {
         const response = await fetch('http://localhost:4000/api/users', {
             method: 'GET',
             headers: {
@@ -36,12 +65,8 @@ const Admin = () => {
         })
         const data = await response.json()
         setUserList(data)
-        // console.log(data)
     }
-    
-    useEffect(() => {
-        getData()
-    }, [token])
+
 
 
     const userFormSubmit = async event => {
@@ -69,7 +94,7 @@ const Admin = () => {
                 // alert(`Oops! Error: ${payload.message} for fields: ${payload.invalid.join(",")}`)
                 alert(`Oops! Error: ${payload.message} for fields: ${payload}`)
             } else {
-                getData()
+                getData_AfterAdd()
                 alert(`New user has been added with id: ${payload.id}`)
             }
         }

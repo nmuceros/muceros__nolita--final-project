@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Redirect } from 'react-router'
 import { Container, Col, Row, Button, Form, FormGroup, Label, Input, Card, CardBody, CardText } from 'reactstrap'
 import { useHistory, useLocation } from 'react-router-dom'
 import { BsFillPersonFill } from "react-icons/bs"
@@ -7,7 +8,7 @@ import { RiLockPasswordFill } from "react-icons/ri"
 import "../../css/login.css"
 
 const Login = () => {
-    let history = useHistory();
+    const history = useHistory();
     let location = useLocation();
     const [email, setUsername] = useState("")
     const [password, setPassword] = useState("")
@@ -37,8 +38,16 @@ const Login = () => {
             sessionStorage.setItem('token', payload.token)
 
             let { from } = location.state || { from: { pathname: "/" } };
-            history.replace(from);
-            // history.push(from)
+            // history.replace(from);
+
+            history.push(from);
+
+          
+
+            // history.push(`/${toPage}`)
+
+            // <Redirect to={{ pathname: "/", state: { from: this.props.location } }}
+
         }
     }
 
