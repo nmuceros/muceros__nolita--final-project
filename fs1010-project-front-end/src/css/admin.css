@@ -172,6 +172,18 @@ Table tbody {
     border-radius: 5px;
 }
 
+#nameEntry::placeholder {
+    color: silver;  
+}
+
+#emailEntry::placeholder {
+    color: silver;  
+}
+
+#passwordEntry::placeholder {
+    color: silver;  
+}
+
 #errorMessages {
     position: relative;
     /* margin-top: 5rem; */

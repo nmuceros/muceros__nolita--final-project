@@ -18,7 +18,7 @@ const validateEntries = (req, res, next) => { // middleware
         next();
     } else {
         const errorMessageObj = {
-            message: "validation error",
+            message: "Validation error",
             invalid: errorMessages,
         };
         return res.status(400).json(errorMessageObj); // return error in json format indicating invalid/missing properties/data

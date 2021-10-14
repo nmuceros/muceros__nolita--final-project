@@ -11,119 +11,96 @@ const Contact = () => {
     const [email, setEmail] = useState("")
     const [phoneNumber, setPhoneNumber] = useState("")
     const [content, setContent] = useState("")
-    
-    const [errorMessages, setErrorMessages] = useState("")
+
+    const [nameError, setNameError] = useState("")
+    const [emailError, setEmailError] = useState("")
+    const [phoneNumberError, setPhoneNumberError] = useState("")
+    const [contentError, setContentError] = useState("")
+
+    const handleName = (e) => {
+        setName(e.target.value)
+        setNameError(!nameError)
+    }
+
+    const handleEmail = (e) => {
+        setEmail(e.target.value)
+        setEmailError(!emailError)
+    }
+
+    const handlePhoneNumber = (e) => {
+        setPhoneNumber(e.target.value)
+        setPhoneNumberError(!phoneNumberError)
+    }
+
+    const handleContent = (e) => {
+        setContent(e.target.value)
+        setContentError(!contentError)
+    }
 
     const formSubmit = async event => {
         event.preventDefault()
+        //call validation function
+        contactFields_Validation()
 
-        // setErrorMessages({})
-        let foundErrors = contactFields_Validation(errorMessages)
-        // setErrorMessages(foundErrors)
+        const response = await fetch('http://localhost:4000/api/contact_form/entries', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({name, email, phoneNumber, content})
+        })
 
-
-        // Ensure front-end validations are complete before fetching happens
-        // so it will not display duplicate validation error message
-        if ( foundErrors.length === 0 ) {         
-
-            const response = await fetch('http://localhost:4000/api/contact_form/entries', {
-                method: 'POST',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({name, email, phoneNumber, content})
-            })
-
-            const payload = await response.json()
-            if (response.status >= 400) {
-                alert(`Oops! Error: ${payload.message} for fields: ${payload.invalid.join(",")}`)
-            } else {
-                alert(`Your message has been submitted with id: ${payload.id}`)
-            }
+        const payload = await response.json()
+        if (response.status >= 400) {
+            alert(`Error Alert! ${payload.message} for fields: ${payload.invalid.join(", ")}`)
         } else {
-            setErrorMessages( `Error: ${foundErrors.join(" / ")}` )
+            alert(`Your message has been submitted with id: ${payload.id}`)
         }
     }
 
-    // const contactFields_Validation = (errorMessages) => {
-
-    //     let contactErrors = {}
-     
-    
-    //     if (!name) {
-    //         contactErrors.nameError = "Name is required!"
-    //     }
-    
-    //     let regX = /^([a-z\d-]+)@([a-z\d-]+)\.([a-z]{2,8}(\.[a-z]{2,8})?)$/
-    //     if (!email) {
-    //         contactErrors.emailError = "eMail is required!"
-    //     } else if (!regX.test(email)) {
-    //         contactErrors.emailError = "eMail is invalid!"  
-    //     }
-    
-    //     regX = /^\d{10}$/
-    //     if (!phoneNumber) {
-    //         contactErrors.phoneNumberError = "Phone Number is required!"
-    //     } else if (!regX.test(phoneNumber)) {
-    //         contactErrors.phoneNumberError = "Phone Number is invalid!"  
-    //     }        
-    
-    //     if (!content) {
-    //         contactErrors.contentError = "Message is required!"
-    //     }
-    
-    //     return contactErrors
-        
-    // }
-
     const contactFields_Validation = () => {
-        let userErrors = []
+        let errorCounter = 0
         if (!name) {
-            userErrors.push("Name is required")
+            setNameError("Name is required!")
+            errorCounter += errorCounter
         }
-
+    
         let regX = /^([a-z\d-]+)@([a-z\d-]+)\.([a-z]{2,8}(\.[a-z]{2,8})?)$/
         if (!email) {
-            userErrors.push("eMail is required")
+            setEmailError("eMail is required!")
+            errorCounter += errorCounter     
         } else if (!regX.test(email)) {
-            userErrors.push("eMail is invalid")
+            setEmailError("eMail is invalid!") 
+            errorCounter += errorCounter
         }
-
+    
         regX = /^\d{10}$/
         if (!phoneNumber) {
-            userErrors.push("Phone Number is required")
+            setPhoneNumberError("Phone Number is required!")
+            errorCounter += errorCounter
         } else if (!regX.test(phoneNumber)) {
-            userErrors.push("Phone Number is invalid")
+            setPhoneNumberError("Phone Number is invalid. Should be in the format 9999999999!")  
+            errorCounter += errorCounter
         }        
-
+    
         if (!content) {
-            userErrors.push("Content is required")
-        }       
-
-        return userErrors
+            setContentError("Message is required!")
+            errorCounter += errorCounter
+        } 
+        return errorCounter
     }
 
 
 
     return (
         <Container>
-            {/* <Card className="text-white bg-secondary my-5 py-4 text-center">
-                <CardBody>
-                    <CardText className="text-white m-0">Use form to reach me, I'll get back to you within 24 hours!</CardText>
-                </CardBody>
-            </Card> */}
-
             <main className="contact-container">
-
                 <h2 className="contactTitle-container">
                     <div className="contactTitle-texts">Reachable Here!</div>
                 </h2>                
            
-                
                 <section className="contactForm-container">
-
-                    {errorMessages && <p id="errorMessages">{ errorMessages}</p>}
 
                     <Form className="my-5" onSubmit={formSubmit} noValidate>
                     
@@ -141,10 +118,15 @@ const Contact = () => {
                                         id="contactNameEntry" 
                                         placeholder="Enter full name" 
                                         required value={name} 
-                                        onChange={e => setName(e.target.value)}
+                                        autoComplete="off"
+                                        onChange={handleName}
                                     />
                                 </div>   
-                                {/* {errorMessages.nameError && <p className="nameError">{ errorMessages.nameError }</p>}    */}
+                                <div className="errorDisplay" 
+                                    style={{ visibility: !nameError ? "hidden" : "visible" }}
+                                >
+                                    {nameError}
+                                </div>                              
                             </Col>
                         </FormGroup>  
 
@@ -161,11 +143,16 @@ const Contact = () => {
                                         name="email" 
                                         id="contactEmailEntry"
                                         placeholder="Enter email"  
+                                        autoComplete="off"
                                         required value={email} 
-                                        onChange={e => setEmail(e.target.value) }
+                                        onChange={handleEmail}
                                     />
                                 </div>    
-                                {/* {errorMessages.emailError && <p className="nameError">{ errorMessages.emailError }</p>}                                    */}
+                                <div className="errorDisplay" 
+                                    style={{ visibility: !emailError ? "hidden" : "visible" }}
+                                >
+                                    {emailError}
+                                </div> 
                             </Col>
                          </FormGroup>                         
 
@@ -183,10 +170,15 @@ const Contact = () => {
                                         id="contactPhoneEntry" 
                                         placeholder="Enter phone number" 
                                         required value={phoneNumber} 
-                                        onChange={e => setPhoneNumber(e.target.value)}
+                                        autoComplete="off"
+                                        onChange={handlePhoneNumber}
                                     />
                                 </div>    
-                                {/* {errorMessages.phoneNumberError && <p className="nameError">{ errorMessages.phoneNumberError }</p>}                                    */}
+                                <div className="errorDisplay" 
+                                    style={{ visibility: !phoneNumberError ? "hidden" : "visible" }}
+                                >
+                                    {phoneNumberError}
+                                </div>                               
                             </Col>
                          </FormGroup>                          
 
@@ -203,14 +195,18 @@ const Contact = () => {
                                     name="text" 
                                     id="contactMessageEntry" 
                                     required value={content} 
-                                    placeholder="Enter your message"                                     
-                                    onChange={e => setContent(e.target.value)}
+                                    placeholder="Enter your message"    
+                                    autoComplete="off"                                 
+                                    onChange={handleContent}
                                 />
                                 </div>    
-                                {/* {errorMessages.contentError && <p className="nameError">{ errorMessages.contentError }</p>}                                    */}
+                                <div className="errorDisplay" 
+                                    style={{ visibility: !contentError ? "hidden" : "visible" }}
+                                >
+                                    {contentError}
+                                </div>                              
                             </Col>
                          </FormGroup>                          
-
 
                         <FormGroup>
                             <Col>
