@@ -73,7 +73,11 @@
     color: silver;  
 }
 
-.nameError {
+#errorMessages {
+    position: relative;
+    margin-top: 1rem;
+    widows: 100%;
+    text-align: center;
     color: red;
 }
 

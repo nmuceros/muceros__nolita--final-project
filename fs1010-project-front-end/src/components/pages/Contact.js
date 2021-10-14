@@ -5,37 +5,26 @@ import { GrMail } from "react-icons/gr"
 import { AiTwotonePhone } from "react-icons/ai"
 import { RiMessage3Fill } from "react-icons/ri"
 import "../../css/contact.css"
-// import contactFields_Validation from "../validations/contactValidation.js"
 
 const Contact = () => {
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [phoneNumber, setPhoneNumber] = useState("")
     const [content, setContent] = useState("")
-
-    // const [errorMessages, setErrorMessages] = useState([
-    //     {
-    //         nameError: "",
-    //         emailError: "",
-    //         phoneNumberError: "",
-    //         contentError: ""
-    //      }
-    //     ])
     
-    const [errorMessages, setErrorMessages] = useState({})
-
+    const [errorMessages, setErrorMessages] = useState("")
 
     const formSubmit = async event => {
         event.preventDefault()
 
-        setErrorMessages({})
+        // setErrorMessages({})
         let foundErrors = contactFields_Validation(errorMessages)
-        setErrorMessages(foundErrors)
+        // setErrorMessages(foundErrors)
 
-        //   alert(`${Object.keys(foundErrors).length}`)
 
         // Ensure front-end validations are complete before fetching happens
-        if (Object.keys(foundErrors).length === 0) {        
+        // so it will not display duplicate validation error message
+        if ( foundErrors.length === 0 ) {         
 
             const response = await fetch('http://localhost:4000/api/contact_form/entries', {
                 method: 'POST',
@@ -52,38 +41,67 @@ const Contact = () => {
             } else {
                 alert(`Your message has been submitted with id: ${payload.id}`)
             }
+        } else {
+            setErrorMessages( `Validation Error/s Found: ${foundErrors.join(" / ")}` )
         }
     }
 
-    const contactFields_Validation = (errorMessages) => {
+    // const contactFields_Validation = (errorMessages) => {
 
-        let contactErrors = {}
+    //     let contactErrors = {}
      
     
-        if (!name) {
-            contactErrors.nameError = "Name is required!"
-        }
+    //     if (!name) {
+    //         contactErrors.nameError = "Name is required!"
+    //     }
     
+    //     let regX = /^([a-z\d-]+)@([a-z\d-]+)\.([a-z]{2,8}(\.[a-z]{2,8})?)$/
+    //     if (!email) {
+    //         contactErrors.emailError = "eMail is required!"
+    //     } else if (!regX.test(email)) {
+    //         contactErrors.emailError = "eMail is invalid!"  
+    //     }
+    
+    //     regX = /^\d{10}$/
+    //     if (!phoneNumber) {
+    //         contactErrors.phoneNumberError = "Phone Number is required!"
+    //     } else if (!regX.test(phoneNumber)) {
+    //         contactErrors.phoneNumberError = "Phone Number is invalid!"  
+    //     }        
+    
+    //     if (!content) {
+    //         contactErrors.contentError = "Message is required!"
+    //     }
+    
+    //     return contactErrors
+        
+    // }
+
+    const contactFields_Validation = () => {
+        let userErrors = []
+        if (!name) {
+            userErrors.push("Name is required")
+        }
+
         let regX = /^([a-z\d-]+)@([a-z\d-]+)\.([a-z]{2,8}(\.[a-z]{2,8})?)$/
         if (!email) {
-            contactErrors.emailError = "eMail is required!"
+            userErrors.push("eMail is required")
         } else if (!regX.test(email)) {
-            contactErrors.emailError = "eMail is invalid!"  
+            userErrors.push("eMail is invalid")
         }
-    
+
         regX = /^\d{10}$/
         if (!phoneNumber) {
-            contactErrors.phoneNumberError = "Phone Number is required!"
+            userErrors.push("Phone Number is required")
         } else if (!regX.test(phoneNumber)) {
-            contactErrors.phoneNumberError = "Phone Number is invalid!"  
+            userErrors.push("Phone Number is invalid")
         }        
-    
+
         if (!content) {
-            contactErrors.contentError = "Message is required!"
-        }
-    
-        return contactErrors
-        
+            userErrors.push("Content is required")
+        }       
+
+        return userErrors
     }
 
 
@@ -104,6 +122,9 @@ const Contact = () => {
            
                 
                 <section className="contactForm-container">
+
+                    {errorMessages && <p id="errorMessages">{ errorMessages}</p>}
+
                     <Form className="my-5" onSubmit={formSubmit} noValidate>
                     
                         <FormGroup row>
@@ -123,7 +144,7 @@ const Contact = () => {
                                         onChange={e => setName(e.target.value)}
                                     />
                                 </div>   
-                                {errorMessages.nameError && <p className="nameError">{ errorMessages.nameError }</p>}   
+                                {/* {errorMessages.nameError && <p className="nameError">{ errorMessages.nameError }</p>}    */}
                             </Col>
                         </FormGroup>  
 
@@ -134,7 +155,7 @@ const Contact = () => {
                                 </div>                          
                             </Col>
                             <Col xs={10} sm={10} md={10} lg={11}>
-                                <div className="inputEmail-containier">
+                                <div className="inputEmail-container">
                                     <Input 
                                         type="email" 
                                         name="email" 
@@ -144,7 +165,7 @@ const Contact = () => {
                                         onChange={e => setEmail(e.target.value) }
                                     />
                                 </div>    
-                                {errorMessages.emailError && <p className="nameError">{ errorMessages.emailError }</p>}                                   
+                                {/* {errorMessages.emailError && <p className="nameError">{ errorMessages.emailError }</p>}                                    */}
                             </Col>
                          </FormGroup>                         
 
@@ -165,7 +186,7 @@ const Contact = () => {
                                         onChange={e => setPhoneNumber(e.target.value)}
                                     />
                                 </div>    
-                                {errorMessages.phoneNumberError && <p className="nameError">{ errorMessages.phoneNumberError }</p>}                                   
+                                {/* {errorMessages.phoneNumberError && <p className="nameError">{ errorMessages.phoneNumberError }</p>}                                    */}
                             </Col>
                          </FormGroup>                          
 
@@ -186,7 +207,7 @@ const Contact = () => {
                                     onChange={e => setContent(e.target.value)}
                                 />
                                 </div>    
-                                {errorMessages.contentError && <p className="nameError">{ errorMessages.contentError }</p>}                                   
+                                {/* {errorMessages.contentError && <p className="nameError">{ errorMessages.contentError }</p>}                                    */}
                             </Col>
                          </FormGroup>                          
 
