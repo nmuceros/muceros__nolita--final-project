@@ -129,16 +129,16 @@ const Contact = () => {
                     
                         <FormGroup row>
                             <Col xs={2} sm={2} md={2} lg={1}>                    
-                                <div className="inputNameIcon-container"> 
+                                <div className="contactNameIcon-container"> 
                                         <BsFillPersonFill />         
                                 </div>                          
                             </Col>
                             <Col xs={10} sm={10} md={10} lg={11}>
-                                <div className="inputName-containier">
+                                <div className="contactName-container">
                                     <Input 
                                         type="name" 
                                         name="name" 
-                                        id="nameEntry" 
+                                        id="contactNameEntry" 
                                         placeholder="Enter full name" 
                                         required value={name} 
                                         onChange={e => setName(e.target.value)}
@@ -150,16 +150,16 @@ const Contact = () => {
 
                         <FormGroup row>
                             <Col xs={2} sm={2} md={2} lg={1}>                    
-                                <div className="inputEmailIcon-container"> 
+                                <div className="contactEmailIcon-container"> 
                                         <GrMail />         
                                 </div>                          
                             </Col>
                             <Col xs={10} sm={10} md={10} lg={11}>
-                                <div className="inputEmail-container">
+                                <div className="contactEmail-container">
                                     <Input 
                                         type="email" 
                                         name="email" 
-                                        id="emailEntry"
+                                        id="contactEmailEntry"
                                         placeholder="Enter email"  
                                         required value={email} 
                                         onChange={e => setEmail(e.target.value) }
@@ -171,16 +171,16 @@ const Contact = () => {
 
                         <FormGroup row>
                             <Col xs={2} sm={2} md={2} lg={1}>                    
-                                <div className="inputPhoneIcon-container"> 
+                                <div className="contactPhoneIcon-container"> 
                                         <AiTwotonePhone />         
                                 </div>                          
                             </Col>
                             <Col xs={10} sm={10} md={10} lg={11}>
-                                <div className="inputPhone-containier">
+                                <div className="contactPhone-container">
                                     <Input 
                                         type="phone" 
                                         name="phone"
-                                        id="phoneEntry" 
+                                        id="contactPhoneEntry" 
                                         placeholder="Enter phone number" 
                                         required value={phoneNumber} 
                                         onChange={e => setPhoneNumber(e.target.value)}
@@ -192,16 +192,16 @@ const Contact = () => {
 
                         <FormGroup row>
                             <Col xs={2} sm={2} md={2} lg={1}>                    
-                                <div className="inputMessageIcon-container"> 
+                                <div className="contactMessageIcon-container"> 
                                         <RiMessage3Fill />         
                                 </div>                          
                             </Col>
                             <Col xs={10} sm={10} md={10} lg={11}>
-                                <div className="inputMessage-containier">
+                                <div className="contactMessage-container">
                                 <Input 
                                     type="textarea" 
                                     name="text" 
-                                    id="messageEntry" 
+                                    id="contactMessageEntry" 
                                     required value={content} 
                                     placeholder="Enter your message"                                     
                                     onChange={e => setContent(e.target.value)}

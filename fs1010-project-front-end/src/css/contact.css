@@ -30,17 +30,17 @@
 
 }
 
-.inputNameIcon-container, .inputEmailIcon-container, .inputPhoneIcon-container, .inputMessageIcon-container {
+.contactNameIcon-container, .contactEmailIcon-container, .contactPhoneIcon-container, .contactMessageIcon-container {
     position: relative;
     color: white;
     font-size: 1.5rem;
     align-content: center;
 }
 
-#nameEntry, #emailEntry, #phoneEntry, #messageEntry {
+#contactNameEntry, #contactEmailEntry, #contactPhoneEntry, #contactMessageEntry {
     position: relative;
     width: 100%;
-    height: 2.5rem;
+    height: 2rem;
     text-align: left;
     align-content: center;
     font-size: 1rem;
@@ -52,24 +52,24 @@
     border-radius: 5px;
 }
 
-#messageEntry {
-    font-size: 15px;
+#contactMessageEntry {
+    /* font-size: 15px; */
     height: 200px;
 }
 
-#nameEntry::placeholder {
+#contactNameEntry::placeholder {
     color: silver;  
 }
 
-#emailEntry::placeholder {
+#contactEmailEntry::placeholder {
     color: silver;  
 }
 
-#phoneEntry::placeholder {
+#contactPhoneEntry::placeholder {
     color: silver;  
 }
 
-#messageEntry::placeholder {
+#contactMessageEntry::placeholder {
     color: silver;  
 }
 
