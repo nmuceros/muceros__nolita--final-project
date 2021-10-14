@@ -152,6 +152,7 @@ Table tbody {
     font-size: 1rem;
     align-content: center;
     width: 100%;
+    margin-top: 3rem;
     margin-bottom: .5rem;
     padding-bottom: 0;
 }
@@ -162,7 +163,7 @@ Table tbody {
     height: 2rem;
     text-align: left;
     align-content: center;
-    /* font-size: 1rem; */
+    font-size: .8rem;
     border: 1px solid #AAAAAA;
     background: none;
     border-bottom: solid 2px #382933;
@@ -174,4 +175,10 @@ Table tbody {
 .nameError, .passwordError, .emailError {
     color: red;
     font-size: .8rem;
+}
+
+#addUser-button {
+    position: relative;
+    margin-top: 3rem;
+
 }

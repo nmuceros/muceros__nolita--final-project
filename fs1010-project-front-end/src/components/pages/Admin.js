@@ -129,11 +129,11 @@ const Admin = () => {
                 <Row>
                 <section className="addUser-container">
 
-                    <Form className="my-5" onSubmit={userFormSubmit} noValidate>
+                    <Form onSubmit={userFormSubmit} noValidate>
                     
                         <FormGroup row>
 
-                            <Col xs={12} sm={3} md={3} lg={3}>
+                            <Col xs={4} sm={3} md={3} lg={3}>
                                 <div className="inputUserName-containier">
                                     <Input 
                                         type="name" 
@@ -147,7 +147,7 @@ const Admin = () => {
                                 {errorMessages.nameError && <p className="nameError">{ errorMessages.nameError }</p>}   
                             </Col>
 
-                            <Col xs={12} sm={3} md={3} lg={3}>
+                            <Col xs={4} sm={3} md={3} lg={3}>
                                 <div className="inputPassword-containier">
                                     <Input 
                                         type="password" 
@@ -161,7 +161,7 @@ const Admin = () => {
                                 {errorMessages.passwordError && <p className="passwordError">{ errorMessages.passwordError }</p>}   
                             </Col>        
 
-                            <Col xs={12} sm={3} md={4} lg={4}>
+                            <Col xs={4} sm={3} md={4} lg={4}>
                                 <div className="inputEmail-containier">
                                     <Input 
                                         type="email" 
@@ -175,7 +175,7 @@ const Admin = () => {
                                 {errorMessages.emailError && <p className="emailError">{ errorMessages.emailError }</p>}   
                             </Col>                                                   
 
-                            <Col xs={12} sm={3} md={2} lg={2}>                    
+                            <Col xs={4} sm={3} md={2} lg={2}>                    
                                 {/* <div className="adduserIcon-container"> 
                                         <AiOutlineUserAdd />         
                                 </div>                           */}
