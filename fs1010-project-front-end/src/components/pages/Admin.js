@@ -26,19 +26,20 @@ const Admin = () => {
         sessionStorage.removeItem('token')
         history.push("/login")
     }
+
+    const getData = async () => {
+        const response = await fetch('http://localhost:4000/api/users', {
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        })
+        const data = await response.json()
+        setUserList(data)
+        // console.log(data)
+    }
     
     useEffect(() => {
-        const getData = async () => {
-            const response = await fetch('http://localhost:4000/api/users', {
-                method: 'GET',
-                headers: {
-                    'Authorization': `Bearer ${token}`
-                }
-            })
-            const data = await response.json()
-            setUserList(data)
-            // console.log(data)
-        }
         getData()
     }, [token])
 
@@ -68,6 +69,7 @@ const Admin = () => {
                 // alert(`Oops! Error: ${payload.message} for fields: ${payload.invalid.join(",")}`)
                 alert(`Oops! Error: ${payload.message} for fields: ${payload}`)
             } else {
+                getData()
                 alert(`New user has been added with id: ${payload.id}`)
             }
         }
