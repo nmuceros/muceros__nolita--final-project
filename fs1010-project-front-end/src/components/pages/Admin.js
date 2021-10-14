@@ -79,7 +79,7 @@ const Admin = () => {
                 alert(`New user has been added with id: ${payload.id}`)
             }
         } else {
-            setErrorMessages( `Validation Error/s Found: ${foundErrors.join(" / ")}` )
+            setErrorMessages( `Error: ${foundErrors.join(" / ")}` )
         }
     }
 

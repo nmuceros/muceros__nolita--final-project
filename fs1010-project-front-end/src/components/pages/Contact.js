@@ -42,7 +42,7 @@ const Contact = () => {
                 alert(`Your message has been submitted with id: ${payload.id}`)
             }
         } else {
-            setErrorMessages( `Validation Error/s Found: ${foundErrors.join(" / ")}` )
+            setErrorMessages( `Error: ${foundErrors.join(" / ")}` )
         }
     }
 
