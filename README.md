@@ -43,11 +43,11 @@ Step2: Setup Backend
 
             npm install
 
-         -Open Visual Studio Code
+    -Open Visual Studio Code
 
             code .
 
-      -Rename the ".env.example" file to ".env" 
+     -Rename the ".env.example" file to ".env" 
             
                             OR 
 
@@ -60,7 +60,7 @@ Step2: Setup Backend
                      DB_ENTRIES_LOCATION=./data/entries.json
 
                 
-        -Create a file called "users.json" under the "data" folder of the "fs1020-project-back-end' folder.
+     -Create a file called "users.json" under the "data" folder of the "fs1020-project-back-end' folder.
         
         This application, requires at least one authorized user to be able to access the protected pages 
         ie. MessageCentre page and Admin page.
@@ -74,7 +74,7 @@ Step2: Setup Backend
            "email": "sample@user.com"
           }]
 
-        -Run the back-end and leave it running
+    -Run the back-end and leave it running
 
             npm run dev
 
