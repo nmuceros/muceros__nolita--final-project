@@ -16,7 +16,7 @@ const Login = () => {
 
     const [emailError, setEmailError] = useState("")
     const [passwordError, setPasswordError] = useState("")
-    const [foundError, setFoundError] = useState()
+    // const [foundError, setFoundError] = useState()
 
 
     useEffect(() => {
@@ -59,30 +59,30 @@ const Login = () => {
     }
 
     const loginFields_Validation = () => {
-        let errorCounter = 0
+        // let errorCounter = 0
  
         let regX = /^([a-z\d-]+)@([a-z\d-]+)\.([a-z]{2,8}(\.[a-z]{2,8})?)$/
         if (!email) {
             setEmailError("eMail is required!")
-            errorCounter += errorCounter     
+            // errorCounter += errorCounter     
         } else if (!regX.test(email)) {
             setEmailError("eMail is invalid! Must be correct email format sample@email.ca.") 
-            errorCounter += errorCounter
+            // errorCounter += errorCounter
         }
 
         regX = /^[\w@-]{8,20}$/; 
         if (!password) {
             setPasswordError("Password is required!")
-            errorCounter += errorCounter
+            // errorCounter += errorCounter
         } else if (!regX.test(password)) {
             setPasswordError("Password is invalid! Must be atleast 8 characters.")
-            errorCounter += errorCounter
+            // errorCounter += errorCounter
         }        
-        if (errorCounter > 0) {
-            setFoundError(true)
-        } else {
-            setFoundError(false)
-        }
+        // if (errorCounter > 0) {
+        //     setFoundError(true)
+        // } else {
+        //     setFoundError(false)
+        // }
       
     }
 
