@@ -37,20 +37,22 @@ Step1: Project Repo Cloning Process
 
 Step2: Setup Backend
 
-        -Still at the terminal (at the repo folder), change directory to 'fs1020-project-back-end' folder
-        -Install npm package
-        
+    -Still at the terminal (at the repo folder), change directory to 'fs1020-project-back-end' folder
+    
+    -Install npm package
+
             npm install
 
-        -Open Visual Studio Code
+         -Open Visual Studio Code
 
             code .
 
-        -Rename the ".env.example" file to ".env" 
+      -Rename the ".env.example" file to ".env" 
             
                             OR 
 
-            Create a new ".env" file in the root directory of the "fs1020-project-back-end' folder with the following information:
+            create a new ".env" file in the root directory of the "fs1020-project-back-end' folder
+            with the following information:
 
             PORT=4000
             JWT_SECRETKEY = somelongrandomphrasegoeshere
@@ -59,15 +61,18 @@ Step2: Setup Backend
 
                 
         -Create a file called "users.json" under the "data" folder of the "fs1020-project-back-end' folder.
-        This application, requires at least one authorized user to be able to access the protected pages ie. MessageCentre page and Admin page.
+        
+        This application, requires at least one authorized user to be able to access the protected pages 
+        ie. MessageCentre page and Admin page.
+        
         To keep going you can add the below data to the "users.json" file
         
-                [{
-                    "id": "8ce9e040-9ff5-4973-8a9d-dae810e3c894",
-                    "name": "Sample User",
-                    "password": "$argon2i$v=19$m=4096,t=3,p=1$1Rr40IsGd0R8lV4XPnshjA$aZqcP3eIfqtDQKsKsrju08/PsdnM4nIJHU0nYfMyVeM",
-                    "email": "sample@user.com"
-                }]
+         [{
+           "id": "8ce9e040-9ff5-4973-8a9d-dae810e3c894",
+           "name": "Sample User",
+           "password": "$argon2i$v=19$m=4096,t=3,p=1$1Rr40IsGd0R8lV4XPnshjA$aZqcP3eIfqtDQKsKsrju08/PsdnM4nIJHU0nYfMyVeM",
+           "email": "sample@user.com"
+          }]
 
         -Run the back-end and leave it running
 
