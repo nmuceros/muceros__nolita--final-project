@@ -21,6 +21,7 @@ const PortfolioCard = (project) => {
                 </div>
                 <CardBody>
                     <CardTitle id="portfolio-cardTitle" tag="h4">{project.projectName}</CardTitle>
+                    <CardSubtitle id="portfolio-cardSubTitle" ag="h6" className="mb-2 text-muted">{project.projectSubTitle}</CardSubtitle> 
                     <div>
                         <div className="portfolio-card-links">
                             <a className="portfolio-collapse-icon" onClick={toggle} href="#">
@@ -31,6 +32,7 @@ const PortfolioCard = (project) => {
                                 <FiLink />
                             </a>
                         </div>
+    
                         <Collapse className="portfolio-collapse" isOpen={isOpen}>
                                {project.projectDesc}
                         </Collapse>
