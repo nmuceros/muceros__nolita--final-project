@@ -2,6 +2,11 @@
     margin-top: 2rem;
 }
 
+.portfolio-cardImage-container:hover {
+    transform: scale(1.3);
+}
+
+
 .portfolio-card-links {
     position: relative;
     display: flex;

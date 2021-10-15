@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 // import twitter from "../../images/twitter.svg"
-import twitter from "../../images/twitter.jpeg"
+import twitter from "../../images/twitter5.jpeg"
 // import facebook from "../../images/facebook2.svg"
-import facebook from "../../images/facebook.jpeg"
+import facebook from "../../images/facebook3.jpeg"
 // import linkedin from "../../images/linkedin.svg"
-import linkedin from "../../images/linkedIn.jpeg"
+import linkedin from "../../images/linkedIn2.jpeg"
 // import instagram from "../../images/instagram.svg"
 import instagram from "../../images/instagram.jpeg"
 import "../../css/footer.css"
