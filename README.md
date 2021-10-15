@@ -2,9 +2,11 @@
 This project is a React application which utilizes the backend built from FS1020 and React version of the HTML / CSS frontend built from FS1000.
 It is a Portfolio website focusing on the following:
 
-         (1) Contact page - where data are validated both frontend and backend. All persistent data is to be stored in a simple JSON file. Anyone will be able to 
-                       send a message
+         (1) Contact page - where data are validated both frontend and backend. All persistent data is to be stored
+                                    in a simple JSON file. Anyone will be able to send a message
+                                    
          (2) MessageCentre page - a protected page which lists all the messages
+         
          (3) Admin page - a protected page which lists all the authorized users of the website
 
 
