@@ -8,7 +8,7 @@
   .img-social {
     position: relative;
     margin: .5rem;
-    width: 1.3rem;
+    width: 1.7rem;
     opacity: 1;
     /* background-color: white; */
     border-radius: 50%;
@@ -22,6 +22,6 @@
 
   #footer-copyright {
     padding-top: 2rem;
-    color: lightgrey;
+    color: rgb(190, 184, 184);
     font-size: .7rem;
   }

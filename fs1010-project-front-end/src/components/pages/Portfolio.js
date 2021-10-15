@@ -14,7 +14,7 @@ const Portfolio = () => {
         {         
             projectID: "1",    
             projectImage: yoh,                           
-            projectName: "YOH!",  
+            projectName: "YOH! YorkU Hackathon 2021 Winner!",  
             projectDesc: "Winner of York Hackathon 2021. YOH! is a hub where tech graduates from York University are able to connect with recruiters for potential job opportunities. I worked mainly on the front-end.",
             projectLink: "https://devpost.com/software/yoh-york-opportunity-hub"        
           },         
