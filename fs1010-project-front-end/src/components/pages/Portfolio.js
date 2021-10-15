@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Button, CardBody, CardImg, CardSubtitle, CardTitle, CardText, CardFooter, Card } from "reactstrap"
 import { Collapse } from 'reactstrap';
+import PortfolioCard from './PortfolioCard';
 import "../../css/portfolio.css"
 import creativeResonance from "../../images/creativeResonance.jpg"
 import photoGallery from "../../images/photoGallery.png"
@@ -31,19 +32,19 @@ const Portfolio = () => {
 
 
     const [selectedProject, setSelectedProject] = useState(null); 
-    const [isOpen, setIsOpen] = useState(false);
+    // const [isOpen, setIsOpen] = useState(false);
     
-    const handleMore = (e, projectObject) => {
-        setSelectedProject({
-            projectID: projectObject.projectID,
-            projectName: projectObject.projectName,
-            projectImage: projectObject.projectImage,
-            projectbBuiltBy: projectObject.projectbBuiltBy,      
-            projectTitle: projectObject.projectTitle,     
-            projectDesc: projectObject.projectDesc
-        });
-        setIsOpen(!isOpen);
-    }
+    // const handleMore = (e, projectObject) => {
+    //     setSelectedProject({
+    //         projectID: projectObject.projectID,
+    //         projectName: projectObject.projectName,
+    //         projectImage: projectObject.projectImage,
+    //         projectbBuiltBy: projectObject.projectbBuiltBy,      
+    //         projectTitle: projectObject.projectTitle,     
+    //         projectDesc: projectObject.projectDesc
+    //     });
+    //     setIsOpen(!isOpen);
+    // }
 
 
     return (
@@ -63,46 +64,24 @@ const Portfolio = () => {
 
                 <Row>
 
-                    {projects.map((projectObject, index) => (
+                    {projects.map((project) => (
                         <Col md="4" className="mb-5">
-                            <div key={projectObject.projectID}>                         
-                                <Card id="portfolio-card-container" key={index}>
-                                    <div className="portfolio-cardImage-container">
-                                        <CardImg id="portfolio-cardImage-creativeResonance" width="100%" src={projectObject.projectImage} alt="Card image cap" />
-                                    </div>
-                                    {/* <CardBody>
-                                        <CardTitle id="portfolio-cardTitle" tag="h5">{projectObject.projectName}</CardTitle>
-                                        <div>
-                                            <Button 
-                                                id={`showMoreButton ${projectObject.projectID}`} 
-                                                outline color="secondary" size="sm" 
-                                                onClick={(e) => handleMore(e,projectObject)}
-                                                style={{ 
-                                                    marginBottom: '1rem'
-                                                }}
-                                            >
-                                                More...
-                                            </Button>
-                                            <Collapse 
-                                                id={`collapse ${projectObject.projectID}`} 
-                                                isOpen={isOpen}>
-                                                <Card>
-                                                    <CardBody id="portfolio-cardText">
-                                                        {projectObject.projectDesc}
-                                                    </CardBody>
-                                                </Card>
-                                            </Collapse>
-                                        </div>                                    
-                                    </CardBody> */}
+                            <div key={project.projectID}>   
+                                {/* {selectedProject === project.projectID ? (
+                                    <>
+                                ) : ( 
+                                    <>
+                                )} */}
+                            
+                                <PortfolioCard  
+                                    project={project} 
+                                    projectImage={project.projectImage}
+                                    projectID={project.projectID}
+                                    projectName={project.projectName}
+                                    projectDesc={project.projectDesc}
 
-                                     <CardBody>
-                                        <CardTitle id="portfolio-cardTitle" tag="h5">{projectObject.projectName}</CardTitle>
-                                        <CardSubtitle id="portfolio-cardSubTitle" ag="h6" className="mb-2 text-muted">{projectObject.projectb}</CardSubtitle> 
-                                        <CardText id="portfolio-cardText">{projectObject.projectDesc}</CardText>
-                                        {/* <Button id="portfolio-collapse-button" color="secondary" size="sm">Button</Button> */}
-                                    </CardBody>       
-
-                                </Card>
+                                />                      
+    
                             </div>    
                         </Col>                                
                     ))}    

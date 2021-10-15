@@ -1,0 +1,31 @@
+
+
+  .portfolio-collapse-button {
+    position: relative;
+    align-content: center;
+    /* margin-left: 2.2rem; */
+    font-size: .6rem;
+    height: auto;
+    width: 3.9rem;
+    margin-top: 1rem
+ }
+
+
+.portfolio-collapse-button:hover {
+    transform: translate(-.35rem) scale(1.05);
+    /* transform: scale(1.3); */
+}
+  
+
+
+
+ .portfolio-collapse-button {
+    cursor: pointer;
+}
+
+
+.portfolio-collapse {
+    font-size: .7rem;
+}
+
+
