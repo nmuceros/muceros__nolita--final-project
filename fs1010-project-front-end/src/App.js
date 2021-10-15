@@ -12,9 +12,12 @@ import MessageCentre from './components/pages/MessageCentre'
 import Admin from './components/pages/Admin'
 import PrivateRoute from './components/shared/PrivateRoute'
 
+import Container from 'reactstrap/lib/Container'
+
 function App() {
   return (
     <BrowserRouter>
+    <Container className="main-container" fluid>
     <Navigation />
     <Switch>
       <Route exact path="/" component={Home} />
@@ -31,6 +34,8 @@ function App() {
 
       {/* <PrivateRoute path="/admin" component={Admin} /> PrivateRoute is a user-defined component */}
     </Switch>
+  
+    </Container>
     <Footer />  
 </BrowserRouter>
   )

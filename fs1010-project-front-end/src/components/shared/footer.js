@@ -8,6 +8,7 @@ import linkedin from "../../images/linkedIn2.jpeg"
 // import instagram from "../../images/instagram.svg"
 import instagram from "../../images/instagram.jpeg"
 import "../../css/footer.css"
+import Container from 'reactstrap/lib/Container'
 
 
 const Footer = () => {
@@ -21,23 +22,27 @@ const Footer = () => {
     const [selectedSocial, setSelectedSocial] = useState(null);  
 
     return (  
-        <footer className="py-3 bg-dark">
-            <div>
-                <div className="m-0 text-center text-white">
-                    <div className="social-container">
-                        {
-                        social.map(social => 
-                            <div className="social-image-container">
-                                <a href={social.link}>
-                                <img className="img-social" src={social.icon} alt="social-image" onClick={() => setSelectedSocial(social.icon)} />
-                                </a>
-                            </div>
-                        )}
+        <Container id="footer" fluid >
+            {/* className="py-3 bg-dark" */}
+            {/* className="fixed-bottom" */}
+            <footer  >
+                <div>
+                    <div className="m-0 text-center text-white">
+                        <div className="social-container">
+                            {
+                            social.map(social => 
+                                <div className="social-image-container">
+                                    <a href={social.link}>
+                                    <img className="img-social" src={social.icon} alt="social-image" onClick={() => setSelectedSocial(social.icon)} />
+                                    </a>
+                                </div>
+                            )}
+                        </div>
                     </div>
-                </div>
-                <p id="footer-copyright" className="m-0 text-center ">Copyright &copy; 2021 Nolita Muceros</p>       
-            </div>      
-        </footer>
+                    <p id="footer-copyright" className="m-0 text-center ">Copyright &copy; 2021 Nolita Muceros</p>       
+                </div>      
+            </footer>
+        </Container>                        
 
     )
 }

@@ -32,7 +32,7 @@ const Home = () => {
 
 
     return (
-        <Container>
+        <Container fluid>
             <main>
                 <section className="section">
                     <Row className="my-5">
