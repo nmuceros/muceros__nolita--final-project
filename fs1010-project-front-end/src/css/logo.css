@@ -6,49 +6,26 @@
     height: auto;
     margin-left: auto;
     margin-right: auto;
-
-    /* flex-direction: column; */
-    /* text-justify: auto; */
-    /* width: auto;
-    height: auto; */
-    /* justify-content: left; */
-    
-    /* background-color: yellow; */
-
 }
 
 #logo {
     position: relative;
     width: 3rem;
     height: 3rem;
-    /* background-color: #32494e; */
-    /* background-color: #65a2b9; */
     background-color: rgb(76, 81, 83);
     border-radius: 50%;
-    /* align-content: center; */
-    /* text-align: center; */
     margin-left: 0;
     margin-right: 0;
     align-items: center;
-
-    /* background-color: blue; */
-
 }
 
 
 
 
 #logo-sm-circle-unfilled  { 
-        /* margin-top: 1rem; */
         width:40%; 
         height:40%; 
         position: relative;
-        /* align-items: center; */
-        /* text-align: center; */
-        /* align-content: center;
-        margin-left:  0;
-        margin-right: 0; */
-        /* width: 100%; */
         border-radius: 50%;
         border: black solid 2px;
         background-color: #65a2b9;
@@ -60,9 +37,7 @@
         animation-duration: 800ms;
         animation-iteration-count: infinite;
         animation-timing-function: linear;
-        /* -o-animation-direction: alternate-reverse; */
-        animation-direction: alternate;
-        
+        animation-direction: alternate;       
     }
 
     #logo-sm-circle-unfilled {
@@ -77,32 +52,11 @@
         position: relative;
         margin-left: 14px;
         margin-top: -12px;
-
-        /* color: yellow; */
-
-
     }
 
     @keyframes logospin {
-        from {
-            transform: rotate(90deg);
-           
-        }
-    
-    
-        to {
-            transform: rotate(-45deg);
-        } 
-        /* from {
-            transform: rotate(90deg);
-           
-        }
-    
-    
-        to {
-            transform: rotate(0deg);
-        }
-    */
+        from {transform: rotate(90deg);}
+        to {transform: rotate(-45deg);} 
     }
 
     .logo-text {
@@ -116,5 +70,4 @@
         font-size: 1.2rem;
         font-weight: bolder;
         margin-left: .5rem;
-        /* background-color: red; */
     } 

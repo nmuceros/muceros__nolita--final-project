@@ -10,11 +10,18 @@
     margin: .5rem;
     width: 1.3rem;
     opacity: 1;
-    color: white;
+    /* background-color: white; */
+    border-radius: 50%;
   }
   
   .img-social:hover {
     transform: scale(1.2);
     background-color: white;
     border-radius: 50%;
+  }
+
+  #footer-copyright {
+    padding-top: 2rem;
+    color: lightgrey;
+    font-size: .7rem;
   }
