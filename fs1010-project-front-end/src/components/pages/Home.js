@@ -1,7 +1,8 @@
 import React, { useState } from "react"
 import { useHistory } from "react-router-dom"
 import { Container, Row, Col, Button } from "reactstrap"
-import profilePhoto from "../../images/myPhoto14.jpeg"
+// import profilePhoto from "../../images/myPhoto14.jpeg"
+import profilePhoto from "../../images/mypic.png"
 // import twitter from "../../images/twitter.svg"
 // import facebook from "../../images/facebook2.svg"
 // import linkedin from "../../images/linkedin.svg"
@@ -66,7 +67,7 @@ const Home = () => {
                                         <p className="texts-experts">"Experts once know the basics. They became expert because someone like you gave them a chance.</p>
                                     </div>
                                     <div className="homeQuote-container2">
-                                        <p className="texts-add">Give me a chance!... Try me!"</p>
+                                        <p className="texts-add">Give me a chance... Try me!"</p>
                                         
                                     
                                      </div>

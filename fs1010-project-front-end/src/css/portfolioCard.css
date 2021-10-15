@@ -11,23 +11,29 @@
     position: relative;
     height: auto;
     width: 2rem;
+    color: grey;
     /* border-style: solid; */
  }
 
 
 .portfolio-collapse-icon:hover {
     transform: scale(1.5);
+    color: rgb(16, 222, 230);
 }
   
 .portfolio-gitLink-icon:hover {
     transform: scale(1.5);
+    color: rgb(16, 222, 230);
 }
 
-
+.portfolio-gitLink-icon {
+    color: grey;
+}
 
 
  .portfolio-collapse-icon {
     cursor: pointer;
+    color: grey;
 }
 
 

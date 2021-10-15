@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { Container, Card, CardBody, CardImg, CardSubtitle, CardTitle, CardText, CardFooter, Button, Collapse } from "reactstrap"
 import { CgDetailsMore } from "react-icons/cg"
 import { FaGitSquare } from "react-icons/fa"
+import { FiLink } from "react-icons/fi"
 import "../../css/portfolioCard.css"
 
 
@@ -22,11 +23,12 @@ const PortfolioCard = (project) => {
                     <CardTitle id="portfolio-cardTitle" tag="h4">{project.projectName}</CardTitle>
                     <div>
                         <div className="portfolio-card-links">
-                            <a className="portfolio-collapse-icon" onClick={toggle}>
+                            <a className="portfolio-collapse-icon" onClick={toggle} href="#">
                                 <CgDetailsMore />
                             </a>
                             <a className="portfolio-gitLink-icon" href={project.projectLink}>
-                                <FaGitSquare />
+                                {/* <FaGitSquare /> */}
+                                <FiLink />
                             </a>
                         </div>
                         <Collapse className="portfolio-collapse" isOpen={isOpen}>

@@ -6,17 +6,18 @@ import "../../css/portfolio.css"
 import creativeResonance from "../../images/creativeResonance.jpg"
 import photoGallery from "../../images/photoGallery.png"
 import todoApp from "../../images/todoApp.png"
+import yoh from "../../images/yoh.jpg"
 
 const Portfolio = () => {  
     
     let projects = [
-        {
-          projectID: "1",  
-          projectImage: creativeResonance,
-          projectName: "Creative Resonance",          
-          projectDesc: "This is a Web Application showcasing the Music Album photo collections from different genres. It has music which automatically plays while a selected genre is being viewed. It is a group effort from FS1000 Music Group. The Admin page is my major contribution to this project.",        
-          projectLink: "https://gitlab.com/nols2021/fs1000_summer2021_group1_project"
-        },
+        {         
+            projectID: "1",    
+            projectImage: yoh,                           
+            projectName: "YOH!",  
+            projectDesc: "Winner of York Hackathon 2021. YOH! is a hub where tech graduates from York University are able to connect with recruiters for potential job opportunities. I worked mainly on the front-end.",
+            projectLink: "https://devpost.com/software/yoh-york-opportunity-hub"        
+          },         
         {
             projectID: "2",              
             projectImage: photoGallery,               
@@ -30,7 +31,14 @@ const Portfolio = () => {
             projectName: "Todo App",  
             projectDesc: "This Todo Web Application is an independent work of mine. Unlike normal Todo application, this has an interesting drag and drop effect. ",
             projectLink: "https://github.com/nmuceros/muceros__nolita--assignment-2"        
-          }         
+          },
+          {
+            projectID: "4",  
+            projectImage: creativeResonance,
+            projectName: "Creative Resonance",          
+            projectDesc: "This is a Web Application showcasing the Music Album photo collections from different genres. It has music which automatically plays while a selected genre is being viewed. It is a group effort from FS1000 Music Group. The Admin page is my major contribution to this project.",        
+            projectLink: "https://gitlab.com/nols2021/fs1000_summer2021_group1_project"
+          }           
       ];
 
 
@@ -68,7 +76,7 @@ const Portfolio = () => {
                 <Row>
 
                     {projects.map((project) => (
-                        <Col md="4" className="mb-5">
+                        <Col md="3" className="mb-5">
                             <div key={project.projectID}>   
                                 {/* {selectedProject === project.projectID ? (
                                     <>
