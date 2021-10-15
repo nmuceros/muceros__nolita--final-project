@@ -14,19 +14,22 @@ const Portfolio = () => {
           projectID: "1",  
           projectImage: creativeResonance,
           projectName: "Creative Resonance",          
-          projectDesc: "This is a Web Application showcasing the Music Album photo collections from different genres. It has music which automatically plays while a selected genre is being viewed. It is a group effort from FS1000 Music Group. The Admin page is my major contribution to this project."        
+          projectDesc: "This is a Web Application showcasing the Music Album photo collections from different genres. It has music which automatically plays while a selected genre is being viewed. It is a group effort from FS1000 Music Group. The Admin page is my major contribution to this project.",        
+          projectLink: "https://gitlab.com/nols2021/fs1000_summer2021_group1_project"
         },
         {
             projectID: "3",    
             projectImage: todoApp,                           
             projectName: "Todo App",  
-            projectDesc: "This Todo Web Application is an independent work of mine. Unlike normal Todo application, this has an interesting drag and drop effect. "        
+            projectDesc: "This Todo Web Application is an independent work of mine. Unlike normal Todo application, this has an interesting drag and drop effect. ",
+            projectLink: "https://github.com/nmuceros/muceros__nolita--assignment-2"        
           },          
         {
             projectID: "2",              
             projectImage: photoGallery,               
             projectName: "Photo Gallery",
-            projectDesc: "This Web Application is an independent work of mine showcasing the photo collection of the Historical Sites of City of Toronto. This comes with an overlay on hover of images as well as a custom styled zoom modal view upon clicking on a photo."        
+            projectDesc: "This Web Application is an independent work of mine showcasing the photo collection of the Historical Sites of City of Toronto. This comes with an overlay on hover of images as well as a custom styled zoom modal view upon clicking on a photo.",
+            projectLink: "https://github.com/nmuceros/FS1010_Assignment1_Style_Photo_Gallery"        
           }
       ];
 
@@ -79,7 +82,7 @@ const Portfolio = () => {
                                     projectID={project.projectID}
                                     projectName={project.projectName}
                                     projectDesc={project.projectDesc}
-
+                                    projectLink={project.projectLink}
                                 />                      
     
                             </div>    

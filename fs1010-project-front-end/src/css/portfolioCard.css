@@ -2,7 +2,7 @@
     position: relative;
     display: flex;
     justify-content: space-around;
-
+    /* border-style: solid; */
 }
 
  
@@ -10,16 +10,17 @@
  .portfolio-collapse-icon {
     position: relative;
     height: auto;
-    width: 5rem;
+    width: 2rem;
+    /* border-style: solid; */
  }
 
 
 .portfolio-collapse-icon:hover {
-    transform: translate(-.35rem) scale(1.05);
+    transform: scale(1.5);
 }
   
 .portfolio-gitLink-icon:hover {
-    transform: translate(-.35rem) scale(1.05);
+    transform: scale(1.5);
 }
 
 

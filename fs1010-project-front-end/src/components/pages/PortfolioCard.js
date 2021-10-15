@@ -25,7 +25,7 @@ const PortfolioCard = (project) => {
                             <a className="portfolio-collapse-icon" onClick={toggle}>
                                 <CgDetailsMore />
                             </a>
-                            <a className="portfolio-gitLink-icon">
+                            <a className="portfolio-gitLink-icon" href={project.projectLink}>
                                 <FaGitSquare />
                             </a>
                         </div>
