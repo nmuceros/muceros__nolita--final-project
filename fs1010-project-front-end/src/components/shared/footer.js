@@ -9,10 +9,10 @@ import "../../css/footer.css"
 const Footer = () => {
 
     const social = [
-        {icon: twitter, link: "https://twitter.com/cityoftoronto?lang=en"},
-        {icon: facebook, link: "https://www.facebook.com/cityofto/"},
-        {icon: linkedin, link: "https://ca.linkedin.com/company/city-of-toronto"},
-        {icon: instagram, link: "https://www.instagram.com/explore/locations/212991559/toronto-ontario/?hl=en"}
+        {icon: twitter, link: "https://twitter.com/i/flow/login"},
+        {icon: facebook, link: "https://www.facebook.com/login/"},
+        {icon: linkedin, link: "https://www.linkedin.com/login"},
+        {icon: instagram, link: "https://www.instagram.com/accounts/login/"}
     ]    
     const [selectedSocial, setSelectedSocial] = useState(null);  
 
