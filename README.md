@@ -54,10 +54,10 @@ Step2: Setup Backend
             create a new ".env" file in the root directory of the "fs1020-project-back-end' folder
             with the following information:
 
-            PORT=4000
-            JWT_SECRETKEY = somelongrandomphrasegoeshere
-            DB_USERS_LOCATION=./data/users.json
-            DB_ENTRIES_LOCATION=./data/entries.json
+                     PORT=4000
+                     JWT_SECRETKEY = somelongrandomphrasegoeshere
+                     DB_USERS_LOCATION=./data/users.json
+                     DB_ENTRIES_LOCATION=./data/entries.json
 
                 
         -Create a file called "users.json" under the "data" folder of the "fs1020-project-back-end' folder.
