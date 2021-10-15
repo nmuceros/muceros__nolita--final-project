@@ -47,7 +47,7 @@ Step2: Setup Backend
 
             code .
 
-     -Rename the ".env.example" file to ".env" 
+    -Rename the ".env.example" file to ".env" 
             
                             OR 
 
@@ -80,19 +80,19 @@ Step2: Setup Backend
 
 Step2: Setup Frontend
 
-        -Go back to terminal (at the repo folder), change directory to 'fs1010-project-front-end' folder
+    -Go back to terminal (at the repo folder), change directory to 'fs1010-project-front-end' folder
 
-        -Install npm package
-                
-                    npm install
+    -Install npm package
 
-        -Open Visual Studio Code
+                npm install
 
-                    code .
+    -Open Visual Studio Code
 
-        -Run front-end
+                code .
 
-            npm start
+    -Run front-end
+
+        npm start
 
 
 IMPORTANT: 
