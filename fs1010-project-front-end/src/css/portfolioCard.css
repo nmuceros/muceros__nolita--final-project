@@ -1,31 +1,39 @@
-
-
-  .portfolio-collapse-button {
+.portfolio-card-links {
     position: relative;
-    align-content: center;
-    /* margin-left: 2.2rem; */
-    font-size: .6rem;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+ 
+ 
+ .portfolio-collapse-icon {
+    position: relative;
     height: auto;
-    width: 3.9rem;
-    margin-top: 1rem
+    width: 5rem;
  }
 
 
-.portfolio-collapse-button:hover {
+.portfolio-collapse-icon:hover {
     transform: translate(-.35rem) scale(1.05);
-    /* transform: scale(1.3); */
 }
   
+.portfolio-gitLink-icon:hover {
+    transform: translate(-.35rem) scale(1.05);
+}
 
 
 
- .portfolio-collapse-button {
+
+ .portfolio-collapse-icon {
     cursor: pointer;
 }
 
 
 .portfolio-collapse {
+    margin-top: .8rem;
     font-size: .7rem;
+    text-align: center;
 }
 
 
