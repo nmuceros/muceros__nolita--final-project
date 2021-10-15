@@ -1,8 +1,10 @@
 import React, { useState } from "react"
 import { Container, Card, CardBody, CardImg, CardSubtitle, CardTitle, CardText, CardFooter, Button, Collapse } from "reactstrap"
-import { CgDetailsMore } from "react-icons/cg"
+// import { CgDetailsMore } from "react-icons/cg"
+import { MdOutlineReadMore} from "react-icons/md"
 import { FaGitSquare } from "react-icons/fa"
-import { FiLink } from "react-icons/fi"
+// import { FiLink } from "react-icons/fi"
+import { BsLink } from "react-icons/bs"
 import "../../css/portfolioCard.css"
 
 
@@ -17,19 +19,19 @@ const PortfolioCard = (project) => {
         <Container>
             <Card id="portfolio-card-container" >
                 <div className="portfolio-cardImage-container">
-                    <CardImg id="portfolio-cardImage-creativeResonance" width="100%" src={project.projectImage} alt="Card image cap" />
+                    <CardImg id="portfolio-cardImage-image" width="100%" src={project.projectImage} alt="Card image cap" />
                 </div>
                 <CardBody>
                     <CardTitle id="portfolio-cardTitle" tag="h4">{project.projectName}</CardTitle>
                     <CardSubtitle id="portfolio-cardSubTitle" ag="h6" className="mb-2 text-muted">{project.projectSubTitle}</CardSubtitle> 
                     <div>
                         <div className="portfolio-card-links">
-                            <a className="portfolio-collapse-icon" onClick={toggle} href="#">
-                                <CgDetailsMore />
+                            <a className="portfolio-showmore-icon" onClick={toggle} href="#">
+                                <MdOutlineReadMore />
                             </a>
                             <a className="portfolio-gitLink-icon" href={project.projectLink}>
                                 {/* <FaGitSquare /> */}
-                                <FiLink />
+                                <BsLink />
                             </a>
                         </div>
     
