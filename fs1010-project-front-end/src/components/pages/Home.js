@@ -33,7 +33,7 @@ const Home = () => {
 
     return (
         <Container fluid>
-            <main>
+            <main className="home-main-container">
                 <section className="section">
                     <Row className="my-5">
                         {/* <Col lg="1">
@@ -52,7 +52,7 @@ const Home = () => {
 
                         </Col> */}
 
-                        <Col lg="5">
+                        <Col lg="6">
                             <div className="leftSection-container">
                                  
                                 <Row>
@@ -76,7 +76,7 @@ const Home = () => {
                             </div>    
                         </Col>
                 
-                        <Col lg="7">
+                        <Col lg="6">
                             <div className="rightSection-container">
                                 <h1 id="homeHello-texts" className="font-weight-light">hELLO!</h1>
                                 <h2 id="homeMyName-texts" className="font-weight-light">My name is  <strong className="myName">Nolita Muceros</strong></h2>
@@ -84,7 +84,7 @@ const Home = () => {
                                 <p className="homeCurrently-texts">Currently expanding skills in "Full-Stack Web Development"</p>
                                 {/* <p>Get to know me...</p> */}
 
-                                <Button id="findOutMore-button" color="secondary" onClick = { buttonHandler}> Recent projects... </Button>
+                                <Button id="findOutMore-button" color="secondary" onClick = { buttonHandler}> Portfolio </Button>
                             </div>
                         </Col>
 
