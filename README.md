@@ -45,7 +45,6 @@ Step2: Setup Backend
 
     -Open Visual Studio Code
 
-            code .
 
     -Rename the ".env.example" file to ".env" 
             
@@ -86,9 +85,8 @@ Step2: Setup Frontend
 
                 npm install
 
-    -Open Visual Studio Code
+    -Open Visual Studio Code or stay in the terminal
 
-                code .
 
     -Run front-end
 
