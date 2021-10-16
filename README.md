@@ -27,13 +27,13 @@ Step1: Project Repo Cloning Process
 
     -Open bash terminal then create a folder where to store the repo
 
-    -Change directory to the newly creaeted folder
+    -Change directory to the newly created folder
 
     -Clone the main repo
         
         git clone repoURL
 
-    -Change directory to the repo folder
+    -Change directory to the repo folder "muceros__nolita--final-project"
 
 Step2: Setup Backend
 
