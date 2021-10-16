@@ -18,23 +18,20 @@ function App() {
   return (
     <BrowserRouter>
     <Container className="main-container" fluid>
-    <Navigation />
-    <Switch>
-      <Route exact path="/" component={Home} />
-      <Route exact path="/resume" component={Resume} />      
-      <Route exact path="/portfolio" component={Portfolio} />
-      <Route exact path="/contact" component={Contact} />
-      <Route exact path="/login" component={Login} />
-      <PrivateRoute path="/messagecentre" > {/* PrivateRoute is a user-defined component */}
-        <MessageCentre />
-      </PrivateRoute>
-      <PrivateRoute path="/admin" > {/* PrivateRoute is a user-defined component */}
-        <Admin />
-      </PrivateRoute>      
-
-      {/* <PrivateRoute path="/admin" component={Admin} /> PrivateRoute is a user-defined component */}
-    </Switch>
-  
+      <Navigation />
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/resume" component={Resume} />      
+        <Route exact path="/portfolio" component={Portfolio} />
+        <Route exact path="/contact" component={Contact} />
+        <Route exact path="/login" component={Login} />
+        <PrivateRoute path="/messagecentre" > {/* PrivateRoute is a user-defined component */}
+          <MessageCentre />
+        </PrivateRoute>
+        <PrivateRoute path="/admin" > {/* PrivateRoute is a user-defined component */}
+          <Admin />
+        </PrivateRoute>      
+      </Switch>
     </Container>
     <Footer />  
 </BrowserRouter>

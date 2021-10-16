@@ -1,17 +1,13 @@
 import React, { useState } from "react"
-import { Container, Card, CardBody, CardImg, CardSubtitle, CardTitle, CardText, CardFooter, Button, Collapse } from "reactstrap"
-// import { CgDetailsMore } from "react-icons/cg"
+import { Container, Card, CardBody, CardImg, CardSubtitle, CardTitle, Collapse } from "reactstrap"
 import { MdOutlineReadMore} from "react-icons/md"
-import { FaGitSquare } from "react-icons/fa"
-// import { FiLink } from "react-icons/fi"
 import { BsLink } from "react-icons/bs"
 import "../../css/portfolioCard.css"
 
 
-
 const PortfolioCard = (project) => {
 
-    const [selectProject, setSelectedProject] = useState(null)
+    // const [selectProject, setSelectedProject] = useState(null)
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
 
@@ -30,7 +26,6 @@ const PortfolioCard = (project) => {
                                 <MdOutlineReadMore />
                             </a>
                             <a className="portfolio-gitLink-icon" href={project.projectLink}>
-                                {/* <FaGitSquare /> */}
                                 <BsLink />
                             </a>
                         </div>

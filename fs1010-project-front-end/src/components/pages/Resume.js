@@ -7,19 +7,15 @@ import { FiPhone } from "react-icons/fi"
 import { GiDiploma } from "react-icons/gi"
 import { BiHighlight } from "react-icons/bi"
 import { FaRegHandshake } from "react-icons/fa"
-// import { BsArrowUpSquare } from "react-icons/bs"
 import { MdVerticalAlignTop } from "react-icons/md"
-// import { grey } from "color-name"
+
 
 const Resume = () => {
     return (
         <Container fluid>
             <main>
-                {/* <section> */}
                 <div id="placeholder">Bottom</div>
                 <Row className="my-8">
-                    {/* <div id="resume-container"> */}
-
                         <Col lg="2">
                             <div id="sidebar">
                                 <nav className="verticalNavBar">
@@ -56,9 +52,8 @@ const Resume = () => {
                                 <Row>   
                                     <div className="resume-header-container">
 
-                                        <Col lg="7" sm="12">
+                                        <Col lg="7" sm="6" xs="12">
                                             <div id="objective-container">
-                                                {/* <div className="objectiveTitle">Objective:</div> */}
                                                 <div className="objective">
                                                     <p style={{
                                                             marginleft: "20px",
@@ -74,7 +69,7 @@ const Resume = () => {
                                             </div>
                                         </Col>
 
-                                        <Col lg="5" sm="12">
+                                        <Col lg="5" sm="6" xs="12">
                                             <div id="contactInfo-container">
                                                 <div className="address">
                                                     <GoLocation 
@@ -85,7 +80,6 @@ const Resume = () => {
                                                     {'  '}Tottenham, ON L0G1W0
                                                 </div>
                                                 <div className="telephone">
-                                                    {/* <img src={phone} alt="phone icone"/> */}
                                                     <FiPhone 
                                                         style={{
                                                             fontSize: "1.5rem"
@@ -94,7 +88,6 @@ const Resume = () => {
                                                     {'  '}(647) 674-3709
                                                 </div>
                                                 <div className="email">
-                                                    {/* <img src={eMail} alt="email icon"/> */}
                                                     <MdOutlineEmail 
                                                         style={{
                                                             fontSize: "1.5rem"
@@ -289,10 +282,10 @@ const Resume = () => {
                                 </Row>    
                              </div>   
                         </Col>
-                    {/* </div>     */}
+
                 </Row>
                 
-                {/* </section> */}
+
             </main>
     </Container>
     )

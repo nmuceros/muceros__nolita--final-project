@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { Container, Form, FormGroup, Input, Row, Col, Table, Button } from 'reactstrap'
 import { useHistory } from "react-router-dom";
-import { RiLogoutCircleRFill } from "react-icons/ri"
 import { RiLogoutBoxRLine } from "react-icons/ri"
-import { AiOutlineUserAdd } from "react-icons/ai"
 import parseJwt from '../../helpers/authHelper'
 import "../../css/admin.css"
-
 
 const Admin = () => {
 
@@ -76,9 +73,7 @@ const Admin = () => {
     const userFormSubmit = async event => {
         event.preventDefault()
         let foundErrors = userFields_Validation()
-        // Ensure front-end validations are complete before fetching happens
-        // so no duplicate error message will be displayed
-        // if (Object.keys(foundErrors).length === 0) {     
+ 
         if ( foundErrors.length === 0 ) {   
             const response = await fetch('http://localhost:4000/api/users', {
                 method: 'POST',
@@ -142,18 +137,11 @@ const Admin = () => {
                          </Col>                       
                      </header>
                 </Row>
-
-
-                
+ 
                 <Row>
-
-                 
                     <section className="addUser-container">
-                    {/* {errorMessages && <p className="errorMessages">{ errorMessages}</p>} */}
-
                         <Form onSubmit={userFormSubmit} noValidate>
                             <FormGroup row>
-                            
                                 <Col xs={4} sm={3} md={3} lg={3}>
                                     <div className="inputUserName-containier">
                                         <Input 
@@ -162,15 +150,10 @@ const Admin = () => {
                                             id="nameEntry" 
                                             placeholder="Enter full name" 
                                             required value={name} 
-                                            // onChange={e => setName(e.target.value)}
                                             onChange={handleName}
-                                          
-                                            
                                         />
                                     </div>   
-                                    {/* {errorMessages.nameError && <p className="nameError">{ errorMessages.nameError }</p>}    */}
                                 </Col>
-
                                 <Col xs={4} sm={3} md={3} lg={3}>
                                     <div className="inputPassword-containier">
                                         <Input 
@@ -179,14 +162,10 @@ const Admin = () => {
                                             id="passwordEntry" 
                                             placeholder="Enter password" 
                                             required value={password} 
-                                            // onChange={e => setPassword(e.target.value)}
                                             onChange={handlePassword}
-                                        
                                         />
                                     </div>   
-                                    {/* {errorMessages.passwordError && <p className="passwordError">{ errorMessages.passwordError }</p>}    */}
                                 </Col>        
-
                                 <Col xs={4} sm={3} md={4} lg={4}>
                                     <div className="inputEmail-containier">
                                         <Input 
@@ -195,12 +174,9 @@ const Admin = () => {
                                             id="emailEntry" 
                                             placeholder="Enter email" 
                                             required value={email} 
-                                            // onChange={e => setEmail(e.target.value)}
-                                            // onChange={ handleInputChange } 
                                             onChange={handleEmail}
                                         />
                                     </div>   
-                                    {/* {errorMessages.emailError && <p className="emailError">{ errorMessages.emailError }</p>}    */}
                                 </Col>                                                   
 
                                 <Col xs={4} sm={3} md={2} lg={2}>                    

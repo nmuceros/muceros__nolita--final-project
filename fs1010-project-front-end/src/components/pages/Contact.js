@@ -17,9 +17,6 @@ const Contact = () => {
     const [phoneNumberError, setPhoneNumberError] = useState("")
     const [contentError, setContentError] = useState("")
 
-    // const [errorMessages, setErrorMessages] = useState("")
-
-    
 
     const handleName = (e) => {
         setName(e.target.value)
@@ -44,13 +41,7 @@ const Contact = () => {
 
     const formSubmit = async event => {
         event.preventDefault()
-        //call validation function
-        // contactFields_Validation()
-
         let foundErrors = contactFields_Validation()
-
-        // Ensure front-end validations are complete before fetching happens
-        // so it will not display duplicate validation error message
         if ( foundErrors < 1 ) {               
 
             const response = await fetch('http://localhost:4000/api/contact_form/entries', {
@@ -104,18 +95,14 @@ const Contact = () => {
     }
 
 
-
     return (
         <Container>
             <main className="contact-container">
                 <h2 className="contactTitle-container">
                     <div className="contactTitle-texts">Reachable Here!</div>
                 </h2>                
-           
                 <section className="contactForm-container">
-
                     <Form className="my-5" onSubmit={formSubmit} noValidate>
-                    
                         <FormGroup row>
                             <Col xs={2} sm={2} md={2} lg={1}>                    
                                 <div className="contactNameIcon-container"> 

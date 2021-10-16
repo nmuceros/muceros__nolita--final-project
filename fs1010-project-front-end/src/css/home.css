@@ -12,12 +12,6 @@
     align-items: center;
     padding-left: 7rem;
     padding-right: 7rem;
-   
-
-    /* background-color: red;
-    border-style: solid 2px; */
-
-    /* background-color: red; */
 }
 
 
@@ -36,9 +30,6 @@
     height: auto;
     align-items: center;
     align-content: center;
-
-    /* background-color: yellow; */
-
 }
 
 
@@ -53,7 +44,6 @@
     position: relative;
     float: left;
     width: 15rem;
-    /* border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; */
     border-radius: 50%;
     box-shadow: 20px 20px 20px rgb(244, 236, 236);
     clear: left;
@@ -63,16 +53,13 @@
 #myPhoto {
     position: relative;
     width: 100%;
-    /* border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; */
     border-radius: 50%;
-
 }
 
 .homeQuote-container1, .homeQuote-container2 {
     position: relative;
     overflow: hidden;
     width: 100%;
-    /* padding-top: .5rem; */
     display: flex;
     justify-content: center;
 }
@@ -99,17 +86,8 @@
     flex-direction: column;
     width: 100%;
     height: auto;
-    /* display: flex; */
-    /* flex-direction: column;
-    justify-content: center;
-    justify-items: center; */
     align-items: center;
     align-content: center;
-
-    /* margin-left: 5rem; */
-
-    /* background-color: blue; */
-
 }
 
 
@@ -119,27 +97,22 @@
 }
 
 
-
-
 #homeMyName-texts {
     margin-top: 1.5rem;
     font-size: 1.5rem;
+    text-align: center;
+    letter-spacing: -0.015em;
 }
 
-
-
-
-
 .myName {
-    /* color: rgb(4, 161, 192); */
     color: #209cbc;
     font-size: 2rem;
     text-align: center;
     letter-spacing: -0.015em;
 }
 
+
 .homeAspiring-texts {
-    /* align-content: center; */
     font-size: 1rem;
     text-align: center;
     letter-spacing: -0.015em;
@@ -148,7 +121,6 @@
 .homeCurrently-texts {
     margin-top: 3rem;
     font-size: 1rem;
-    /* align-content: center; */
     text-align: center;
     letter-spacing: -0.015em;
 }
@@ -160,29 +132,5 @@
 
 #findOutMore-button:hover {
     transform: translate(-.35rem) scale(1.05);
-  }
-
-/* 
-.social-container {
- position: relative;
- width: 100%;
- margin: 0;
- padding: 0;
- height: auto;
 }
 
-.img-social {
- position: relative;
- display: flex;
- justify-content: space-between;
- margin-bottom: 1rem;
- width: 1rem;
- height: auto;
- color: white;
-}
-
-.img-social:hover {
- opacity: .5;
- transform: scale(1.5);
- 
-} */

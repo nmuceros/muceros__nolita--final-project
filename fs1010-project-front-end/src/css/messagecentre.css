@@ -27,41 +27,19 @@
     line-height: 5rem;
 }
 
-/* .listingSendButton-container{
-    position: relative;
-    text-align: right;
-    line-height: 5rem;
-} */
-
-
-/* #listing-sendButton {
-    position: relative;
-    align-content: center;
- } */
 
  .listing-logoutIcon-container {
     position: relative;
     text-align: right;
     line-height: 5rem;
-
-    /* color: white; */
     font-size: 1.3rem;
-    /* align-content: center; */
-
-    /* background-color: red; */
 }
 
- #listing-logout {
-    /* cursor: pointer; */
-
-}
 
 #listing-logout:hover  {
     opacity: .5;
     transform: scale(1.2);
 }
-
-
 
 
 .listingTitle-container .listingTitle-texts {

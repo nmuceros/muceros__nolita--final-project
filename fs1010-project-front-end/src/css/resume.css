@@ -1,12 +1,10 @@
 * {
   box-sizing: border-box;
-  /* overflow: auto; */
 }
 
 #placeholder {
   visibility: hidden;
   height: 50px;
-  /* padding-top: 3rem; */
 }
 
 #sidebar {
@@ -15,27 +13,15 @@
   margin: 0;
   padding: 0;
   margin-top: 1rem;  
-  /* margin-left: 2rem; */
   width: 100%;
   height: auto;
-
-  /* border-style: solid 3px red; */
-  /* background-color: red; */
 }
 
 .verticalNavBar {
   position: relative;
-  /* float: left; */
-  /* padding-top: 4rem; */
-  /* margin-top: 13rem; */
-  /* padding-top: 10rem; */
-  /* width: 90%; */
   padding-left: 2rem;
   height: auto;
-  /* min-height: 646px; */
   background-color: transparent;
-  
-  
 }
 
 
@@ -44,29 +30,17 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
-  /* width: 15%; */
-  /* position: fixed; */
-  /* height: 100%; */
-  /* overflow: auto; */
   font-family: 'Montserrat', sans-serif;
   font-size: 18px;
-
   text-align: center;
   justify-content:space-around;
-  /* padding-top: 2rem; */
-  /* padding-top: 1rem; */
-  /* text-shadow: black; */
-  /* background-color: whitesmoke; */
   color: white;
   text-shadow: 2px 2px 4px #000000;
-  
 }
 
 
 .verticalNavBar-li a {
   display: block;
-  /* color: white;   */
-  /* color: rgb(40, 187, 187); */
   color: white;
   padding: 6px;
   text-decoration: none;
@@ -76,8 +50,6 @@
 
 
 .verticalNavBar-li a:hover {
-  /* background-color:#655C56; */
-  /* background-color: rgb(27, 165, 165); */
   background-color: rgb(76, 81, 83);
 }
 
@@ -90,7 +62,6 @@
   margin-top: 1rem;
   margin-right: 4rem;
   margin-left: 4rem;
-  /* background-color: blue; */
   background-color: lightblue;  
 }
 
@@ -102,53 +73,28 @@
   height: auto;
   margin-left: auto;
   margin-right: auto;
-  /* padding: 3rem; */
-  /* background-color: #444444; */
   background-color: rgb(76, 81, 83);
 }
 
-
-/* .resumeHeader {
-  position: relative;
-  margin: 0;
-  padding: 0;
-  width: 100%; 
-  height: auto;
-  color: seashell;
-} */
 
 #objective-container {
   position: relative;
   width: 100%;
   height: auto;
   padding: 2rem;
-  /* background-color: black; */
 }
 
-/* .objective { */
-  /* position: relative;
-  width: 100%;
-  height: auto; */
-  /* padding-bottom: 2rem; */
-  /* padding-left: 5rem; */
-  /* background-color: #444444; */
-
-/* } */
 
 .objectiveTitle {
   position: relative;
-  /* width: 100%; */
   height: auto;
   font-weight: bold;
   font-size: 14px;
-  /* margin-top: 1rem; */
   color: white;
-  /* padding-bottom: 2rem; */
 }
 
 .objective {
   position: relative;
-  /* width: 100%; */
   font-family: Arial, Helvetica, sans-serif;
   font-size: 12px;
   color: white;
@@ -159,30 +105,10 @@
   height: auto;
   padding-top: 2rem;
   padding-left: 2rem;
-  /* margin-left: 1rem; */
-  /* background-color: black;   */
 }
 
 
-
-/* .contactInfo {
-  position: relative;
-  width: 100%;
-  min-height: 110px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 12px;
-  color: white;
-  background-color: #444444;
-
-} */
-
-
 .telephone, .email, .address {
-  /* width: 100%;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 12px;
-  color: white; */
-
   position: relative;
   width: 100%;
   font-family: Arial, Helvetica, sans-serif;
@@ -192,117 +118,80 @@
 
 }
 
-.telephone, .email {
-  /* margin-top: 1px; */
-
-  
-}
-
-.address {
-  /* margin-top: 2rem; */
-
-}
-
-/* .resumeContent {
-  width: 100%;
-  height: auto;
-  align-content: center;
-  text-align: center;
-  background-color: lightblue;
-  
-} */
-
-
 
 .highlights-container, .experience-container, .education-container {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   width: 100%;
   height: auto;
   overflow: hidden;
-  /* padding-left: 1rem; */
-  /* margin-bottom: 2rem; */
-  /* padding: 2rem; */
   font-size: .8rem;
   text-align: left;
+  text-justify: auto;
 }
 
 
 
 
 .highlightsTitle, .experienceTitle, .educationTitle {
+  position: relative;
   border: 5px solid white;
   width: 100%;
   height: auto;
   text-align: center;
-  font-size: 18px;
+  font-size: 1rem;
   font-weight: bold;
-  /* background-color: #444444; */
   background-color: rgb(76, 81, 83);
   color: white;
 }
 
 .experienceTitle, .educationTitle {
   margin-top: 3rem;
-  
-
 }
+
 
 .highlights-contents-container, .experience-contents-container, .education-contents-container {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   width: 100%;
   height: auto;
   padding: 3rem 5rem 3rem 5rem;
-
-  /* background-color: red; */
-
-
+  text-justify: auto;
 }
-
-/* .highlights-ul.a {
-  list-style-type: circle;
-  color: black;
-} */
 
 
 .mainBullet {
-  /* padding-top: 3rem; */
-
-  
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 
+ul li {
+  text-justify: auto;
+  word-wrap: normal;
+}
 
-/* .mainBullet li {
-  text-decoration: dotted;
-} */
-
-/* .job-top, .education-top {
-  padding-top: 3rem;
-  padding-left: 1.5rem;
-  width: 100%;
-} */
 
 .job, .education {
   padding-top: .5rem;
   padding-left: 1.5rem;
   width: 100%;
 }
+
+
  #top-experience, #top-education {
   padding-left: 2.5rem;
   outline: none;
-  /* padding-bottom: 5rem; */
 }
 
 #top {
   padding-left: 2.5rem;
   outline: none;  
-  /* margin: 5px; */
 }
 
-/* Responsive layout - when the screen is less than 600px wide, adjust the left margin of vertical navbar*/
-@media screen and (max-width: 600px) {
-  .verticalNavBar {
-    padding-left: 0;
-  }
-  
-}
+

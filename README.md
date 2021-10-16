@@ -67,12 +67,12 @@ Step2: Setup Backend
         
         To keep going you can add the below data to the "users.json" file
         
-         [{
-           "id": "8ce9e040-9ff5-4973-8a9d-dae810e3c894",
-           "name": "Sample User",
-           "password": "$argon2i$v=19$m=4096,t=3,p=1$1Rr40IsGd0R8lV4XPnshjA$aZqcP3eIfqtDQKsKsrju08/PsdnM4nIJHU0nYfMyVeM",
-           "email": "sample@user.com"
-          }]
+            [{
+                "id": "e02e3919-f675-44a5-b85c-505414ab6ff5",
+                "name": "Admin User",
+                "password": "$argon2i$v=19$m=4096,t=3,p=1$sotBHeLLeuDxFn4YMKAeIg$DW37iMQ/3q4zQVcsL2S/++rX7dHtRmikZigYpNVP2wY",
+                "email": "sample@user.com"
+            }]
 
     -Run the back-end and leave it running
 

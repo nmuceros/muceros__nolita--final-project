@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
-import { Container, Row, Col, Button, CardBody, CardImg, CardSubtitle, CardTitle, CardText, CardFooter, Card } from "reactstrap"
-import { Collapse } from 'reactstrap';
+import React from 'react';
+import { Container, Row, Col } from "reactstrap"
 import PortfolioCard from './PortfolioCard';
 import "../../css/portfolio.css"
 import creativeResonance from "../../images/creativeResonance.jpg"
@@ -46,21 +45,6 @@ const Portfolio = () => {
       ];
 
 
-    const [selectedProject, setSelectedProject] = useState(null); 
-    // const [isOpen, setIsOpen] = useState(false);
-    
-    // const handleMore = (e, projectObject) => {
-    //     setSelectedProject({
-    //         projectID: projectObject.projectID,
-    //         projectName: projectObject.projectName,
-    //         projectImage: projectObject.projectImage,
-    //         projectbBuiltBy: projectObject.projectbBuiltBy,      
-    //         projectTitle: projectObject.projectTitle,     
-    //         projectDesc: projectObject.projectDesc
-    //     });
-    //     setIsOpen(!isOpen);
-    // }
-
 
     return (
         <Container>
@@ -70,7 +54,6 @@ const Portfolio = () => {
                             "Happiness in what you do is the key to success!"
                         </div>
                 </Row>
-
                 <Row id="txtTakeALook-container">
                      <div className="txtTakeAlook">
                         <p>Please take a look at the sample projects I have enjoyed building so far...</p>
@@ -82,12 +65,6 @@ const Portfolio = () => {
                     {projects.map((project) => (
                         <Col md="3" className="mb-5">
                             <div key={project.projectID}>   
-                                {/* {selectedProject === project.projectID ? (
-                                    <>
-                                ) : ( 
-                                    <>
-                                )} */}
-                            
                                 <PortfolioCard  
                                     project={project} 
                                     projectImage={project.projectImage}
@@ -97,7 +74,6 @@ const Portfolio = () => {
                                     projectLink={project.projectLink}
                                     projectSubTitle={project.projectSubTitle}
                                 />                      
-    
                             </div>    
                         </Col>                                
                     ))}    

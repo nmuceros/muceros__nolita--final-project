@@ -21,36 +21,11 @@
     align-items: center;
 }
 
-
-
-/* .adminTitle-container {
-    position: relative;
-    text-align: left;
-    background-color: blue;
-} */
-
-/* .adminTitle-container {
-    position: relative;
-    text-align: left;
-    line-height: 5rem;
-    background-color: blue;
-} */
-
 .adminTitle-container {
     position: relative;
     margin-top: 1rem;
     width: 100%;
-    /* color: white; */
-    /* text-shadow: 2px 2px 4px #000000; */
-    /* font-size: 1.5rem; */
-
     text-align: left;
-    /* line-height: 4rem; */
-
-
-    /* background-color: red; */
-
-    /* background-color: blue; */
 }
 
 .admin-logoutIcon-container {
@@ -58,15 +33,7 @@
     margin-top: 1rem;
     width: 100%;
     text-align: right;
-    /* height: auto; */
-    /* line-height: 1.5rem; */
-    /* background-color: red; */
-
-    /* color: white; */
     font-size: 1.3rem;
-    /* align-content: center; */
-
-    /* background-color: blue; */
 }
 
 .adminTitle-texts {
@@ -74,26 +41,6 @@
     color: white;
     text-shadow: 2px 2px 4px #000000;
     font-size: 1.5rem;
-}
-
-
-/* .listingSendButton-container{
-    position: relative;
-    text-align: right;
-    line-height: 5rem;
-} */
-
-
-/* #listing-sendButton {
-    position: relative;
-    align-content: center;
- } */
-
-
-
- #admin-logout {
-    /* cursor: pointer; */
-
 }
 
 #admin-logout:hover  {
@@ -110,8 +57,6 @@
     margin-left: auto;
     margin-right: auto;
 }
-
-
 
 
 Table thead {
@@ -186,7 +131,6 @@ Table tbody {
 
 #errorMessages {
     position: relative;
-    /* margin-top: 5rem; */
     color: red;
     font-size: .8rem;
 }

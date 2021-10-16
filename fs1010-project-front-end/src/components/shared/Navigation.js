@@ -12,7 +12,6 @@ const Navigation = () => {
     return (
         <Container>
             <Navbar className="mainNavigation" dark expand="md" fixed="top" color="info">
-                {/* <Container> */}
                     <NavbarBrand href="">
                         <Logo />
                     </NavbarBrand>
@@ -39,7 +38,6 @@ const Navigation = () => {
                             </NavItem>                        
                         </Nav>
                     </Collapse>
-                {/* </Container> */}
             </Navbar>
         </Container>
     )

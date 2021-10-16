@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { Container, Col, Button, Form, FormGroup, Label, Input, Card, CardBody, CardText } from 'reactstrap'
+import { Container, Col, Button, Form, FormGroup, Input } from 'reactstrap'
 import { useHistory, useLocation } from 'react-router-dom'
 import { BsFillPersonFill } from "react-icons/bs"
 import { RiLockPasswordFill } from "react-icons/ri"
@@ -16,7 +16,6 @@ const Login = () => {
 
     const [emailError, setEmailError] = useState("")
     const [passwordError, setPasswordError] = useState("")
-    // const [foundError, setFoundError] = useState()
 
 
     useEffect(() => {
@@ -53,43 +52,29 @@ const Login = () => {
         } else {
             sessionStorage.setItem('token', payload.token)
             let { from } = location.state || { from: { pathname: "/" } };
-            // history.replace(from);
             history.push(from);
         }
     }
 
     const loginFields_Validation = () => {
-        // let errorCounter = 0
- 
         let regX = /^([a-z\d-]+)@([a-z\d-]+)\.([a-z]{2,8}(\.[a-z]{2,8})?)$/
         if (!email) {
-            setEmailError("eMail is required!")
-            // errorCounter += errorCounter     
+            setEmailError("eMail is required!")  
         } else if (!regX.test(email)) {
             setEmailError("eMail is invalid! Must be correct email format sample@email.ca.") 
-            // errorCounter += errorCounter
         }
 
         regX = /^[\w@-]{8,20}$/; 
         if (!password) {
             setPasswordError("Password is required!")
-            // errorCounter += errorCounter
         } else if (!regX.test(password)) {
             setPasswordError("Password is invalid! Must be atleast 8 characters.")
-            // errorCounter += errorCounter
         }        
-        // if (errorCounter > 0) {
-        //     setFoundError(true)
-        // } else {
-        //     setFoundError(false)
-        // }
-      
     }
 
     return (
         <Container>
           <main className="login-container">
-
             <header>
                 <h2 className="loginTitle-container">
                     <div className="loginTitle-texts">For Authorized User Only!</div>
@@ -99,7 +84,6 @@ const Login = () => {
 
              <section className="loginForm-container">            
                 <Form className="my-5" onSubmit={loginSubmit} noValidate >
-
                     <FormGroup row>
                         <Col xs={3} sm={2} md={2} lg={1}>     
                             <div className="userIDIcon-main-containier">               
@@ -118,7 +102,6 @@ const Login = () => {
                                     required value={email} 
                                     autoComplete="off"
                                     ref={inputRef}
-                                    // onChange={e => setUsername(e.target.value)}
                                     onChange={handleEmail}
                                 />
                             </div>  
@@ -145,7 +128,6 @@ const Login = () => {
                                     placeholder="Valid password" 
                                     required value={password} 
                                     autoComplete="off"
-                                    // onChange={e => setPassword(e.target.value)}
                                     onChange={handlePassword}
                                 />
                             </div>   

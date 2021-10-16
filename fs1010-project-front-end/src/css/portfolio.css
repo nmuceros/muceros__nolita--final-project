@@ -1,7 +1,5 @@
 #txtQuote-container {
     height: 5px;
-  
-  
   }
   
   
@@ -28,10 +26,7 @@
   #portfolio-card-container {
       position: relative;
       display: flex;  
-      /* justify-content: space-around; */
-      /* justify-items: center; */
       height: auto;
-      /* padding: 10px; */
       margin-top: 2rem;
       border-radius: 5px;
       box-shadow: 5px 10px 8px #888888;
@@ -74,12 +69,5 @@
       border: black solid;
   }
 
-  
-  /* #portfolio-collapse-button {
-      cursor: pointer;
-  }
-  
-  #portfolio-collapse-button:hover {
-      transform: translate(-.35rem) scale(1.05);
-    } */
+
 

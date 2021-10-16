@@ -2,39 +2,9 @@
   box-sizing: border-box;
 }
 
-/* use these wit <Container className="fixed-bottom" fluid >
-footer is sticky and leaves a little left and right margin 
-to solve the left and right margin use this <Container id="footer" fluid >
-then   <footer  >
 #footer {
-  position: relative;
-  width: 100%;
   background-color: rgb(76, 81, 83);
-} */
-
-/* Use this with <footer id="footer" >
-With this code, left and right are fluid but leaves space at the bottom when maximized
-#footer {
-  position: relative;
-  width: 100%;
-  background-color: rgb(76, 81, 83);
-} */
-
-
-#footer {
-  /* position: relative; */
-  /* width: 100%; */
-  /* float: left; */
-  /* height: auto; */
- 
-  background-color: rgb(76, 81, 83);
-  /* margin-left: auto;
-  margin-right: auto; */
-
-  /* margin-top: auto; */
 }
-
-
 
 .social-container {
     position: relative;
@@ -49,7 +19,6 @@ With this code, left and right are fluid but leaves space at the bottom when max
     margin: .5rem;
     width: 1.7rem;
     opacity: 1;
-    /* background-color: white; */
     border-radius: 50%;
   }
   

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { Container, Row, Col, Table, Button } from 'reactstrap'
+import { Container, Row, Col, Table } from 'reactstrap'
 import { useHistory } from "react-router-dom";
-import { RiLogoutCircleRFill } from "react-icons/ri"
 import { RiLogoutBoxRLine } from "react-icons/ri"
 import parseJwt from '../../helpers/authHelper'
 import "../../css/messagecentre.css"
@@ -13,47 +12,6 @@ const MessageCentre = () => {
     const token = sessionStorage.getItem('token')
     const user = parseJwt(token).email
     const [listing, setListing] = useState([])
-
-    // const listHeader = [
-    //     {
-    //       id: "1",  
-    //       Header: "ID",
-    //       className: "t-cell-1 text-left",
-    //       accessor: "id",
-    //       notShowSortingDisplay: "true"  
-    //     },
-    //     {
-    //       id: "2",              
-    //       Header:  "Name",
-    //       accessor: "name",
-    //       className: "t-cell-2 text-left",
-    //       notShowSortingDisplay: "true"        
-    //     },
-    //     {
-    //       id: "3",              
-    //       Header: "Phone Number",
-    //       accessor: "phoneNumber",
-    //       className: "t-cell-3 text-left",
-    //       notShowSortingDisplay: "true"           
-    //     },
-    //     {
-    //       id: "4",  
-    //       Header: "Email",
-    //       accessor: "email",
-    //       className: "t-cell-4 text-center",
-    //       notShowSortingDisplay: "true"         
-    //     },
-    //     {
-    //         id: "5",  
-    //         Header: "Message",
-    //         accessor: "content",
-    //         className: "t-cell-5 text-center",
-    //         notShowSortingDisplay: "true"            
-    //       }        
-    //   ];
-    //   const listData = listing;
-
-
 
     const logout = event => {
         event.preventDefault()
@@ -71,7 +29,6 @@ const MessageCentre = () => {
             })
             const data = await response.json()
             setListing(data)
-            // console.log(data)
         }
         getData()
     }, [token])
@@ -79,11 +36,7 @@ const MessageCentre = () => {
     return (
         <Container>
             <main className="submission-main-container">
-
-               {/* <ListingTable columns={listHeader} data={listing} loading={false} /> */}
-
                 <Row>
-                    
                     <header className="listing-header">
                         <Col >
                             <div className="listingTitle-container">   
